@@ -1,0 +1,214 @@
+#!/usr/bin/env python3
+"""Scan all generated report HTML files and build index.html"""
+import os, re
+from pathlib import Path
+from datetime import datetime
+
+ROOT = Path(__file__).parent
+pattern = re.compile(r'^(\d{4}-\d{2}-\d{2})_(finance|ai)_report\.html$')
+
+finance_reports = []
+ai_reports = []
+
+for f in sorted(ROOT.glob("*.html"), reverse=True):
+    m = pattern.match(f.name)
+    if not m:
+        continue
+    date_str, rtype = m.group(1), m.group(2)
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+        wdays = ["一","二","三","四","五","六","日"]
+        label = date_str + "（週" + wdays[dt.weekday()] + "）"
+    except Exception:
+        label = date_str
+    entry = {"date": date_str, "label": label, "file": f.name}
+    if rtype == "finance":
+        finance_reports.append(entry)
+    else:
+        ai_reports.append(entry)
+
+def report_cards(reports, color, icon, tag_cls):
+    if not reports:
+        return '<p style="color:#4a5580;padding:20px 0">尚無報告</p>'
+    out = ""
+    for i, r in enumerate(reports):
+        badge = ' <span class="badge">最新</span>' if i == 0 else ""
+        out += (
+            '<a class="rcard ' + tag_cls + '" href="' + r["file"] + '">'
+            '<div class="rc-date">' + r["label"] + badge + '</div>'
+            '<div class="rc-arrow">閱讀報告 →</div>'
+            '</a>'
+        )
+    return out
+
+finance_html = report_cards(finance_reports, "#f0b429", "📈", "rc-finance")
+ai_html      = report_cards(ai_reports,      "#a78bfa", "🤖", "rc-ai")
+now          = datetime.now().strftime("%Y-%m-%d %H:%M")
+total        = len(finance_reports) + len(ai_reports)
+
+html = """<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>每日資訊彙整站</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07091a;--surf:#0d1030;--card:#111428;--bdr:#1e2550;
+  --gold:#f0b429;--gold-bg:rgba(240,180,41,.08);--gold-b:rgba(240,180,41,.25);
+  --purple:#a78bfa;--purple-bg:rgba(167,139,250,.08);--purple-b:rgba(167,139,250,.25);
+  --t1:#e2e8ff;--t2:#7b8cc8;--tm:#3d4d80;
+  --grad-f:linear-gradient(135deg,#d97706,#f0b429,#fde68a);
+  --grad-ai:linear-gradient(135deg,#6366f1,#8b5cf6,#06b6d4);
+}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;
+  background:var(--bg);color:var(--t1);line-height:1.6;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;
+  background:radial-gradient(ellipse 70% 40% at 15% 5%,rgba(240,180,41,.05),transparent 60%),
+             radial-gradient(ellipse 60% 40% at 85% 85%,rgba(99,102,241,.06),transparent 60%);
+  pointer-events:none;z-index:0}
+
+/* Header */
+.site-header{background:rgba(7,9,26,.9);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--bdr);padding:0 32px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;
+  justify-content:space-between;height:72px}
+.site-title{font-size:22px;font-weight:900;letter-spacing:-.5px}
+.site-title .f{background:var(--grad-f);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.site-title .ai{background:var(--grad-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header-meta{font-size:12px;color:var(--tm)}
+
+/* Hero */
+.hero{padding:64px 32px 48px;position:relative;z-index:1;text-align:center}
+.hero-inner{max-width:700px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:var(--purple);
+  background:var(--purple-bg);border:1px solid var(--purple-b);
+  padding:5px 16px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(28px,5vw,46px);font-weight:900;line-height:1.15;margin-bottom:16px}
+.hero-sub{font-size:15px;color:var(--t2);margin-bottom:32px}
+.stats-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.stat{text-align:center;background:var(--card);border:1px solid var(--bdr);
+  border-radius:12px;padding:14px 28px}
+.stat .n{font-size:28px;font-weight:900;line-height:1}
+.stat .l{font-size:12px;color:var(--tm);margin-top:4px}
+.stat.sf .n{background:var(--grad-f);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat.sa .n{background:var(--grad-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat.st .n{color:var(--t1)}
+
+/* Main sections */
+.main{max-width:1100px;margin:0 auto;padding:0 32px 80px;position:relative;z-index:1}
+.section{margin-bottom:56px}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:24px;
+  padding-bottom:16px;border-bottom:1px solid var(--bdr)}
+.section-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;
+  justify-content:center;font-size:22px}
+.section-icon.fi{background:var(--gold-bg);border:1px solid var(--gold-b)}
+.section-icon.ai{background:var(--purple-bg);border:1px solid var(--purple-b)}
+.section-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--tm);margin-bottom:2px}
+.section-title{font-size:22px;font-weight:800}
+.section-title.ft{color:var(--gold)}
+.section-title.at{background:var(--grad-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.section-count{margin-left:auto;font-size:13px;color:var(--tm);
+  background:rgba(255,255,255,.05);border:1px solid var(--bdr);
+  padding:4px 12px;border-radius:20px}
+
+/* Report cards */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.rcard{display:flex;align-items:center;justify-content:space-between;
+  background:var(--card);border:1px solid var(--bdr);border-radius:12px;
+  padding:16px 20px;text-decoration:none;color:var(--t1);
+  transition:background .2s,border-color .2s,transform .15s}
+.rcard:hover{background:#181c3a;transform:translateY(-2px)}
+.rc-finance{border-left:3px solid var(--gold)}
+.rc-finance:hover{border-color:var(--gold)}
+.rc-ai{border-left:3px solid var(--purple)}
+.rc-ai:hover{border-color:var(--purple)}
+.rc-date{font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px}
+.rc-arrow{font-size:12px;color:var(--tm);white-space:nowrap}
+.badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;
+  background:rgba(52,211,153,.15);color:#34d399;border:1px solid rgba(52,211,153,.3)}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--bdr);padding:28px 32px;text-align:center;
+  position:relative;z-index:1}
+.site-footer p{font-size:12px;color:var(--tm);margin-bottom:6px}
+.grad-f{background:var(--grad-f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+.grad-ai{background:var(--grad-ai);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#2d3878;border-radius:3px}
+@media(max-width:600px){.hero{padding:40px 16px 32px}.main{padding:0 16px 60px}
+  .header-inner{height:60px}.cards-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="site-title">
+      <span class="f">財經</span> &amp; <span class="ai">AI</span> 每日情報站
+    </div>
+    <div class="header-meta">更新於 """ + now + """</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">✦ DAILY INTELLIGENCE HUB</div>
+    <h1>自動化每日<br/>資訊彙整系統</h1>
+    <p class="hero-sub">
+      YouTube 精選頻道 · Claude AI 翻譯摘要<br/>
+      每日 07:30 自動更新 · 財經 + AI 技術雙軌並行
+    </p>
+    <div class="stats-row">
+      <div class="stat sf"><div class="n">""" + str(len(finance_reports)) + """</div><div class="l">財經報告</div></div>
+      <div class="stat sa"><div class="n">""" + str(len(ai_reports)) + """</div><div class="l">AI 報告</div></div>
+      <div class="stat st"><div class="n">""" + str(total) + """</div><div class="l">累計期數</div></div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon fi">📈</div>
+      <div>
+        <div class="section-label">Finance Reports</div>
+        <div class="section-title ft">每日財經情報</div>
+      </div>
+      <div class="section-count">""" + str(len(finance_reports)) + """ 期</div>
+    </div>
+    <div class="cards-grid">""" + finance_html + """</div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon ai">🤖</div>
+      <div>
+        <div class="section-label">AI Tech Reports</div>
+        <div class="section-title at">每日 AI 技術情報</div>
+      </div>
+      <div class="section-count">""" + str(len(ai_reports)) + """ 期</div>
+    </div>
+    <div class="cards-grid">""" + ai_html + """</div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>📺 Bloomberg · CNBC · Coin Bureau · Anthropic · Google DeepMind · Fireship · Sam Witteveen 等 27 個頻道</p>
+  <p><span class="grad-f">財經系統</span> · <span class="grad-ai">AI 技術系統</span> · 由 Claude claude-sonnet-4-6 驅動</p>
+  <p>⚠ 本站內容僅供資訊參考，不構成任何投資建議</p>
+</footer>
+
+</body>
+</html>"""
+
+out_path = ROOT / "index.html"
+out_path.write_text(html, encoding="utf-8")
+print("index.html generated with " + str(len(finance_reports)) + " finance + " + str(len(ai_reports)) + " AI reports")
