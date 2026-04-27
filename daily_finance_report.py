@@ -29,8 +29,8 @@ except ImportError:
 YOUTUBE_API_KEY   = os.getenv("YOUTUBE_API_KEY", "")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 OUTPUT_DIR        = Path(os.getenv("OUTPUT_DIR", str(Path(__file__).parent)))
-MAX_VIDEOS        = 5
-FETCH_HOURS       = 72
+MAX_VIDEOS        = 3
+FETCH_HOURS       = 48
 CLAUDE_MODEL      = "claude-sonnet-4-6"
 YT_API_BASE       = "https://www.googleapis.com/youtube/v3"
 
@@ -38,31 +38,19 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 log = logging.getLogger(__name__)
 
 CHANNELS = [
-    # ── 英文宏觀 / 財經 ──────────────────────────────────────
-    {"id": "UCrM7B7SL_g1edFOnmj-SDKg", "handle": "BloombergMarketsandFinance", "name": "Bloomberg Markets",   "lang": "en", "category": "macro"},
-    {"id": "UCvJJ_dzjViJCoLf5uKUTwoA",  "handle": "CNBC",                       "name": "CNBC",               "lang": "en", "category": "macro"},
-    {"id": "UCFRbT6FKe4YUGqD5-O2gy_w",  "handle": "KitcoNews",                  "name": "Kitco News",         "lang": "en", "category": "macro"},
-    {"id": "UCFk9ZMHzDVgAGn0Y_4kFiYg",  "handle": "Wealthion",                  "name": "Wealthion",          "lang": "en", "category": "macro"},
-    {"id": "UCXEqan5R9_3JlKCqSlXCYMg",  "handle": "realvision",                 "name": "Real Vision",        "lang": "en", "category": "macro"},
-    {"id": "UCQxOtDzLjKFb6NxRRJFN1UA",  "handle": "LynAldenInvestmentStrategy", "name": "Lyn Alden",          "lang": "en", "category": "macro"},
-    {"id": "",                           "handle": "grahamstephan",              "name": "Graham Stephan",     "lang": "en", "category": "macro"},
-    {"id": "",                           "handle": "AndreiJikh",                 "name": "Andrei Jikh",        "lang": "en", "category": "etf"},
-    # ── 英文加密 ────────────────────────────────────────────
-    {"id": "UCqK_GSMbpiV8spgD3ZGloLA",  "handle": "CoinBureau",                 "name": "Coin Bureau",        "lang": "en", "category": "crypto"},
-    {"id": "UCnzCBPOOfBMEf_4UoiKrHhQ",  "handle": "InvestAnswers",              "name": "InvestAnswers",      "lang": "en", "category": "crypto"},
-    {"id": "",                           "handle": "aantonop",                   "name": "Andreas Antonopoulos","lang": "en", "category": "crypto"},
-    {"id": "",                           "handle": "AdamLivingstonBTC",          "name": "Adam Livingston",    "lang": "en", "category": "crypto"},
-    # ── 中文財經 ────────────────────────────────────────────
-    {"id": "",  "handle": "MeiGuYanJiuShi",   "name": "美股研究室",    "lang": "zh", "category": "macro"},
-    {"id": "",  "handle": "macromicrotw",      "name": "財經M平方",     "lang": "zh", "category": "macro"},
-    {"id": "",  "handle": "GoodInfoTW",        "name": "股市好消息",    "lang": "zh", "category": "macro"},
-    {"id": "",  "handle": "moneymonday",       "name": "Money Monday",  "lang": "zh", "category": "macro"},
-    {"id": "",  "handle": "cfjycaijing",       "name": "財經角落",      "lang": "zh", "category": "macro"},
-    {"id": "",  "handle": "investwisely",      "name": "聰明理財",      "lang": "zh", "category": "etf"},
-    # ── 日文財經 ────────────────────────────────────────────
-    {"id": "UC7sg-8-SVQXZ3HMI9bTrZtQ",  "handle": "DanTakahashi17",  "name": "高橋ダン",  "lang": "ja", "category": "macro"},
-    {"id": "UC5oGMJaEpKR_ZKYQk_b7XHZA", "handle": "ryogakucho",      "name": "両学長",    "lang": "ja", "category": "etf"},
-    {"id": "",                           "handle": "jonenji",         "name": "上念司",    "lang": "ja", "category": "macro"},
+    {"id": "UCrM7B7SL_g1edFOnmj-SDKg", "handle": "BloombergMarketsandFinance", "name": "Bloomberg Markets", "lang": "en", "category": "macro"},
+    {"id": "UCvJJ_dzjViJCoLf5uKUTwoA",  "handle": "CNBC",                       "name": "CNBC",             "lang": "en", "category": "macro"},
+    {"id": "UCqK_GSMbpiV8spgD3ZGloLA",  "handle": "CoinBureau",                 "name": "Coin Bureau",      "lang": "en", "category": "crypto"},
+    {"id": "UCXEqan5R9_3JlKCqSlXCYMg",  "handle": "realvision",                 "name": "Real Vision",      "lang": "en", "category": "macro"},
+    {"id": "UCFRbT6FKe4YUGqD5-O2gy_w",  "handle": "KitcoNews",                  "name": "Kitco News",       "lang": "en", "category": "macro"},
+    {"id": "UCFk9ZMHzDVgAGn0Y_4kFiYg",  "handle": "Wealthion",                  "name": "Wealthion",        "lang": "en", "category": "macro"},
+    {"id": "UCQxOtDzLjKFb6NxRRJFN1UA",  "handle": "LynAldenInvestmentStrategy", "name": "Lyn Alden",        "lang": "en", "category": "macro"},
+    {"id": "UCnzCBPOOfBMEf_4UoiKrHhQ",  "handle": "InvestAnswers",              "name": "InvestAnswers",    "lang": "en", "category": "crypto"},
+    {"id": "UC7sg-8-SVQXZ3HMI9bTrZtQ",  "handle": "DanTakahashi17",             "name": "高橋ダン",          "lang": "ja", "category": "macro"},
+    {"id": "UC5oGMJaEpKR_ZKYQk_b7XHZA", "handle": "ryogakucho",                "name": "両学長",            "lang": "ja", "category": "etf"},
+    {"id": "",                            "handle": "jonenji",                   "name": "上念司",            "lang": "ja", "category": "macro"},
+    {"id": "",                            "handle": "tesuta_testa",              "name": "テスタ",            "lang": "ja", "category": "general"},
+    {"id": "",                            "handle": "toushi_gakkou",             "name": "投資の達人",         "lang": "ja", "category": "etf"},
 ]
 
 # ── YouTube API (urllib, no extra packages) ──────────────────────────
@@ -466,4 +454,9 @@ def main():
     if not all_videos:
         log.warning("今日無新影片，仍生成空白報告")
     html = generate_html(all_videos, report_date)
-    output_path.write_text(html, encoding="utf
+    output_path.write_text(html, encoding="utf-8")
+    log.info(f"🎉 報告已儲存：{output_path}")
+    log.info("   用瀏覽器開啟即可閱讀")
+
+if __name__ == "__main__":
+    main()
