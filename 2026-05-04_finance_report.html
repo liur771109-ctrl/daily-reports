@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>每日財經情報 — 2026-05-04</title><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d16;--surf:#0e1623;--card:#131e2e;--card2:#1a2840;--bdr:#1f3050;--bdr2:#2a4070;
+--gold:#f0b429;--gdim:#c8901e;--gglow:rgba(240,180,41,.15);
+--mac:#38bdf8;--mac-bg:rgba(56,189,248,.1);--mac-b:rgba(56,189,248,.3);
+--cry:#a78bfa;--cry-bg:rgba(167,139,250,.1);--cry-b:rgba(167,139,250,.3);
+--etf:#34d399;--etf-bg:rgba(52,211,153,.1);--etf-b:rgba(52,211,153,.3);
+--gen:#fb923c;--gen-bg:rgba(251,146,60,.1);--gen-b:rgba(251,146,60,.3);
+--t1:#e8edf5;--t2:#8fa8c8;--tm:#4a6280;--r:12px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.6}
+.site-header{background:linear-gradient(135deg,#0a1525,#0d1f38,#0a1525);border-bottom:1px solid var(--bdr);padding:0 24px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-block{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gdim));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-size:18px;font-weight:700}.logo-text span{color:var(--gold)}
+.date-badge{font-size:13px;color:var(--t2);background:rgba(255,255,255,.05);border:1px solid var(--bdr);padding:5px 12px;border-radius:20px}
+.update-tag{font-size:11px;background:var(--gglow);color:var(--gold);border:1px solid rgba(240,180,41,.3);padding:3px 10px;border-radius:20px}
+.hero{background:linear-gradient(160deg,#0d1f38,#080d16 60%);border-bottom:1px solid var(--bdr);padding:40px 24px 32px}
+.hero-inner{max-width:1280px;margin:0 auto}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:8px}.hero h1 .a{color:var(--gold)}
+.hero-sub{font-size:14px;color:var(--t2);margin-bottom:24px}
+.stats-row{display:flex;flex-wrap:wrap;gap:12px}
+.stat-chip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:8px 16px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}.num{font-weight:700}.lbl{color:var(--tm)}
+.da{background:var(--gold)}.dm{background:var(--mac)}.dc{background:var(--cry)}.de{background:var(--etf)}.dg{background:var(--gen)}
+.tab-nav{background:var(--surf);border-bottom:1px solid var(--bdr);padding:0 24px;overflow-x:auto}
+.tab-list{max-width:1280px;margin:0 auto;display:flex;list-style:none}
+.tab-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:14px;font-weight:500;color:var(--tm);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--t2)}.tab-count{font-size:11px;background:rgba(255,255,255,.07);padding:1px 7px;border-radius:10px}
+.tab-btn[data-cat=all].active{border-color:var(--gold);color:var(--gold)}
+.tab-btn[data-cat=macro].active{border-color:var(--mac);color:var(--mac)}
+.tab-btn[data-cat=crypto].active{border-color:var(--cry);color:var(--cry)}
+.tab-btn[data-cat=etf].active{border-color:var(--etf);color:var(--etf)}
+.tab-btn[data-cat=general].active{border-color:var(--gen);color:var(--gen)}
+.main{max-width:1280px;margin:0 auto;padding:28px 24px 60px}
+.section{margin-bottom:40px}.section[data-cat]{display:none}.section.visible{display:block}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-macro{background:var(--mac-bg);border:1px solid var(--mac-b);color:var(--mac)}
+.pill-crypto{background:var(--cry-bg);border:1px solid var(--cry-b);color:var(--cry)}
+.pill-etf{background:var(--etf-bg);border:1px solid var(--etf-b);color:var(--etf)}
+.pill-general{background:var(--gen-bg);border:1px solid var(--gen-b);color:var(--gen)}
+.section-title{font-size:18px;font-weight:700}.section-count{margin-left:auto;font-size:12px;color:var(--tm)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.card[data-cat=macro]::before{background:var(--mac)}.card[data-cat=crypto]::before{background:var(--cry)}
+.card[data-cat=etf]::before{background:var(--etf)}.card[data-cat=general]::before{background:var(--gen)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-2px)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.channel-badge{display:flex;align-items:center;gap:7px}
+.ch-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ch-icon.macro{background:var(--mac-bg);color:var(--mac)}.ch-icon.crypto{background:var(--cry-bg);color:var(--cry)}
+.ch-icon.etf{background:var(--etf-bg);color:var(--etf)}.ch-icon.general{background:var(--gen-bg);color:var(--gen)}
+.ch-name{font-size:12px;font-weight:600;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.flag{font-size:14px}.card-time{font-size:11px;color:var(--tm);white-space:nowrap}
+.card-title-orig{font-size:11px;color:var(--tm);font-style:italic;line-height:1.4;border-left:2px solid var(--bdr2);padding-left:8px}
+.card-title-zh{font-size:15px;font-weight:700;line-height:1.4}
+.card-summary{font-size:13px;color:var(--t2);line-height:1.6;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;padding:2px 9px;border-radius:10px;font-weight:500}
+.tag-macro{background:var(--mac-bg);color:var(--mac);border:1px solid var(--mac-b)}
+.tag-crypto{background:var(--cry-bg);color:var(--cry);border:1px solid var(--cry-b)}
+.tag-etf{background:var(--etf-bg);color:var(--etf);border:1px solid var(--etf-b)}
+.tag-general{background:var(--gen-bg);color:var(--gen);border:1px solid var(--gen-b)}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--bdr)}
+.watch-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;padding:5px 12px;border:1px solid rgba(240,180,41,.3);border-radius:6px;background:var(--gglow);transition:background .2s}
+.watch-btn:hover{background:rgba(240,180,41,.25);border-color:var(--gold)}
+.view-count{font-size:11px;color:var(--tm)}
+.site-footer{border-top:1px solid var(--bdr);padding:24px;text-align:center}
+.footer-inner{max-width:1280px;margin:0 auto}.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:6px}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+@media(max-width:640px){.header-inner{height:56px}.update-tag{display:none}.hero{padding:28px 16px 24px}.main{padding:20px 16px 50px}.card-grid{grid-template-columns:1fr}}</style></head><body><header class="site-header"><div class="header-inner"><div class="logo-block"><div class="logo-icon">📈</div><div class="logo-text">每日<span>財經</span>情報</div></div><div style="display:flex;align-items:center;gap:16px"><div class="date-badge">📅 2026 年 5 月 4 日（週一）</div><div class="update-tag">✦ 自動生成 2026-05-04 23:50</div></div></div></header><section class="hero"><div class="hero-inner"><h1>今日 <span class="a">財經情報</span> 彙整</h1><p class="hero-sub">從 13 個精選 YouTube 頻道（美國+日本）自動抓取 · Claude AI 翻譯摘要</p><div class="stats-row"><div class="stat-chip"><div class="dot da"></div><span class="num">5</span><span class="lbl">今日影片</span></div><div class="stat-chip"><div class="dot dm"></div><span class="num">5</span><span class="lbl">宏觀</span></div><div class="stat-chip"><div class="dot dc"></div><span class="num">0</span><span class="lbl">加密</span></div><div class="stat-chip"><div class="dot de"></div><span class="num">0</span><span class="lbl">ETF</span></div><div class="stat-chip"><div class="dot dg"></div><span class="num">0</span><span class="lbl">綜合</span></div></div></div></section><nav class="tab-nav"><ul class="tab-list"><li><button class="tab-btn active" data-cat="all" onclick="switchTab(this)">全部 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="macro" onclick="switchTab(this)">🌐 宏觀 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="crypto" onclick="switchTab(this)">₿ 數字貨幣 <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="etf" onclick="switchTab(this)">📊 ETF <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="general" onclick="switchTab(this)">💼 綜合 <span class="tab-count">0</span></button></li></ul></nav><main class="main"><section class="section visible" data-cat="macro"><div class="section-header"><span class="section-pill pill-macro">🌐 宏觀經濟</span><span class="section-title">Macro Economy</span><span class="section-count">5 則</span></div><div class="card-grid"><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">3小時前</span></div><div class="card-title-orig">The Online Games Where The House Always Wins</div><div class="card-title-zh">莊家永遠獲勝的線上遊戲</div><div class="card-summary">本集Bloomberg Big Take播客深入探討網路賭場式遊戲的世界，揭示這些平台如何在設計上確保「莊家永遠獲利」的機制。記者Vernon Silver與主持人Sarah Holder分析線上博彩產業的商業模式，包括遊戲算法如何操控賠率、平台如何利用心理策略吸引並留住玩家，以及監管漏洞如何讓這些平台得以在灰色地帶運作。報導涵蓋從社交賭博遊戲到真實金錢博彩的產業演變，探討其對消費者財務健康的影響，以及在數位時代下博彩產業快速擴張所帶來的宏觀經濟與社會監管挑戰。此議題在多國監管機構加強審查背景下，具有重要的政策討論意義。</div><div class="card-tags"><span class="tag tag-macro">線上博彩</span><span class="tag tag-macro">賭場遊戲</span><span class="tag tag-macro">消費者保護</span><span class="tag tag-macro">金融監管</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=7OkK9zv_TPo" target="_blank">▶ 觀看影片</a><span class="view-count">👁 20 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">3小時前</span></div><div class="card-title-orig">Apple Delivers Strong Forecast in Sign It’s Weathering Shortages</div><div class="card-title-zh">蘋果公司發布強勁業績預測，顯示其正成功應對供應短缺挑戰</div><div class="card-summary">蘋果公司公布了超乎市場預期的第三季度營收預測，顯示其在全球供應鏈短缺的困境中展現出強勁韌性。此亮眼表現主要得益於今年三月推出的一系列新產品，包括新款iPhone SE及iPad Air等，有效帶動消費需求。儘管全球半導體短缺問題持續困擾科技產業，蘋果憑藉其強大的供應鏈管理能力及品牌號召力，成功緩解了零組件短缺對營收的衝擊。分析師普遍認為，蘋果此次優於預期的業績指引，反映出消費者對蘋果產品的旺盛需求依然持續，同時也彰顯了公司在宏觀經濟不確定環境下的抗壓能力，為市場注入一劑強心針。</div><div class="card-tags"><span class="tag tag-macro">蘋果公司</span><span class="tag tag-macro">供應鏈短缺</span><span class="tag tag-macro">科技股財報</span><span class="tag tag-macro">半導體短缺</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=DWpVPjTGrkU" target="_blank">▶ 觀看影片</a><span class="view-count">👁 470 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">3小時前</span></div><div class="card-title-orig">GameStop’s $56 Billion Bid for eBay | Bloomberg Tech 5/4/2026</div><div class="card-title-zh">GameStop出價560億美元收購eBay｜彭博科技 2026年5月4日</div><div class="card-summary">彭博記者Caroline Hyde報導，GameStop提出高達560億美元的收購要約，意圖併購規模為其四倍的電商巨頭eBay。此舉震驚市場，因GameStop長期被視為實體零售遊戲商，近年雖透過迷因股熱潮積累大量現金，但發動如此大規模的跨產業併購仍屬罕見。若收購成功，將是近年來最具爭議性的企業合併案之一，可能重塑二手商品電商市場格局。此外，本集節目亦涵蓋AI晶片製造商相關最新動態，顯示科技與半導體產業持續受到市場高度關注。整體而言，本期內容聚焦於企業併購策略與AI產業發展兩大主軸。</div><div class="card-tags"><span class="tag tag-macro">GameStop</span><span class="tag tag-macro">eBay</span><span class="tag tag-macro">企業併購</span><span class="tag tag-macro">迷因股</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=xkKLxHwIsDs" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.0K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">3小時前</span></div><div class="card-title-orig">Which Chinese Carmaker Might Be First To Win In The U.S.</div><div class="card-title-zh">哪家中國汽車製造商可能率先打入美國市場</div><div class="card-summary">美國兩黨政治領袖均積極採取措施阻止中國汽車進入美國市場，對中國電動車加徵高額關稅，試圖保護本土汽車產業。然而，部分中國車廠正透過迂迴策略尋求突破，包括在墨西哥或其他第三國建廠，以規避關稅壁壘。比亞迪、吉利等中國主要車廠憑藉低廉成本與成熟電動車技術，具備強大競爭優勢。分析師指出，儘管監管障礙重重，仍有中國品牌可能透過合資、收購美國品牌或供應鏈滲透等方式間接進入美國市場。此議題不僅涉及汽車產業競爭，更牽動中美貿易關係、國家安全疑慮及全球電動車市場格局的深遠影響。</div><div class="card-tags"><span class="tag tag-macro">中國電動車</span><span class="tag tag-macro">中美貿易戰</span><span class="tag tag-macro">汽車產業</span><span class="tag tag-macro">電動車關稅</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=QNPzWaafsCA" target="_blank">▶ 觀看影片</a><span class="view-count">👁 8.2K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">Why GLP-1s Are Helping The Hair Care Industry</div><div class="card-title-zh">GLP-1藥物如何為護髮產業創造新商機</div><div class="card-summary">數百萬美國人正在服用GLP-1類藥物（如Ozempic、Wegovy等減重針），這類藥物在幫助患者控制體重的同時，卻帶來了掉髮等副作用。這一現象意外地為美容護髮產業創造了全新的商業機會。由於服用GLP-1藥物的用戶普遍出現髮量稀疏、髮質變差等問題，促使消費者對護髮產品、頭皮保養以及生髮解決方案的需求大幅上升。美容品牌與護髮公司正積極針對這一族群開發專屬產品線，搶攻這塊因醫療副作用衍生出的新興市場。此趨勢顯示，藥物的普及不僅改變了醫療健康產業格局，更對消費品市場產生了連鎖影響，凸顯出宏觀藥物趨勢與美容消費行為之間日益緊密的交叉關係。</div><div class="card-tags"><span class="tag tag-macro">GLP-1</span><span class="tag tag-macro">護髮產業</span><span class="tag tag-macro">美容市場</span><span class="tag tag-macro">減重藥物副作用</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=TvhSxb8qltw" target="_blank">▶ 觀看影片</a><span class="view-count">👁 2.6萬 次</span></div></article></div></section></main><footer class="site-footer"><div class="footer-inner"><p>📺 Bloomberg · CNBC · Coin Bureau · Real Vision · Kitco · Wealthion · Lyn Alden · InvestAnswers · 高橋ダン · 両学長 · 上念司 · テスタ · 投資の達人</p><p>🤖 Claude claude-sonnet-4-6 自動翻譯摘要 · 2026-05-04 23:50</p><p>⚠ 本報告僅供資訊參考，不構成投資建議。</p></div></footer><script>function switchTab(btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.dataset.cat;
+  document.querySelectorAll('.section').forEach(sec=>{
+    if(cat==='all')sec.classList.add('visible');
+    else sec.classList.toggle('visible',sec.dataset.cat===cat);
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.05});
+document.querySelectorAll('.card').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(16px)';c.style.transition='opacity .4s,transform .4s,background .2s';obs.observe(c)});</script></body></html>
