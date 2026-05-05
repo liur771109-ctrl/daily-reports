@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>蒸餾馬雲 — Jack Ma Distilled</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0612;--surf:#150a1f;--card:#1a0f28;--card2:#22153a;
+  --bdr:#2d1b4a;--bdr2:#4a2d78;
+  --orange:#fb923c;--orange-bg:rgba(251,146,60,.10);--orange-b:rgba(251,146,60,.30);
+  --gold:#fbbf24;--gold-bg:rgba(251,191,36,.10);--gold-b:rgba(251,191,36,.30);
+  --red:#f87171;--red-bg:rgba(248,113,113,.10);--red-b:rgba(248,113,113,.30);
+  --jade:#34d399;--jade-bg:rgba(52,211,153,.10);--jade-b:rgba(52,211,153,.30);
+  --purple:#c084fc;--purple-bg:rgba(192,132,252,.10);--purple-b:rgba(192,132,252,.30);
+  --t1:#f5e9d4;--t2:#a08eb0;--tm:#5b4d6b;
+  --r:14px;
+  --grad1:linear-gradient(135deg,#f59e0b,#dc2626,#7c3aed);
+  --grad2:linear-gradient(135deg,#fbbf24,#f97316);
+}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.7;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 10%,rgba(251,146,60,.06),transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(192,132,252,.05),transparent 60%);pointer-events:none;z-index:0}
+
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,6,18,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr);padding:0 28px}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo-block{display:flex;align-items:center;gap:14px}
+.logo-icon{width:42px;height:42px;border-radius:10px;background:var(--grad1);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#fff;box-shadow:0 0 24px rgba(251,146,60,.4)}
+.logo-text{font-size:19px;font-weight:800}
+.logo-text .g{background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.tag-pill{font-size:11px;color:var(--orange);background:var(--orange-bg);border:1px solid var(--orange-b);padding:5px 14px;border-radius:20px;letter-spacing:1px}
+
+.hero{padding:64px 28px 40px;position:relative;z-index:1}
+.hero-inner{max-width:1200px;margin:0 auto}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.hero h1{font-size:clamp(28px,5vw,52px);font-weight:900;margin-bottom:18px;line-height:1.15;letter-spacing:-1px}
+.hero h1 .a{background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:15px;color:var(--t2);margin-bottom:30px;max-width:720px}
+.profile-row{display:flex;flex-wrap:wrap;gap:10px}
+.profile-chip{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:10px 18px;font-size:13px}
+.profile-chip .k{color:var(--tm);font-weight:600}
+.profile-chip .v{font-weight:700;color:var(--t1)}
+
+.essence-strip{background:linear-gradient(135deg,rgba(251,146,60,.10),rgba(220,38,38,.08),rgba(124,58,237,.10));border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:36px 28px;position:relative;z-index:1}
+.essence-inner{max-width:1200px;margin:0 auto}
+.essence-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.essence-label::before{content:'\2756';font-size:14px}
+.essence-quote{font-size:clamp(18px,2.4vw,24px);font-weight:800;line-height:1.5;color:var(--t1);max-width:980px}
+.essence-quote .hl{color:var(--gold)}
+.essence-attr{margin-top:14px;font-size:13px;color:var(--t2)}
+
+.main{max-width:1200px;margin:0 auto;padding:48px 28px 80px;position:relative;z-index:1}
+.section{margin-bottom:56px}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-orange{background:var(--orange-bg);border:1px solid var(--orange-b);color:var(--orange)}
+.pill-gold{background:var(--gold-bg);border:1px solid var(--gold-b);color:var(--gold)}
+.pill-red{background:var(--red-bg);border:1px solid var(--red-b);color:var(--red)}
+.pill-jade{background:var(--jade-bg);border:1px solid var(--jade-b);color:var(--jade)}
+.pill-purple{background:var(--purple-bg);border:1px solid var(--purple-b);color:var(--purple)}
+.section-title{font-size:21px;font-weight:800}
+.section-en{margin-left:auto;font-size:12px;color:var(--tm);font-style:italic;letter-spacing:1px}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s,box-shadow .2s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.card[data-c=orange]::before{background:linear-gradient(90deg,#f97316,#fb923c)}
+.card[data-c=gold]::before{background:linear-gradient(90deg,#d97706,#fbbf24)}
+.card[data-c=red]::before{background:linear-gradient(90deg,#dc2626,#f87171)}
+.card[data-c=jade]::before{background:linear-gradient(90deg,#059669,#34d399)}
+.card[data-c=purple]::before{background:linear-gradient(90deg,#9333ea,#c084fc)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.card-num{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--tm)}
+.card-title{font-size:17px;font-weight:800;line-height:1.4}
+.card-body{font-size:14px;color:var(--t2);line-height:1.75}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tag{font-size:11px;padding:3px 10px;border-radius:10px;font-weight:600}
+.tag-orange{background:var(--orange-bg);color:var(--orange);border:1px solid var(--orange-b)}
+.tag-gold{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-b)}
+.tag-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-b)}
+.tag-jade{background:var(--jade-bg);color:var(--jade);border:1px solid var(--jade-b)}
+.tag-purple{background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-b)}
+
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--orange),var(--purple))}
+.tl-item{position:relative;margin-bottom:22px;padding:16px 18px;background:var(--card);border:1px solid var(--bdr);border-radius:var(--r)}
+.tl-item::before{content:'';position:absolute;left:-26px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px var(--bg),0 0 12px rgba(251,146,60,.5)}
+.tl-year{font-size:12px;font-weight:800;color:var(--orange);letter-spacing:1px;margin-bottom:4px}
+.tl-title{font-size:15px;font-weight:700;margin-bottom:4px}
+.tl-desc{font-size:13px;color:var(--t2);line-height:1.7}
+
+.quote-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.q-card{background:var(--card);border:1px solid var(--bdr);border-left:4px solid var(--gold);border-radius:var(--r);padding:22px}
+.q-card .q-mark{font-size:36px;color:var(--gold);line-height:1;margin-bottom:6px;font-family:Georgia,serif}
+.q-text{font-size:15px;font-weight:600;line-height:1.6;color:var(--t1);margin-bottom:10px}
+.q-meta{font-size:11px;color:var(--tm);letter-spacing:1px}
+
+.takeaway-box{background:linear-gradient(135deg,rgba(251,191,36,.08),rgba(192,132,252,.06));border:1px solid var(--bdr2);border-radius:var(--r);padding:28px;margin-top:24px}
+.takeaway-title{font-size:13px;font-weight:800;letter-spacing:2px;color:var(--gold);margin-bottom:14px;text-transform:uppercase}
+.takeaway-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.takeaway-list li{font-size:14px;line-height:1.7;color:var(--t1);padding-left:24px;position:relative}
+.takeaway-list li::before{content:'\25B8';position:absolute;left:0;color:var(--orange);font-weight:900}
+
+.disclaimer{margin-top:48px;padding:18px 22px;background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);font-size:12px;color:var(--tm);line-height:1.7}
+
+.site-footer{border-top:1px solid var(--bdr);padding:28px;text-align:center;position:relative;z-index:1}
+.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:8px}
+.footer-inner .grad-text{background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+
+@media(max-width:640px){
+  .header-inner{height:58px}
+  .hero{padding:36px 16px 24px}
+  .essence-strip{padding:24px 16px}
+  .main{padding:32px 16px 60px}
+  .card-grid,.quote-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-icon">馬</div>
+      <div class="logo-text">蒸餾<span class="g">馬雲</span></div>
+    </div>
+    <div class="tag-pill">JACK MA · DISTILLED</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">A FOUNDER&apos;S PHILOSOPHY · CONDENSED</div>
+    <h1>把馬雲<span class="a">蒸餾</span>成一杯，<br/>留下他真正想說的事</h1>
+    <p class="hero-sub">從英語老師到電商帝國創辦人；從西湖湖畔的 18 個夥伴，到全球矚目的演講舞台。本文濃縮馬雲公開演講、訪談與書信中反覆出現的核心思想，去除場面話與時代雜訊，留下可被任何創業者、學習者、在挫折中徘徊的人引用的「思想精油」。</p>
+    <div class="profile-row">
+      <div class="profile-chip"><span class="k">本名</span><span class="v">馬雲 Ma Yun</span></div>
+      <div class="profile-chip"><span class="k">英文名</span><span class="v">Jack Ma</span></div>
+      <div class="profile-chip"><span class="k">出生</span><span class="v">1964 · 杭州</span></div>
+      <div class="profile-chip"><span class="k">創辦</span><span class="v">阿里巴巴 / 1999</span></div>
+      <div class="profile-chip"><span class="k">起點</span><span class="v">湖畔花園 · 18 人</span></div>
+      <div class="profile-chip"><span class="k">本職</span><span class="v">英語教師</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="essence-strip">
+  <div class="essence-inner">
+    <div class="essence-label">ESSENCE · 一句話蒸餾</div>
+    <div class="essence-quote">「今天很<span class="hl">殘酷</span>，明天更<span class="hl">殘酷</span>，後天很<span class="hl">美好</span>，但絕大多數人<span class="hl">死在明天晚上</span>，看不到後天的太陽。」</div>
+    <div class="essence-attr">— 阿里巴巴內部講話，反覆出現於各次員工大會</div>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- 一、核心思想 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-orange">①</span>
+      <span class="section-title">核心思想 · 五個底層信念</span>
+      <span class="section-en">Core Beliefs</span>
+    </div>
+    <div class="card-grid">
+      <article class="card" data-c="orange">
+        <div class="card-num">01 · 使命驅動</div>
+        <div class="card-title">先有使命，後有公司</div>
+        <div class="card-body">「讓天下沒有難做的生意。」這不是行銷口號，而是阿里決策時的最高仲裁。當策略衝突，回到使命；當市場誘惑大，仍回到使命。馬雲認為公司可以被打敗，但有使命的組織不會迷路。</div>
+        <div class="card-tags"><span class="tag tag-orange">Mission</span><span class="tag tag-orange">愿景</span></div>
+      </article>
+      <article class="card" data-c="gold">
+        <div class="card-num">02 · 客戶第一</div>
+        <div class="card-title">客戶 &gt; 員工 &gt; 股東</div>
+        <div class="card-body">他堅持的順序是：客戶第一、員工第二、股東第三。理由很冷靜——只有客戶持續買單，員工才有飯吃；只有員工有信念，股東才有長期回報。把股東放第三，不是不在乎，而是承認：股東利益是「結果」，不是「目的」。</div>
+        <div class="card-tags"><span class="tag tag-gold">Priority</span><span class="tag tag-gold">經營哲學</span></div>
+      </article>
+      <article class="card" data-c="red">
+        <div class="card-num">03 · 擁抱變化</div>
+        <div class="card-title">變化是常態，不變才是異常</div>
+        <div class="card-body">「擁抱變化」是阿里六脈神劍之一。馬雲反覆說：明天會發生什麼沒人知道，但我們要訓練自己「在變化中找機會」，而不是抱怨變化。對年輕人，他的提醒更直接——最大的危險，是你太舒服。</div>
+        <div class="card-tags"><span class="tag tag-red">Change</span><span class="tag tag-red">應變力</span></div>
+      </article>
+      <article class="card" data-c="jade">
+        <div class="card-num">04 · 相信相信</div>
+        <div class="card-title">因為相信，所以看見</div>
+        <div class="card-body">他的口頭禪是「因為相信，所以看見」，刻意翻轉一般人的「因為看見才相信」。在 1999 年沒人懂網際網路時相信、在 SARS 時相信、在被全球資本嘲笑時相信。這不是雞湯，是創業者唯一能拿出來的籌碼——對未來更早、更深的信。</div>
+        <div class="card-tags"><span class="tag tag-jade">Belief</span><span class="tag tag-jade">遠見</span></div>
+      </article>
+      <article class="card" data-c="purple">
+        <div class="card-num">05 · 人才即組織</div>
+        <div class="card-title">找對人，比找對事更重要</div>
+        <div class="card-body">「三流的點子加上一流的執行，永遠比一流的點子加上三流的執行更值錢。」馬雲認為策略可以調整、產品可以重做，但人組成的文化，三年才能養成、五年才見根。所以阿里花在「招人 / 育人 / 留人」的時間，遠多於談市佔。</div>
+        <div class="card-tags"><span class="tag tag-purple">People</span><span class="tag tag-purple">文化</span></div>
+      </article>
+      <article class="card" data-c="orange">
+        <div class="card-num">06 · 利他即利己</div>
+        <div class="card-title">幫別人成功，自己才會成功</div>
+        <div class="card-body">阿里早年口號：「讓中小企業成功」。馬雲反覆強調：阿里不是平台收租者，而是「中小企業的水電煤」。這套利他敘事，後來成為 B2B、淘寶、支付寶共同的精神主線——當你讓最弱小的玩家也能參賽，整個棋盤就會變大。</div>
+        <div class="card-tags"><span class="tag tag-orange">Altruism</span><span class="tag tag-orange">生態</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 二、創業哲學 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-gold">②</span>
+      <span class="section-title">創業哲學 · 六條反共識準則</span>
+      <span class="section-en">Counter-intuitive Rules</span>
+    </div>
+    <div class="card-grid">
+      <article class="card" data-c="gold">
+        <div class="card-num">01</div>
+        <div class="card-title">不要等錢都到位才開始</div>
+        <div class="card-body">他常引用自己的例子：阿里第一筆融資來得很晚，前期靠 18 個人每月幾百塊薪水撐。「最好的創業時機，是你以為自己沒準備好的時候。」資源永遠不夠，問題是你願不願意動身。</div>
+      </article>
+      <article class="card" data-c="gold">
+        <div class="card-num">02</div>
+        <div class="card-title">先別想商業模式，先想客戶痛點</div>
+        <div class="card-body">「商業模式是被客戶逼出來的，不是被白板畫出來的。」很多創業者把週末耗在 PPT 上，卻沒見過真客戶。他建議：把每週至少 1/3 的時間，留給「不舒服的真實」。</div>
+      </article>
+      <article class="card" data-c="gold">
+        <div class="card-num">03</div>
+        <div class="card-title">最大的對手是自己，不是市場</div>
+        <div class="card-body">阿里幾次重大戰役（與 eBay、與騰訊、與京東），馬雲對內最常說的反而不是「打敗對手」，而是「不要變成對手討厭的樣子」。他相信公司被打敗，多數時候是內部先腐爛。</div>
+      </article>
+      <article class="card" data-c="gold">
+        <div class="card-num">04</div>
+        <div class="card-title">不上市不是清高，是自由</div>
+        <div class="card-body">他多次警告創業者：上市是手段、不是目的。一旦上市，你就要回應每一個季度的數字，但偉大的事業多半反季度、反共識。要清楚自己是「打一年仗」，還是「種一片森林」。</div>
+      </article>
+      <article class="card" data-c="gold">
+        <div class="card-num">05</div>
+        <div class="card-title">小公司活下來，比擴張重要</div>
+        <div class="card-body">「現金流是公司的氧氣。」他建議早期創業者，盈利的單位經濟模型沒跑通前，慎用資本武器。融資是燃料，不是止痛藥；用資本掩蓋商業模式問題，是慢性自殺。</div>
+      </article>
+      <article class="card" data-c="gold">
+        <div class="card-num">06</div>
+        <div class="card-title">永遠相信「年輕人」這支股票</div>
+        <div class="card-body">他多次表示：投資年輕人，是回報率最高的投資。一個沒人相信的年輕團隊，得到第一筆關鍵的信任後，能爆發 10 倍能量。「我這輩子做對的最重要一件事，是相信年輕人。」</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 三、人生時間軸 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-red">③</span>
+      <span class="section-title">關鍵節點 · 一條失敗為主的時間軸</span>
+      <span class="section-en">A Timeline of Falls &amp; Returns</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1982 / 1983 / 1984</div>
+        <div class="tl-title">高考三戰，前兩次落榜</div>
+        <div class="tl-desc">數學第一年只考了 1 分，第二年 19 分。第三次才以擦邊分進入杭州師範學院外語系。後來他常說：「我考試從不是好學生，但我從沒被失敗說服。」</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1988 — 1995</div>
+        <div class="tl-title">中學英語老師，月薪 89 元人民幣</div>
+        <div class="tl-desc">在杭州電子工業學院教英語七年，被學生稱為「最會講故事的馬老師」。這段時間培養了他日後最大的武器之一——上台演講與煽動人心的能力。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1995</div>
+        <div class="tl-title">第一次接觸網際網路</div>
+        <div class="tl-desc">赴美出差期間，第一次看到 Internet。在搜尋引擎上輸入 "beer" 沒看到中國品牌，「中國啤酒」沒有結果——他決定回國做網際網路。創辦「中國黃頁」，被認為是中國最早的商業網站之一。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1999</div>
+        <div class="tl-title">湖畔花園的 18 羅漢</div>
+        <div class="tl-desc">在杭州湖畔花園自家公寓，與 17 名夥伴湊出 50 萬人民幣，創辦阿里巴巴。馬雲在地板上對所有人說：「我們要做一家活 102 年的公司」——跨越三個世紀。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2003</div>
+        <div class="tl-title">SARS 隔離期，誕生淘寶</div>
+        <div class="tl-desc">員工被居家隔離期間，秘密團隊在公寓內開發 C2C 平台「淘寶網」。同年發布支付寶雛形——以擔保交易解決中國電商最致命的「信任問題」。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2005</div>
+        <div class="tl-title">與雅虎的世紀交易</div>
+        <div class="tl-desc">楊致遠投資 10 億美元並把雅虎中國資產併入阿里。這場交易讓阿里有了喘息資本，也埋下日後與軟銀、雅虎股權結構的長期博弈。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2014</div>
+        <div class="tl-title">紐約上市，當時最大 IPO</div>
+        <div class="tl-desc">阿里巴巴在 NYSE 掛牌，市值衝上 2,300 億美元，刷新全球 IPO 紀錄。當天他在敲鐘現場讓 8 位平台上的小客戶（賣家、農民、快遞員）替他敲鐘——回應了 1999 年那句「中小企業的成功」。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2019</div>
+        <div class="tl-title">提早卸任，回歸老師</div>
+        <div class="tl-desc">在 55 歲教師節宣布卸任董事局主席，把棒子交給張勇。他把名片改回「鄉村教師代言人」——他始終認為教育才是自己最早、也最後的身份。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2020 — 2023</div>
+        <div class="tl-title">外灘演講與低調歲月</div>
+        <div class="tl-desc">2020 年外灘金融峰會的演講，成為他公開生涯最大轉折。隨後三年大幅淡出公眾視野，旅居海外、從事農業與教育研究。這一段沉默，成為理解他思想成熟期最重要的對照。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 四、經典語錄 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-purple">④</span>
+      <span class="section-title">經典語錄 · 蒸餾後的話</span>
+      <span class="section-en">Quotes, Reduced</span>
+    </div>
+    <div class="quote-grid">
+      <div class="q-card">
+        <div class="q-mark">&ldquo;</div>
+        <div class="q-text">夢想還是要有的，萬一實現了呢？</div>
+        <div class="q-meta">經常引用 · 來源網路時代廣為流傳</div>
+      </div>
+      <div class="q-card">
+        <div class="q-mark">&ldquo;</div>
+        <div class="q-text">員工的離職原因，無非兩點：錢沒到位，心受委屈了。</div>
+        <div class="q-meta">內部管理講話</div>
+      </div>
+      <div class="q-card">
+        <div class="q-mark">&ldquo;</div>
+        <div class="q-text">男人的胸懷，是被委屈撐大的。</div>
+        <div class="q-meta">領導力訪談</div>
+      </div>
+      <div class="q-card">
+        <div class="q-mark">&ldquo;</div>
+        <div class="q-text">永遠不要跟別人比幸運，我從來沒想過我比別人幸運。我可能比他們更有毅力。</div>
+        <div class="q-meta">創業者大會演講</div>
+      </div>
+      <div class="q-card">
+        <div class="q-mark">&ldquo;</div>
+        <div class="q-text">免費，是世界上最昂貴的東西。</div>
+        <div class="q-meta">商業模式相關訪談</div>
+      </div>
+      <div class="q-card">
+        <div class="q-mark">&ldquo;</div>
+        <div class="q-text">我對錢沒興趣。</div>
+        <div class="q-meta">2014 央視訪談 · 後成為網路梗</div>
+      </div>
+      <div class="q-card">
+        <div class="q-mark">&ldquo;</div>
+        <div class="q-text">人要是沒有夢想，跟一條鹹魚有什麼區別。</div>
+        <div class="q-meta">引用周星馳台詞 · 多次在演講中復述</div>
+      </div>
+      <div class="q-card">
+        <div class="q-mark">&ldquo;</div>
+        <div class="q-text">當你成功時，你說的所有話都是真理。</div>
+        <div class="q-meta">自嘲 · 與年輕人對話</div>
+      </div>
+      <div class="q-card">
+        <div class="q-mark">&ldquo;</div>
+        <div class="q-text">這世界從來沒有救世主，唯一能救你的，就是你自己。</div>
+        <div class="q-meta">創業者大會</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 五、給不同人的話 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-jade">⑤</span>
+      <span class="section-title">他想留給你的話 · 三類人</span>
+      <span class="section-en">For Three Kinds of People</span>
+    </div>
+    <div class="card-grid">
+      <article class="card" data-c="jade">
+        <div class="card-num">FOR · 年輕人</div>
+        <div class="card-title">25 歲前都別怕犯錯</div>
+        <div class="card-body">「20 歲到 30 歲，跟著一個好老闆學，不是公司多大；30 歲到 40 歲，做你真心想做的事；40 歲到 50 歲，做你最擅長的事；50 歲到 60 歲，幫年輕人做事；60 歲以上，回家陪孫子。」這是他公開最常被引用的人生時間表。</div>
+        <div class="card-tags"><span class="tag tag-jade">25-60 歲時間表</span></div>
+      </article>
+      <article class="card" data-c="jade">
+        <div class="card-num">FOR · 創業者</div>
+        <div class="card-title">最壞的時候，是你最好的時機</div>
+        <div class="card-body">「太順的環境裡長不出強的公司。」他認為大環境差時創業，反而能淘汰投機者，留下真正想解決問題的人。但他補一句：「不要把磨難浪漫化——磨難只是磨難，把它變成燃料的人，才有資格回頭講故事。」</div>
+        <div class="card-tags"><span class="tag tag-jade">逆境創業</span></div>
+      </article>
+      <article class="card" data-c="jade">
+        <div class="card-num">FOR · 在挫折中的人</div>
+        <div class="card-title">活下來，本身就是答案</div>
+        <div class="card-body">他曾被肯德基、警察學校、30 多家公司拒絕。他的結論不是「永不放棄」這種廉價勵志，而是更冷靜：「失敗多了，你會發現絕大多數失敗只是『順序錯了』、『時間錯了』，不是你錯了。先活下來，再談對錯。」</div>
+        <div class="card-tags"><span class="tag tag-jade">挫折</span><span class="tag tag-jade">心法</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 六、爭議與留白 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-red">⑥</span>
+      <span class="section-title">他並不完美 · 必須誠實的留白</span>
+      <span class="section-en">The Honest Asterisks</span>
+    </div>
+    <div class="card-grid">
+      <article class="card" data-c="red">
+        <div class="card-num">⚠ 爭議</div>
+        <div class="card-title">996 工作制的代言</div>
+        <div class="card-body">他曾公開稱 996（早 9 晚 9，每週 6 天）為「修來的福報」。這番話在中國年輕世代引發強烈反彈，也被視為他與年輕勞動者語境出現裂痕的關鍵時刻。蒸餾他的思想，不能跳過這一段。</div>
+      </article>
+      <article class="card" data-c="red">
+        <div class="card-num">⚠ 爭議</div>
+        <div class="card-title">外灘演講與後續監管風暴</div>
+        <div class="card-body">2020 年的演講對金融監管提出尖銳批評，後續螞蟻集團 IPO 被叫停、阿里被反壟斷立案。這既是他個人的轉折，也是中國平台經濟監管的轉折。如何看待這段，仍有不同立場——但無法忽略。</div>
+      </article>
+      <article class="card" data-c="red">
+        <div class="card-num">⚠ 爭議</div>
+        <div class="card-title">「太會講故事」的兩面</div>
+        <div class="card-body">他被批評最多的一點，是過度依賴敘事與煽動。支持者認為這是「願景型領導」的本質；質疑者認為，當公司問題複雜化時，故事會掩蓋真實的治理缺陷。蒸餾他，必須同時握住這兩面。</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 七、五句帶走 -->
+  <div class="takeaway-box">
+    <div class="takeaway-title">⌁ 蒸餾完成 · 五句帶走</div>
+    <ul class="takeaway-list">
+      <li><b>使命比策略長壽。</b>策略可以每年改，使命要養 30 年。</li>
+      <li><b>客戶第一不是話術，是順序。</b>把股東放第三，需要勇氣。</li>
+      <li><b>因為相信，所以看見。</b>創業者唯一不需要驗證就能擁有的籌碼。</li>
+      <li><b>找對人，遠比找對事重要。</b>三流的點子配一流的人，會贏。</li>
+      <li><b>活下來再說。</b>後天的太陽很美，但你要熬得過明天晚上。</li>
+    </ul>
+  </div>
+
+  <div class="disclaimer">
+    ⓘ 本文為依公開演講、訪談與報導整理之思想摘要，目的在於濃縮其反覆出現的核心觀點。其中部分語錄為網路流傳版本，原始出處可能因翻譯與轉述略有差異；爭議段落採取盡量中性表述，不代表本 repo 觀點。本文不構成任何商業、投資或人生建議。
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>📚 來源彙整 · 公開演講、財報電話會議、訪談、自傳體著作、財經媒體報導</p>
+    <p>🥃 <span class="grad-text">Distilled by Claude</span> · 為 daily-reports 專案的「人物蒸餾」實驗篇</p>
+    <p>⚠ 本報告僅供思想參考，不構成投資、職涯或人生建議。</p>
+  </div>
+</footer>
+</body>
+</html>
