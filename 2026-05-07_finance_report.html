@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>每日財經情報 — 2026-05-07</title><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d16;--surf:#0e1623;--card:#131e2e;--card2:#1a2840;--bdr:#1f3050;--bdr2:#2a4070;
+--gold:#f0b429;--gdim:#c8901e;--gglow:rgba(240,180,41,.15);
+--mac:#38bdf8;--mac-bg:rgba(56,189,248,.1);--mac-b:rgba(56,189,248,.3);
+--cry:#a78bfa;--cry-bg:rgba(167,139,250,.1);--cry-b:rgba(167,139,250,.3);
+--etf:#34d399;--etf-bg:rgba(52,211,153,.1);--etf-b:rgba(52,211,153,.3);
+--gen:#fb923c;--gen-bg:rgba(251,146,60,.1);--gen-b:rgba(251,146,60,.3);
+--t1:#e8edf5;--t2:#8fa8c8;--tm:#4a6280;--r:12px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.6}
+.site-header{background:linear-gradient(135deg,#0a1525,#0d1f38,#0a1525);border-bottom:1px solid var(--bdr);padding:0 24px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-block{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gdim));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-size:18px;font-weight:700}.logo-text span{color:var(--gold)}
+.date-badge{font-size:13px;color:var(--t2);background:rgba(255,255,255,.05);border:1px solid var(--bdr);padding:5px 12px;border-radius:20px}
+.update-tag{font-size:11px;background:var(--gglow);color:var(--gold);border:1px solid rgba(240,180,41,.3);padding:3px 10px;border-radius:20px}
+.hero{background:linear-gradient(160deg,#0d1f38,#080d16 60%);border-bottom:1px solid var(--bdr);padding:40px 24px 32px}
+.hero-inner{max-width:1280px;margin:0 auto}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:8px}.hero h1 .a{color:var(--gold)}
+.hero-sub{font-size:14px;color:var(--t2);margin-bottom:24px}
+.stats-row{display:flex;flex-wrap:wrap;gap:12px}
+.stat-chip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:8px 16px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}.num{font-weight:700}.lbl{color:var(--tm)}
+.da{background:var(--gold)}.dm{background:var(--mac)}.dc{background:var(--cry)}.de{background:var(--etf)}.dg{background:var(--gen)}
+.tab-nav{background:var(--surf);border-bottom:1px solid var(--bdr);padding:0 24px;overflow-x:auto}
+.tab-list{max-width:1280px;margin:0 auto;display:flex;list-style:none}
+.tab-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:14px;font-weight:500;color:var(--tm);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--t2)}.tab-count{font-size:11px;background:rgba(255,255,255,.07);padding:1px 7px;border-radius:10px}
+.tab-btn[data-cat=all].active{border-color:var(--gold);color:var(--gold)}
+.tab-btn[data-cat=macro].active{border-color:var(--mac);color:var(--mac)}
+.tab-btn[data-cat=crypto].active{border-color:var(--cry);color:var(--cry)}
+.tab-btn[data-cat=etf].active{border-color:var(--etf);color:var(--etf)}
+.tab-btn[data-cat=general].active{border-color:var(--gen);color:var(--gen)}
+.main{max-width:1280px;margin:0 auto;padding:28px 24px 60px}
+.section{margin-bottom:40px}.section[data-cat]{display:none}.section.visible{display:block}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-macro{background:var(--mac-bg);border:1px solid var(--mac-b);color:var(--mac)}
+.pill-crypto{background:var(--cry-bg);border:1px solid var(--cry-b);color:var(--cry)}
+.pill-etf{background:var(--etf-bg);border:1px solid var(--etf-b);color:var(--etf)}
+.pill-general{background:var(--gen-bg);border:1px solid var(--gen-b);color:var(--gen)}
+.section-title{font-size:18px;font-weight:700}.section-count{margin-left:auto;font-size:12px;color:var(--tm)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.card[data-cat=macro]::before{background:var(--mac)}.card[data-cat=crypto]::before{background:var(--cry)}
+.card[data-cat=etf]::before{background:var(--etf)}.card[data-cat=general]::before{background:var(--gen)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-2px)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.channel-badge{display:flex;align-items:center;gap:7px}
+.ch-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ch-icon.macro{background:var(--mac-bg);color:var(--mac)}.ch-icon.crypto{background:var(--cry-bg);color:var(--cry)}
+.ch-icon.etf{background:var(--etf-bg);color:var(--etf)}.ch-icon.general{background:var(--gen-bg);color:var(--gen)}
+.ch-name{font-size:12px;font-weight:600;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.flag{font-size:14px}.card-time{font-size:11px;color:var(--tm);white-space:nowrap}
+.card-title-orig{font-size:11px;color:var(--tm);font-style:italic;line-height:1.4;border-left:2px solid var(--bdr2);padding-left:8px}
+.card-title-zh{font-size:15px;font-weight:700;line-height:1.4}
+.card-summary{font-size:13px;color:var(--t2);line-height:1.6;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;padding:2px 9px;border-radius:10px;font-weight:500}
+.tag-macro{background:var(--mac-bg);color:var(--mac);border:1px solid var(--mac-b)}
+.tag-crypto{background:var(--cry-bg);color:var(--cry);border:1px solid var(--cry-b)}
+.tag-etf{background:var(--etf-bg);color:var(--etf);border:1px solid var(--etf-b)}
+.tag-general{background:var(--gen-bg);color:var(--gen);border:1px solid var(--gen-b)}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--bdr)}
+.watch-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;padding:5px 12px;border:1px solid rgba(240,180,41,.3);border-radius:6px;background:var(--gglow);transition:background .2s}
+.watch-btn:hover{background:rgba(240,180,41,.25);border-color:var(--gold)}
+.view-count{font-size:11px;color:var(--tm)}
+.site-footer{border-top:1px solid var(--bdr);padding:24px;text-align:center}
+.footer-inner{max-width:1280px;margin:0 auto}.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:6px}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+@media(max-width:640px){.header-inner{height:56px}.update-tag{display:none}.hero{padding:28px 16px 24px}.main{padding:20px 16px 50px}.card-grid{grid-template-columns:1fr}}</style></head><body><header class="site-header"><div class="header-inner"><div class="logo-block"><div class="logo-icon">📈</div><div class="logo-text">每日<span>財經</span>情報</div></div><div style="display:flex;align-items:center;gap:16px"><div class="date-badge">📅 2026 年 5 月 7 日（週四）</div><div class="update-tag">✦ 自動生成 2026-05-07 23:50</div></div></div></header><section class="hero"><div class="hero-inner"><h1>今日 <span class="a">財經情報</span> 彙整</h1><p class="hero-sub">從 13 個精選 YouTube 頻道（美國+日本）自動抓取 · Claude AI 翻譯摘要</p><div class="stats-row"><div class="stat-chip"><div class="dot da"></div><span class="num">5</span><span class="lbl">今日影片</span></div><div class="stat-chip"><div class="dot dm"></div><span class="num">5</span><span class="lbl">宏觀</span></div><div class="stat-chip"><div class="dot dc"></div><span class="num">0</span><span class="lbl">加密</span></div><div class="stat-chip"><div class="dot de"></div><span class="num">0</span><span class="lbl">ETF</span></div><div class="stat-chip"><div class="dot dg"></div><span class="num">0</span><span class="lbl">綜合</span></div></div></div></section><nav class="tab-nav"><ul class="tab-list"><li><button class="tab-btn active" data-cat="all" onclick="switchTab(this)">全部 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="macro" onclick="switchTab(this)">🌐 宏觀 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="crypto" onclick="switchTab(this)">₿ 數字貨幣 <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="etf" onclick="switchTab(this)">📊 ETF <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="general" onclick="switchTab(this)">💼 綜合 <span class="tab-count">0</span></button></li></ul></nav><main class="main"><section class="section visible" data-cat="macro"><div class="section-header"><span class="section-pill pill-macro">🌐 宏觀經濟</span><span class="section-title">Macro Economy</span><span class="section-count">5 則</span></div><div class="card-grid"><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">4小時前</span></div><div class="card-title-orig">Arm Warns of Phone Market Weakness | Bloomberg Tech 5/7/2026</div><div class="card-title-zh">安謀警告手機市場疲軟 | 彭博科技 2026年5月7日</div><div class="card-summary">安謀（Arm）執行長雷內·哈斯接受彭博記者卡洛琳·海德專訪，就智慧型手機產業持續疲軟發出警示。哈斯指出，全球消費性電子市場需求復甦力道不如預期，智慧手機出貨量成長動能明顯放緩，對安謀授權業務收益產生一定壓力。儘管如此，安謀仍持續深耕人工智慧晶片架構授權領域，並積極拓展資料中心、車用電子及物聯網等多元市場，以抵銷手機市場下行帶來的衝擊。哈斯強調，AI運算需求的爆發性成長為公司帶來新的營收增長引擎，有助於分散對單一手機市場的依賴，長期業務前景仍具備結構性成長動能。</div><div class="card-tags"><span class="tag tag-macro">安謀</span><span class="tag tag-macro">智慧型手機市場</span><span class="tag tag-macro">半導體產業</span><span class="tag tag-macro">人工智慧晶片</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=z9PfnAiU9Jo" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.1K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">4小時前</span></div><div class="card-title-orig">HawkEye 360 Goes Public In Latest Sign of IPO Demand</div><div class="card-title-zh">鷹眼360上市，成為IPO需求復甦最新信號</div><div class="card-summary">鷹眼360（HawkEye 360）是一家專門為美國政府機構提供衛星訊號情報服務的公司，此次在美國市場成功募資4.16億美元，完成上市。此次IPO被視為近期市場對新股需求回溫的重要指標。鷹眼360的核心業務涵蓋利用衛星群蒐集、分析無線電頻率訊號，為國防、情報及海事監控等領域提供關鍵數據支援。在地緣政治緊張局勢持續升溫的背景下，太空情報與國防科技領域的投資吸引力顯著提升。本次上市不僅反映出資本市場對國防科技新創企業的高度興趣，也顯示IPO市場在經歷一段沉寂期後，正逐步恢復活力，投資人風險偏好有所回升。</div><div class="card-tags"><span class="tag tag-macro">鷹眼360</span><span class="tag tag-macro">IPO市場</span><span class="tag tag-macro">衛星情報</span><span class="tag tag-macro">國防科技</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=9JDxKZuhz88" target="_blank">▶ 觀看影片</a><span class="view-count">👁 321 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">Tech Sector Layoffs Keep Mounting As Cuts in Other Sectors Fall</div><div class="card-title-zh">科技業裁員持續攀升，其他行業裁員卻在下降</div><div class="card-summary">美國科技產業的裁員潮持續擴大，相關企業不斷宣布削減人力計畫，然而整體私人企業部門的裁員規模卻呈現收縮趨勢。這種鮮明對比顯示出科技業正經歷結構性調整，與其他產業的復甦軌跡明顯背離。科技公司在疫情期間大幅擴招，如今面對利率上升、廣告收入下滑及AI轉型壓力，不得不進行人員精簡。此現象引發市場對科技業就業前景的擔憂，同時也反映出企業正積極重整資源，將資金重新配置至人工智慧等高效益領域。整體而言，科技業裁員成為當前宏觀就業市場中最顯著的結構性分歧指標之一。</div><div class="card-tags"><span class="tag tag-macro">科技業裁員</span><span class="tag tag-macro">就業市場</span><span class="tag tag-macro">宏觀經濟</span><span class="tag tag-macro">美國經濟</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=wPAZB31qyYM" target="_blank">▶ 觀看影片</a><span class="view-count">👁 654 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">7小時前</span></div><div class="card-title-orig">How Kodak is trying to turn things around</div><div class="card-title-zh">柯達如何嘗試扭轉局勢</div><div class="card-summary">昔日膠卷巨頭伊士曼柯達公司歷經多次財務困境，但現任執行長吉姆·孔蒂南扎（Jim Continenza）決心帶領公司重新振作。柯達曾在數位攝影浪潮衝擊下於2012年申請破產保護，此後持續尋求轉型方向。近年來，公司嘗試將業務重心從傳統膠卷轉向多元化領域，包括商業印刷、包裝材料及特殊化學品等。2020年柯達曾獲美國政府考慮提供貸款，以支持其投入藥品原料生產，但該計畫後來因調查問題而擱置。目前管理層積極推動業務重組，致力削減成本、提升核心業務競爭力，並探索新興市場機會，期望透過聚焦有利潤的業務線，使這家百年老牌企業重新找到可持續發展的商業模式。</div><div class="card-tags"><span class="tag tag-macro">柯達</span><span class="tag tag-macro">企業轉型</span><span class="tag tag-macro">商業策略</span><span class="tag tag-macro">破產重組</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=4Fy-CpLJEAE" target="_blank">▶ 觀看影片</a><span class="view-count">👁 5.2K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">Why Nvidia And Corning’s Fiber Deal Could Change The Game For The AI Boom</div><div class="card-title-zh">為何輝達與康寧的光纖合作案可能改變AI繁榮的遊戲規則</div><div class="card-summary">輝達（Nvidia）與康寧（Corning）宣布達成一項重大多年期合作協議，旨在擴大美國境內新型光纖技術的製造規模。此合作對AI基礎設施發展具有深遠意義，因為隨著AI資料中心對頻寬與傳輸速度的需求急劇攀升，傳統銅纜已難以應付龐大的數據流量，光纖技術成為關鍵解決方案。康寧作為全球光纖製造領導者，將協助輝達打造更高效能的AI運算網路連接架構。此協議同時響應美國推動本土製造業回流的政策方向，有望創造就業並強化供應鏈韌性。分析師認為，此合作案不僅提升兩家公司的長期營收能見度，更可能重塑整體AI基礎建設的技術標準與產業生態格局。</div><div class="card-tags"><span class="tag tag-macro">輝達</span><span class="tag tag-macro">康寧</span><span class="tag tag-macro">光纖技術</span><span class="tag tag-macro">AI基礎設施</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=ZXFw8EGbX3E" target="_blank">▶ 觀看影片</a><span class="view-count">👁 12.0萬 次</span></div></article></div></section></main><footer class="site-footer"><div class="footer-inner"><p>📺 Bloomberg · CNBC · Coin Bureau · Real Vision · Kitco · Wealthion · Lyn Alden · InvestAnswers · 高橋ダン · 両学長 · 上念司 · テスタ · 投資の達人</p><p>🤖 Claude claude-sonnet-4-6 自動翻譯摘要 · 2026-05-07 23:50</p><p>⚠ 本報告僅供資訊參考，不構成投資建議。</p></div></footer><script>function switchTab(btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.dataset.cat;
+  document.querySelectorAll('.section').forEach(sec=>{
+    if(cat==='all')sec.classList.add('visible');
+    else sec.classList.toggle('visible',sec.dataset.cat===cat);
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.05});
+document.querySelectorAll('.card').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(16px)';c.style.transition='opacity .4s,transform .4s,background .2s';obs.observe(c)});</script></body></html>
