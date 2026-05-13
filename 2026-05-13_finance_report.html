@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>每日財經情報 — 2026-05-13</title><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d16;--surf:#0e1623;--card:#131e2e;--card2:#1a2840;--bdr:#1f3050;--bdr2:#2a4070;
+--gold:#f0b429;--gdim:#c8901e;--gglow:rgba(240,180,41,.15);
+--mac:#38bdf8;--mac-bg:rgba(56,189,248,.1);--mac-b:rgba(56,189,248,.3);
+--cry:#a78bfa;--cry-bg:rgba(167,139,250,.1);--cry-b:rgba(167,139,250,.3);
+--etf:#34d399;--etf-bg:rgba(52,211,153,.1);--etf-b:rgba(52,211,153,.3);
+--gen:#fb923c;--gen-bg:rgba(251,146,60,.1);--gen-b:rgba(251,146,60,.3);
+--t1:#e8edf5;--t2:#8fa8c8;--tm:#4a6280;--r:12px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.6}
+.site-header{background:linear-gradient(135deg,#0a1525,#0d1f38,#0a1525);border-bottom:1px solid var(--bdr);padding:0 24px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-block{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gdim));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-size:18px;font-weight:700}.logo-text span{color:var(--gold)}
+.date-badge{font-size:13px;color:var(--t2);background:rgba(255,255,255,.05);border:1px solid var(--bdr);padding:5px 12px;border-radius:20px}
+.update-tag{font-size:11px;background:var(--gglow);color:var(--gold);border:1px solid rgba(240,180,41,.3);padding:3px 10px;border-radius:20px}
+.hero{background:linear-gradient(160deg,#0d1f38,#080d16 60%);border-bottom:1px solid var(--bdr);padding:40px 24px 32px}
+.hero-inner{max-width:1280px;margin:0 auto}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:8px}.hero h1 .a{color:var(--gold)}
+.hero-sub{font-size:14px;color:var(--t2);margin-bottom:24px}
+.stats-row{display:flex;flex-wrap:wrap;gap:12px}
+.stat-chip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:8px 16px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}.num{font-weight:700}.lbl{color:var(--tm)}
+.da{background:var(--gold)}.dm{background:var(--mac)}.dc{background:var(--cry)}.de{background:var(--etf)}.dg{background:var(--gen)}
+.tab-nav{background:var(--surf);border-bottom:1px solid var(--bdr);padding:0 24px;overflow-x:auto}
+.tab-list{max-width:1280px;margin:0 auto;display:flex;list-style:none}
+.tab-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:14px;font-weight:500;color:var(--tm);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--t2)}.tab-count{font-size:11px;background:rgba(255,255,255,.07);padding:1px 7px;border-radius:10px}
+.tab-btn[data-cat=all].active{border-color:var(--gold);color:var(--gold)}
+.tab-btn[data-cat=macro].active{border-color:var(--mac);color:var(--mac)}
+.tab-btn[data-cat=crypto].active{border-color:var(--cry);color:var(--cry)}
+.tab-btn[data-cat=etf].active{border-color:var(--etf);color:var(--etf)}
+.tab-btn[data-cat=general].active{border-color:var(--gen);color:var(--gen)}
+.main{max-width:1280px;margin:0 auto;padding:28px 24px 60px}
+.section{margin-bottom:40px}.section[data-cat]{display:none}.section.visible{display:block}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-macro{background:var(--mac-bg);border:1px solid var(--mac-b);color:var(--mac)}
+.pill-crypto{background:var(--cry-bg);border:1px solid var(--cry-b);color:var(--cry)}
+.pill-etf{background:var(--etf-bg);border:1px solid var(--etf-b);color:var(--etf)}
+.pill-general{background:var(--gen-bg);border:1px solid var(--gen-b);color:var(--gen)}
+.section-title{font-size:18px;font-weight:700}.section-count{margin-left:auto;font-size:12px;color:var(--tm)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.card[data-cat=macro]::before{background:var(--mac)}.card[data-cat=crypto]::before{background:var(--cry)}
+.card[data-cat=etf]::before{background:var(--etf)}.card[data-cat=general]::before{background:var(--gen)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-2px)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.channel-badge{display:flex;align-items:center;gap:7px}
+.ch-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ch-icon.macro{background:var(--mac-bg);color:var(--mac)}.ch-icon.crypto{background:var(--cry-bg);color:var(--cry)}
+.ch-icon.etf{background:var(--etf-bg);color:var(--etf)}.ch-icon.general{background:var(--gen-bg);color:var(--gen)}
+.ch-name{font-size:12px;font-weight:600;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.flag{font-size:14px}.card-time{font-size:11px;color:var(--tm);white-space:nowrap}
+.card-title-orig{font-size:11px;color:var(--tm);font-style:italic;line-height:1.4;border-left:2px solid var(--bdr2);padding-left:8px}
+.card-title-zh{font-size:15px;font-weight:700;line-height:1.4}
+.card-summary{font-size:13px;color:var(--t2);line-height:1.6;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;padding:2px 9px;border-radius:10px;font-weight:500}
+.tag-macro{background:var(--mac-bg);color:var(--mac);border:1px solid var(--mac-b)}
+.tag-crypto{background:var(--cry-bg);color:var(--cry);border:1px solid var(--cry-b)}
+.tag-etf{background:var(--etf-bg);color:var(--etf);border:1px solid var(--etf-b)}
+.tag-general{background:var(--gen-bg);color:var(--gen);border:1px solid var(--gen-b)}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--bdr)}
+.watch-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;padding:5px 12px;border:1px solid rgba(240,180,41,.3);border-radius:6px;background:var(--gglow);transition:background .2s}
+.watch-btn:hover{background:rgba(240,180,41,.25);border-color:var(--gold)}
+.view-count{font-size:11px;color:var(--tm)}
+.site-footer{border-top:1px solid var(--bdr);padding:24px;text-align:center}
+.footer-inner{max-width:1280px;margin:0 auto}.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:6px}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+@media(max-width:640px){.header-inner{height:56px}.update-tag{display:none}.hero{padding:28px 16px 24px}.main{padding:20px 16px 50px}.card-grid{grid-template-columns:1fr}}</style></head><body><header class="site-header"><div class="header-inner"><div class="logo-block"><div class="logo-icon">📈</div><div class="logo-text">每日<span>財經</span>情報</div></div><div style="display:flex;align-items:center;gap:16px"><div class="date-badge">📅 2026 年 5 月 13 日（週三）</div><div class="update-tag">✦ 自動生成 2026-05-13 23:51</div></div></div></header><section class="hero"><div class="hero-inner"><h1>今日 <span class="a">財經情報</span> 彙整</h1><p class="hero-sub">從 13 個精選 YouTube 頻道（美國+日本）自動抓取 · Claude AI 翻譯摘要</p><div class="stats-row"><div class="stat-chip"><div class="dot da"></div><span class="num">5</span><span class="lbl">今日影片</span></div><div class="stat-chip"><div class="dot dm"></div><span class="num">5</span><span class="lbl">宏觀</span></div><div class="stat-chip"><div class="dot dc"></div><span class="num">0</span><span class="lbl">加密</span></div><div class="stat-chip"><div class="dot de"></div><span class="num">0</span><span class="lbl">ETF</span></div><div class="stat-chip"><div class="dot dg"></div><span class="num">0</span><span class="lbl">綜合</span></div></div></div></section><nav class="tab-nav"><ul class="tab-list"><li><button class="tab-btn active" data-cat="all" onclick="switchTab(this)">全部 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="macro" onclick="switchTab(this)">🌐 宏觀 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="crypto" onclick="switchTab(this)">₿ 數字貨幣 <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="etf" onclick="switchTab(this)">📊 ETF <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="general" onclick="switchTab(this)">💼 綜合 <span class="tab-count">0</span></button></li></ul></nav><main class="main"><section class="section visible" data-cat="macro"><div class="section-header"><span class="section-pill pill-macro">🌐 宏觀經濟</span><span class="section-title">Macro Economy</span><span class="section-count">5 則</span></div><div class="card-grid"><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">3小時前</span></div><div class="card-title-orig">Anthropic Eyeing Over $900 Billion Valuation | Bloomberg Tech 5/13/2026</div><div class="card-title-zh">Anthropic估值衝破9000億美元｜彭博科技 2026/5/13</div><div class="card-summary">彭博主播Caroline Hyde與Ed Ludlow深入探討多項重大財經議題。焦點之一為AI新創公司Anthropic正尋求超過9000億美元的估值，顯示人工智慧產業投資熱潮持續升溫，市場對AI基礎建設與大型語言模型的資金挹注仍維持強勁動能。此外，節目亦聚焦美國總統川普即將舉行的高度矚目會議，市場密切關注其政策走向對全球經濟與科技產業的潛在影響。整體而言，本集內容涵蓋AI獨角獸企業估值飆升、地緣政治風險與宏觀經濟政策交織的複雜市場環境，反映出當前投資者在高估值科技資產與政策不確定性之間所面臨的挑戰與機遇。</div><div class="card-tags"><span class="tag tag-macro">Anthropic</span><span class="tag tag-macro">人工智慧估值</span><span class="tag tag-macro">川普政策</span><span class="tag tag-macro">科技股</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=tsJODaLOAA0" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.5K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">Affirm Seeing Real, Scalable Growth, CEO Says</div><div class="card-title-zh">Affirm執行長：公司正實現真實且可擴展的成長</div><div class="card-summary">Affirm執行長在Bloomberg Markets節目中表示，公司正經歷實質且可持續的業務成長，並發布了雄心勃勃的路線圖，目標達成年度1,000億美元的交易規模。公司當前戰略聚焦兩大核心方向：一是「代理式商務」（Agentic Commerce），即結合人工智能代理技術，讓AI助手能代表消費者自動完成購物及分期付款流程；二是積極推進國際市場擴張，將先買後付（BNPL）服務延伸至更多海外市場。執行長強調，Affirm的成長並非曇花一現，而是建立在穩健的風控模型與科技基礎設施之上，具備高度可複製性。隨著消費信貸環境持續演變，Affirm正積極布局下一階段的全球金融科技競爭。</div><div class="card-tags"><span class="tag tag-macro">Affirm</span><span class="tag tag-macro">先買後付</span><span class="tag tag-macro">金融科技</span><span class="tag tag-macro">BNPL</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=mmWwXLkNGQw" target="_blank">▶ 觀看影片</a><span class="view-count">👁 232 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">Varda CEO Sees More Wins for Drugmaking in Earth Orbit</div><div class="card-title-zh">Varda執行長看好太空軌道製藥前景，將迎來更多突破</div><div class="card-summary">Varda Space公司計劃與United Therapeutics合作，將藥品送入地球軌道，探索利用微重力環境製造藥物的可能性。該公司執行長表示，微重力條件能改變藥物結晶結構，有助於提升藥物純度與效能，為地面難以實現的製藥工藝帶來突破。Varda已成功完成首次太空製藥任務並將藥物返回地球，證明商業太空製藥具有可行性。此一新興產業結合航太技術與生物製藥，吸引投資人高度關注。執行長對未來軌道製藥市場持樂觀態度，認為隨著技術成熟與發射成本下降，太空製藥將逐步走向商業化規模，為製藥產業帶來革命性變革，並可能改變特定難治疾病的用藥選擇與治療方式。</div><div class="card-tags"><span class="tag tag-macro">太空製藥</span><span class="tag tag-macro">微重力</span><span class="tag tag-macro">Varda Space</span><span class="tag tag-macro">商業航太</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=QX3NVTrX12o" target="_blank">▶ 觀看影片</a><span class="view-count">👁 271 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">4小時前</span></div><div class="card-title-orig">U.S.-UAE swap line to test Fed independence</div><div class="card-title-zh">美國與阿聯酋貨幣互換協議將考驗聯準會獨立性</div><div class="card-summary">根據美國財政部長史考特·貝森特透露，阿聯酋近期已向美國申請貨幣互換額度（Swap Line）。此舉引發市場對聯準會獨立性的高度關注，因為傳統上貨幣互換協議由聯準會主導決策，但若行政部門介入此類安排，可能對央行獨立運作原則構成挑戰。美聯儲的貨幣互換協議通常用於在全球金融動盪時期向外國央行提供美元流動性支持，此前主要開放給盟友國家及主要經濟體。阿聯酋作為中東重要金融樞紐，若成功取得互換額度，將具有重大地緣政治與金融意涵，同時也凸顯美元霸權地位在全球貨幣體系中的角色，以及財政部與聯準會之間的權力邊界問題。</div><div class="card-tags"><span class="tag tag-macro">貨幣互換協議</span><span class="tag tag-macro">聯準會獨立性</span><span class="tag tag-macro">阿聯酋</span><span class="tag tag-macro">美元</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=7M6eQA2RVso" target="_blank">▶ 觀看影片</a><span class="view-count">👁 3.0K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">Iran War Sends Gas Prices Higher, Lifting U.S. Inflation To 3.8% Annually</div><div class="card-title-zh">伊朗戰爭推高油價，美國年通膨率升至3.8%</div><div class="card-summary">美國4月消費者物價指數（CPI）顯示，年通膨率仍維持在3.8%，遠高於聯準會設定的2%目標。能源價格是此次通膨上升的主要驅動力，受中東地區伊朗衝突局勢升溫影響，油價顯著攀升，進而推高汽油零售價格。持續的地緣政治緊張局勢為全球能源市場帶來不確定性，使得聯準會在考慮降息時機上面臨更大壓力。通膨數據頑固地高於目標水準，意味著聯準會可能需要將高利率政策維持更長時間，這對消費者信貸成本及整體經濟成長前景構成挑戰。市場密切關注後續能源價格走勢及聯準會貨幣政策動向。</div><div class="card-tags"><span class="tag tag-macro">美國通膨</span><span class="tag tag-macro">消費者物價指數</span><span class="tag tag-macro">伊朗地緣政治</span><span class="tag tag-macro">能源價格</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=c4sRc5NhFjw" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.1萬 次</span></div></article></div></section></main><footer class="site-footer"><div class="footer-inner"><p>📺 Bloomberg · CNBC · Coin Bureau · Real Vision · Kitco · Wealthion · Lyn Alden · InvestAnswers · 高橋ダン · 両学長 · 上念司 · テスタ · 投資の達人</p><p>🤖 Claude claude-sonnet-4-6 自動翻譯摘要 · 2026-05-13 23:51</p><p>⚠ 本報告僅供資訊參考，不構成投資建議。</p></div></footer><script>function switchTab(btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.dataset.cat;
+  document.querySelectorAll('.section').forEach(sec=>{
+    if(cat==='all')sec.classList.add('visible');
+    else sec.classList.toggle('visible',sec.dataset.cat===cat);
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.05});
+document.querySelectorAll('.card').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(16px)';c.style.transition='opacity .4s,transform .4s,background .2s';obs.observe(c)});</script></body></html>
