@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>每日財經情報 — 2026-05-21</title><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d16;--surf:#0e1623;--card:#131e2e;--card2:#1a2840;--bdr:#1f3050;--bdr2:#2a4070;
+--gold:#f0b429;--gdim:#c8901e;--gglow:rgba(240,180,41,.15);
+--mac:#38bdf8;--mac-bg:rgba(56,189,248,.1);--mac-b:rgba(56,189,248,.3);
+--cry:#a78bfa;--cry-bg:rgba(167,139,250,.1);--cry-b:rgba(167,139,250,.3);
+--etf:#34d399;--etf-bg:rgba(52,211,153,.1);--etf-b:rgba(52,211,153,.3);
+--gen:#fb923c;--gen-bg:rgba(251,146,60,.1);--gen-b:rgba(251,146,60,.3);
+--t1:#e8edf5;--t2:#8fa8c8;--tm:#4a6280;--r:12px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.6}
+.site-header{background:linear-gradient(135deg,#0a1525,#0d1f38,#0a1525);border-bottom:1px solid var(--bdr);padding:0 24px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-block{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gdim));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-size:18px;font-weight:700}.logo-text span{color:var(--gold)}
+.date-badge{font-size:13px;color:var(--t2);background:rgba(255,255,255,.05);border:1px solid var(--bdr);padding:5px 12px;border-radius:20px}
+.update-tag{font-size:11px;background:var(--gglow);color:var(--gold);border:1px solid rgba(240,180,41,.3);padding:3px 10px;border-radius:20px}
+.hero{background:linear-gradient(160deg,#0d1f38,#080d16 60%);border-bottom:1px solid var(--bdr);padding:40px 24px 32px}
+.hero-inner{max-width:1280px;margin:0 auto}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:8px}.hero h1 .a{color:var(--gold)}
+.hero-sub{font-size:14px;color:var(--t2);margin-bottom:24px}
+.stats-row{display:flex;flex-wrap:wrap;gap:12px}
+.stat-chip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:8px 16px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}.num{font-weight:700}.lbl{color:var(--tm)}
+.da{background:var(--gold)}.dm{background:var(--mac)}.dc{background:var(--cry)}.de{background:var(--etf)}.dg{background:var(--gen)}
+.tab-nav{background:var(--surf);border-bottom:1px solid var(--bdr);padding:0 24px;overflow-x:auto}
+.tab-list{max-width:1280px;margin:0 auto;display:flex;list-style:none}
+.tab-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:14px;font-weight:500;color:var(--tm);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--t2)}.tab-count{font-size:11px;background:rgba(255,255,255,.07);padding:1px 7px;border-radius:10px}
+.tab-btn[data-cat=all].active{border-color:var(--gold);color:var(--gold)}
+.tab-btn[data-cat=macro].active{border-color:var(--mac);color:var(--mac)}
+.tab-btn[data-cat=crypto].active{border-color:var(--cry);color:var(--cry)}
+.tab-btn[data-cat=etf].active{border-color:var(--etf);color:var(--etf)}
+.tab-btn[data-cat=general].active{border-color:var(--gen);color:var(--gen)}
+.main{max-width:1280px;margin:0 auto;padding:28px 24px 60px}
+.section{margin-bottom:40px}.section[data-cat]{display:none}.section.visible{display:block}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-macro{background:var(--mac-bg);border:1px solid var(--mac-b);color:var(--mac)}
+.pill-crypto{background:var(--cry-bg);border:1px solid var(--cry-b);color:var(--cry)}
+.pill-etf{background:var(--etf-bg);border:1px solid var(--etf-b);color:var(--etf)}
+.pill-general{background:var(--gen-bg);border:1px solid var(--gen-b);color:var(--gen)}
+.section-title{font-size:18px;font-weight:700}.section-count{margin-left:auto;font-size:12px;color:var(--tm)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.card[data-cat=macro]::before{background:var(--mac)}.card[data-cat=crypto]::before{background:var(--cry)}
+.card[data-cat=etf]::before{background:var(--etf)}.card[data-cat=general]::before{background:var(--gen)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-2px)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.channel-badge{display:flex;align-items:center;gap:7px}
+.ch-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ch-icon.macro{background:var(--mac-bg);color:var(--mac)}.ch-icon.crypto{background:var(--cry-bg);color:var(--cry)}
+.ch-icon.etf{background:var(--etf-bg);color:var(--etf)}.ch-icon.general{background:var(--gen-bg);color:var(--gen)}
+.ch-name{font-size:12px;font-weight:600;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.flag{font-size:14px}.card-time{font-size:11px;color:var(--tm);white-space:nowrap}
+.card-title-orig{font-size:11px;color:var(--tm);font-style:italic;line-height:1.4;border-left:2px solid var(--bdr2);padding-left:8px}
+.card-title-zh{font-size:15px;font-weight:700;line-height:1.4}
+.card-summary{font-size:13px;color:var(--t2);line-height:1.6;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;padding:2px 9px;border-radius:10px;font-weight:500}
+.tag-macro{background:var(--mac-bg);color:var(--mac);border:1px solid var(--mac-b)}
+.tag-crypto{background:var(--cry-bg);color:var(--cry);border:1px solid var(--cry-b)}
+.tag-etf{background:var(--etf-bg);color:var(--etf);border:1px solid var(--etf-b)}
+.tag-general{background:var(--gen-bg);color:var(--gen);border:1px solid var(--gen-b)}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--bdr)}
+.watch-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;padding:5px 12px;border:1px solid rgba(240,180,41,.3);border-radius:6px;background:var(--gglow);transition:background .2s}
+.watch-btn:hover{background:rgba(240,180,41,.25);border-color:var(--gold)}
+.view-count{font-size:11px;color:var(--tm)}
+.site-footer{border-top:1px solid var(--bdr);padding:24px;text-align:center}
+.footer-inner{max-width:1280px;margin:0 auto}.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:6px}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+@media(max-width:640px){.header-inner{height:56px}.update-tag{display:none}.hero{padding:28px 16px 24px}.main{padding:20px 16px 50px}.card-grid{grid-template-columns:1fr}}</style></head><body><header class="site-header"><div class="header-inner"><div class="logo-block"><div class="logo-icon">📈</div><div class="logo-text">每日<span>財經</span>情報</div></div><div style="display:flex;align-items:center;gap:16px"><div class="date-badge">📅 2026 年 5 月 21 日（週四）</div><div class="update-tag">✦ 自動生成 2026-05-21 23:51</div></div></div></header><section class="hero"><div class="hero-inner"><h1>今日 <span class="a">財經情報</span> 彙整</h1><p class="hero-sub">從 13 個精選 YouTube 頻道（美國+日本）自動抓取 · Claude AI 翻譯摘要</p><div class="stats-row"><div class="stat-chip"><div class="dot da"></div><span class="num">5</span><span class="lbl">今日影片</span></div><div class="stat-chip"><div class="dot dm"></div><span class="num">5</span><span class="lbl">宏觀</span></div><div class="stat-chip"><div class="dot dc"></div><span class="num">0</span><span class="lbl">加密</span></div><div class="stat-chip"><div class="dot de"></div><span class="num">0</span><span class="lbl">ETF</span></div><div class="stat-chip"><div class="dot dg"></div><span class="num">0</span><span class="lbl">綜合</span></div></div></div></section><nav class="tab-nav"><ul class="tab-list"><li><button class="tab-btn active" data-cat="all" onclick="switchTab(this)">全部 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="macro" onclick="switchTab(this)">🌐 宏觀 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="crypto" onclick="switchTab(this)">₿ 數字貨幣 <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="etf" onclick="switchTab(this)">📊 ETF <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="general" onclick="switchTab(this)">💼 綜合 <span class="tab-count">0</span></button></li></ul></nav><main class="main"><section class="section visible" data-cat="macro"><div class="section-header"><span class="section-pill pill-macro">🌐 宏觀經濟</span><span class="section-title">Macro Economy</span><span class="section-count">5 則</span></div><div class="card-grid"><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">6小時前</span></div><div class="card-title-orig">Spotify Co-CEO On The &quot;Disco Ball&quot; Rage</div><div class="card-title-zh">Spotify聯合執行長談「迪斯可球」標誌引發的熱議</div><div class="card-summary">Spotify為慶祝成立20週年，暫時將其品牌標誌加入迪斯可球元素，此舉在網路上引發廣泛討論與熱烈反應。聯合執行長Gustav Söderström在Bloomberg Markets節目中親自解釋這場品牌行銷活動背後的動機與策略思考。這一看似簡單的視覺變更不僅成功吸引大量用戶關注，更展現Spotify在品牌經營上善用社群媒體話題性的能力。此次20週年紀念活動反映出Spotify希望與用戶建立更深層情感連結的企圖心，同時藉由輕鬆有趣的互動方式強化品牌親和力。對於一家在全球音樂串流市場佔據領導地位的科技公司而言，如何維持品牌新鮮感與用戶黏著度，始終是重要的商業課題。</div><div class="card-tags"><span class="tag tag-macro">Spotify</span><span class="tag tag-macro">品牌行銷</span><span class="tag tag-macro">音樂串流</span><span class="tag tag-macro">科技公司</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=LdBrhM4Jss8" target="_blank">▶ 觀看影片</a><span class="view-count">👁 265 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">6小時前</span></div><div class="card-title-orig">SpaceX Files for Nasdaq IPO | Bloomberg Tech 5/21/2026</div><div class="card-title-zh">SpaceX申請納斯達克IPO | 彭博科技 2026/5/21</div><div class="card-summary">SpaceX正式向納斯達克提交IPO申請，彭博記者Ed Ludlow深入解析此次上市案。SpaceX在招股說明書中描繪高達28.5兆美元的龐大市場機會，涵蓋人工智慧基礎設施、衛星通訊及火星殖民等多元業務領域。這是全球科技與航太產業的里程碑事件，市場關注其估值定價與股權結構安排。SpaceX旗下星鏈（Starlink）衛星網路持續擴張，加上AI算力需求爆發，為公司提供強勁營收支撐。此次IPO若順利完成，將成為近年來規模最大的科技股上市案之一，預計引發機構與散戶投資人高度搶購，並對整體科技股市場情緒產生顯著提振效果。</div><div class="card-tags"><span class="tag tag-macro">SpaceX</span><span class="tag tag-macro">納斯達克IPO</span><span class="tag tag-macro">人工智慧</span><span class="tag tag-macro">星鏈</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=OAXjrI5w7qQ" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.5K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">6小時前</span></div><div class="card-title-orig">What if Big Tech’s Massive Bet on AI Is a False Start?</div><div class="card-title-zh">如果科技巨頭在AI上的巨額押注是一次虛假的開始呢？</div><div class="card-summary">本影片探討科技巨頭在人工智慧領域投入數千億美元資本支出的合理性與潛在風險。主持人邀請知名財經評論員Merryn Somerset Webb深入分析，質疑當前AI投資熱潮是否存在泡沫化跡象。核心論點圍繞AI技術的商業變現能力、投資回報週期以及市場過度樂觀情緒展開。Webb指出，目前企業在AI基礎設施上的龐大支出，尚未獲得相對應的營收成長驗證，若AI應用落地速度不如預期，可能導致資本錯置的重大風險。影片同時探討這波AI投資浪潮對整體股市估值、科技股前景以及宏觀經濟格局的深遠影響，提醒投資人審慎評估AI概念股的長期投資價值。</div><div class="card-tags"><span class="tag tag-macro">人工智慧</span><span class="tag tag-macro">科技巨頭</span><span class="tag tag-macro">資本支出</span><span class="tag tag-macro">投資泡沫</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=eFi-5hmArFs" target="_blank">▶ 觀看影片</a><span class="view-count">👁 688 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">How Cheap AI Could Derail OpenAI And Anthropic&#39;s IPOs</div><div class="card-title-zh">廉價AI如何可能破壞OpenAI與Anthropic的IPO計劃</div><div class="card-summary">中國AI實驗室DeepSeek以極低成本達到與美國頂尖AI相當的技術水準，對OpenAI及Anthropic等美國AI獨角獸的估值與IPO前景造成重大衝擊。DeepSeek的崛起引發市場對高昂AI基礎設施投資必要性的質疑，動搖了「AI需要龐大算力投入」的核心敘事。投資人開始重新評估美國AI新創公司的商業模式與護城河，擔憂若低成本替代方案持續湧現，這些公司高達數百億美元的估值是否合理。廉價AI的普及不僅壓縮頭部業者的定價能力，更可能使潛在IPO時機延後，甚至影響上市後的市場表現，對整體AI投資生態帶來深遠影響。</div><div class="card-tags"><span class="tag tag-macro">DeepSeek</span><span class="tag tag-macro">OpenAI</span><span class="tag tag-macro">Anthropic</span><span class="tag tag-macro">IPO</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=aKNaXGpJ7WM" target="_blank">▶ 觀看影片</a><span class="view-count">👁 9.7萬 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">Gas Prices Have Climbed Over 40%. EVs Are Back In The Conversation</div><div class="card-title-zh">油價漲幅超過40%，電動車話題重回焦點</div><div class="card-summary">2026年前四個月，油價累計漲幅突破40%，促使更多消費者重新考慮電動車選項。根據Edmunds的以舊換新數據，以燃油車換購新舊電動車的比例上升了5%，顯示高油價正在實質改變消費者的購車決策。此波油價上漲讓此前因補貼縮減、需求疲軟而陷入低谷的電動車市場重新獲得關注。分析師指出，燃油成本的持續攀升是推動民眾轉向電動車的關鍵經濟誘因，尤其對日常通勤里程較高的族群影響更為顯著。然而，電動車的充電基礎設施是否完善、車輛售價是否具競爭力，仍是左右消費者最終決定的重要因素。整體而言，能源價格波動正重塑汽車市場格局，電動車需求有望在高油價環境下持續回溫。</div><div class="card-tags"><span class="tag tag-macro">電動車</span><span class="tag tag-macro">油價上漲</span><span class="tag tag-macro">汽車市場</span><span class="tag tag-macro">能源轉型</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=7BJAjYjVAVo" target="_blank">▶ 觀看影片</a><span class="view-count">👁 3.3萬 次</span></div></article></div></section></main><footer class="site-footer"><div class="footer-inner"><p>📺 Bloomberg · CNBC · Coin Bureau · Real Vision · Kitco · Wealthion · Lyn Alden · InvestAnswers · 高橋ダン · 両学長 · 上念司 · テスタ · 投資の達人</p><p>🤖 Claude claude-sonnet-4-6 自動翻譯摘要 · 2026-05-21 23:51</p><p>⚠ 本報告僅供資訊參考，不構成投資建議。</p></div></footer><script>function switchTab(btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.dataset.cat;
+  document.querySelectorAll('.section').forEach(sec=>{
+    if(cat==='all')sec.classList.add('visible');
+    else sec.classList.toggle('visible',sec.dataset.cat===cat);
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.05});
+document.querySelectorAll('.card').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(16px)';c.style.transition='opacity .4s,transform .4s,background .2s';obs.observe(c)});</script></body></html>
