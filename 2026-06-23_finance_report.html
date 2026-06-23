@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>每日財經情報 — 2026-06-23</title><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d16;--surf:#0e1623;--card:#131e2e;--card2:#1a2840;--bdr:#1f3050;--bdr2:#2a4070;
+--gold:#f0b429;--gdim:#c8901e;--gglow:rgba(240,180,41,.15);
+--mac:#38bdf8;--mac-bg:rgba(56,189,248,.1);--mac-b:rgba(56,189,248,.3);
+--cry:#a78bfa;--cry-bg:rgba(167,139,250,.1);--cry-b:rgba(167,139,250,.3);
+--etf:#34d399;--etf-bg:rgba(52,211,153,.1);--etf-b:rgba(52,211,153,.3);
+--gen:#fb923c;--gen-bg:rgba(251,146,60,.1);--gen-b:rgba(251,146,60,.3);
+--t1:#e8edf5;--t2:#8fa8c8;--tm:#4a6280;--r:12px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.6}
+.site-header{background:linear-gradient(135deg,#0a1525,#0d1f38,#0a1525);border-bottom:1px solid var(--bdr);padding:0 24px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-block{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gdim));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-size:18px;font-weight:700}.logo-text span{color:var(--gold)}
+.date-badge{font-size:13px;color:var(--t2);background:rgba(255,255,255,.05);border:1px solid var(--bdr);padding:5px 12px;border-radius:20px}
+.update-tag{font-size:11px;background:var(--gglow);color:var(--gold);border:1px solid rgba(240,180,41,.3);padding:3px 10px;border-radius:20px}
+.hero{background:linear-gradient(160deg,#0d1f38,#080d16 60%);border-bottom:1px solid var(--bdr);padding:40px 24px 32px}
+.hero-inner{max-width:1280px;margin:0 auto}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:8px}.hero h1 .a{color:var(--gold)}
+.hero-sub{font-size:14px;color:var(--t2);margin-bottom:24px}
+.stats-row{display:flex;flex-wrap:wrap;gap:12px}
+.stat-chip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:8px 16px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}.num{font-weight:700}.lbl{color:var(--tm)}
+.da{background:var(--gold)}.dm{background:var(--mac)}.dc{background:var(--cry)}.de{background:var(--etf)}.dg{background:var(--gen)}
+.tab-nav{background:var(--surf);border-bottom:1px solid var(--bdr);padding:0 24px;overflow-x:auto}
+.tab-list{max-width:1280px;margin:0 auto;display:flex;list-style:none}
+.tab-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:14px;font-weight:500;color:var(--tm);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--t2)}.tab-count{font-size:11px;background:rgba(255,255,255,.07);padding:1px 7px;border-radius:10px}
+.tab-btn[data-cat=all].active{border-color:var(--gold);color:var(--gold)}
+.tab-btn[data-cat=macro].active{border-color:var(--mac);color:var(--mac)}
+.tab-btn[data-cat=crypto].active{border-color:var(--cry);color:var(--cry)}
+.tab-btn[data-cat=etf].active{border-color:var(--etf);color:var(--etf)}
+.tab-btn[data-cat=general].active{border-color:var(--gen);color:var(--gen)}
+.main{max-width:1280px;margin:0 auto;padding:28px 24px 60px}
+.section{margin-bottom:40px}.section[data-cat]{display:none}.section.visible{display:block}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-macro{background:var(--mac-bg);border:1px solid var(--mac-b);color:var(--mac)}
+.pill-crypto{background:var(--cry-bg);border:1px solid var(--cry-b);color:var(--cry)}
+.pill-etf{background:var(--etf-bg);border:1px solid var(--etf-b);color:var(--etf)}
+.pill-general{background:var(--gen-bg);border:1px solid var(--gen-b);color:var(--gen)}
+.section-title{font-size:18px;font-weight:700}.section-count{margin-left:auto;font-size:12px;color:var(--tm)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.card[data-cat=macro]::before{background:var(--mac)}.card[data-cat=crypto]::before{background:var(--cry)}
+.card[data-cat=etf]::before{background:var(--etf)}.card[data-cat=general]::before{background:var(--gen)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-2px)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.channel-badge{display:flex;align-items:center;gap:7px}
+.ch-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ch-icon.macro{background:var(--mac-bg);color:var(--mac)}.ch-icon.crypto{background:var(--cry-bg);color:var(--cry)}
+.ch-icon.etf{background:var(--etf-bg);color:var(--etf)}.ch-icon.general{background:var(--gen-bg);color:var(--gen)}
+.ch-name{font-size:12px;font-weight:600;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.flag{font-size:14px}.card-time{font-size:11px;color:var(--tm);white-space:nowrap}
+.card-title-orig{font-size:11px;color:var(--tm);font-style:italic;line-height:1.4;border-left:2px solid var(--bdr2);padding-left:8px}
+.card-title-zh{font-size:15px;font-weight:700;line-height:1.4}
+.card-summary{font-size:13px;color:var(--t2);line-height:1.6;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;padding:2px 9px;border-radius:10px;font-weight:500}
+.tag-macro{background:var(--mac-bg);color:var(--mac);border:1px solid var(--mac-b)}
+.tag-crypto{background:var(--cry-bg);color:var(--cry);border:1px solid var(--cry-b)}
+.tag-etf{background:var(--etf-bg);color:var(--etf);border:1px solid var(--etf-b)}
+.tag-general{background:var(--gen-bg);color:var(--gen);border:1px solid var(--gen-b)}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--bdr)}
+.watch-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;padding:5px 12px;border:1px solid rgba(240,180,41,.3);border-radius:6px;background:var(--gglow);transition:background .2s}
+.watch-btn:hover{background:rgba(240,180,41,.25);border-color:var(--gold)}
+.view-count{font-size:11px;color:var(--tm)}
+.site-footer{border-top:1px solid var(--bdr);padding:24px;text-align:center}
+.footer-inner{max-width:1280px;margin:0 auto}.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:6px}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+@media(max-width:640px){.header-inner{height:56px}.update-tag{display:none}.hero{padding:28px 16px 24px}.main{padding:20px 16px 50px}.card-grid{grid-template-columns:1fr}}</style></head><body><header class="site-header"><div class="header-inner"><div class="logo-block"><div class="logo-icon">📈</div><div class="logo-text">每日<span>財經</span>情報</div></div><div style="display:flex;align-items:center;gap:16px"><div class="date-badge">📅 2026 年 6 月 23 日（週二）</div><div class="update-tag">✦ 自動生成 2026-06-23 23:50</div></div></div></header><section class="hero"><div class="hero-inner"><h1>今日 <span class="a">財經情報</span> 彙整</h1><p class="hero-sub">從 13 個精選 YouTube 頻道（美國+日本）自動抓取 · Claude AI 翻譯摘要</p><div class="stats-row"><div class="stat-chip"><div class="dot da"></div><span class="num">5</span><span class="lbl">今日影片</span></div><div class="stat-chip"><div class="dot dm"></div><span class="num">5</span><span class="lbl">宏觀</span></div><div class="stat-chip"><div class="dot dc"></div><span class="num">0</span><span class="lbl">加密</span></div><div class="stat-chip"><div class="dot de"></div><span class="num">0</span><span class="lbl">ETF</span></div><div class="stat-chip"><div class="dot dg"></div><span class="num">0</span><span class="lbl">綜合</span></div></div></div></section><nav class="tab-nav"><ul class="tab-list"><li><button class="tab-btn active" data-cat="all" onclick="switchTab(this)">全部 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="macro" onclick="switchTab(this)">🌐 宏觀 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="crypto" onclick="switchTab(this)">₿ 數字貨幣 <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="etf" onclick="switchTab(this)">📊 ETF <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="general" onclick="switchTab(this)">💼 綜合 <span class="tab-count">0</span></button></li></ul></nav><main class="main"><section class="section visible" data-cat="macro"><div class="section-header"><span class="section-pill pill-macro">🌐 宏觀經濟</span><span class="section-title">Macro Economy</span><span class="section-count">5 則</span></div><div class="card-grid"><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">6小時前</span></div><div class="card-title-orig">SpaceX Wavers Near $2 Trillion Market Cap After 3-Day Rout | Bloomberg Tech 6/23/2026</div><div class="card-title-zh">SpaceX市值在三日跌勢後徘徊於2兆美元關卡｜彭博科技 2026/6/23</div><div class="card-summary">SpaceX股價在經歷連續三日下跌後，市值在2兆美元關口附近搖搖欲墜。彭博記者Ed Ludlow深入分析馬斯克旗下太空探索公司股價承壓的原因，恰逢SpaceX正式啟動其首次公開市場相關融資活動。市場投資人對這家私人估值巨擘的前景展開激烈辯論，關注焦點包括公司商業模式的可持續性、星艦計畫的進展、衛星網路Starlink的營收貢獻，以及整體科技股估值偏高的宏觀環境壓力。此番回調是否屬於短期技術性修正，抑或反映出市場對超高估值的根本性疑慮，成為當前華爾街熱議的核心議題。</div><div class="card-tags"><span class="tag tag-macro">SpaceX</span><span class="tag tag-macro">伊隆馬斯克</span><span class="tag tag-macro">科技股估值</span><span class="tag tag-macro">太空經濟</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=ZCSwtUCUIvc" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.3K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">7小時前</span></div><div class="card-title-orig">Siemens CEO on Industrial AI&#39;s Future</div><div class="card-title-zh">西門子執行長談工業AI的未來</div><div class="card-summary">西門子執行長Roland Busch探討人工智慧如何超越聊天機器人的範疇，深入滲透至工廠生產線，協助製造業者大幅提升生產效率。工業AI的應用涵蓋自動化流程優化、預測性維護及智慧製造等領域，正在重塑全球工業生態。Busch指出，西門子積極將AI技術整合至其工業軟體與自動化硬體平台，打造數位化與實體世界融合的工業元宇宙。隨著製造業面臨勞動力短缺與供應鏈挑戰，AI成為提升競爭力的關鍵工具。此波工業AI浪潮不僅影響大型企業，中小型製造商亦將受惠，預計將帶動全球工業生產力進入新一輪成長週期，對宏觀經濟產生深遠影響。</div><div class="card-tags"><span class="tag tag-macro">工業AI</span><span class="tag tag-macro">西門子</span><span class="tag tag-macro">智慧製造</span><span class="tag tag-macro">自動化</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=iR3UNlZSL6k" target="_blank">▶ 觀看影片</a><span class="view-count">👁 755 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">7小時前</span></div><div class="card-title-orig">Menlo Ventures&#39; Ganesan on Anthropic Bet, Backing AI Startups</div><div class="card-title-zh">Menlo Ventures的Ganesan談Anthropic投資押注與AI新創支持策略</div><div class="card-summary">Menlo Ventures宣布募集30億美元用於新人工智慧投資，創下該公司50年歷史上最大規模的募資紀錄，充分反映出AI領域投資熱潮的持續升溫。該公司合夥人Ganesan在Bloomberg Markets節目中深入探討了押注Anthropic的投資邏輯，以及Menlo Ventures如何評估並篩選具潛力的AI新創企業。訪談涵蓋當前AI投資生態的競爭格局、大型語言模型公司的估值合理性，以及創投機構如何在技術快速演進的環境下制定投資策略。Ganesan亦分享了對AI基礎設施、應用層與模型層各自投資機會的看法，並說明Menlo Ventures在這波AI浪潮中的整體佈局方向與風險管理思路。</div><div class="card-tags"><span class="tag tag-macro">Menlo Ventures</span><span class="tag tag-macro">Anthropic</span><span class="tag tag-macro">人工智慧投資</span><span class="tag tag-macro">創業投資</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=MKEzDVXq0a8" target="_blank">▶ 觀看影片</a><span class="view-count">👁 342 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">9小時前</span></div><div class="card-title-orig">How Twilio and Datadog are winning back investors</div><div class="card-title-zh">Twilio與Datadog如何重新贏得投資者青睞</div><div class="card-summary">軟體公司Twilio與Datadog正逐步展現其在人工智慧領域的競爭優勢，並成功重建投資者信心。這兩家公司在AI浪潮中找到明確定位：Datadog透過雲端監控與可觀測性平台，協助企業管理AI工作負載與基礎設施；Twilio則藉由通訊API與客戶數據平台，將AI整合至企業溝通流程。在經歷估值大幅修正後，兩家公司著重提升營運效率與獲利能力，逐漸從「高成長但虧損」模式轉型為更具財務紀律的經營模式。隨著企業AI支出持續增加，這類基礎設施與開發工具軟體廠商被視為AI落地應用的關鍵受益者，吸引機構投資者重新關注其長期投資價值。</div><div class="card-tags"><span class="tag tag-macro">Twilio</span><span class="tag tag-macro">Datadog</span><span class="tag tag-macro">人工智慧</span><span class="tag tag-macro">軟體股</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=2hJJl2JeV7Q" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.6K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">How Barrière is trying to disrupt the supplement industry</div><div class="card-title-zh">Barrière如何顛覆補充劑產業</div><div class="card-summary">補充劑貼片公司Barrière正積極進軍主流零售市場，推出業界首款乳糖不耐症貼片，並已進駐全美1,700家沃爾瑪門市銷售。該公司透過創新的透皮貼片技術，將傳統口服補充劑轉化為貼片形式，提供消費者更便捷的使用方式。Barrière的商業模式試圖打破現有補充劑市場的格局，以差異化產品切入龐大的保健品市場。乳糖不耐症影響全球數十億人口，代表著巨大的潛在市場需求。與沃爾瑪的合作標誌著該公司從小眾市場邁向大眾消費市場的重要里程碑，顯示投資者與零售商對貼片式補充劑這一新興產品類別的信心與期待。</div><div class="card-tags"><span class="tag tag-macro">補充劑產業</span><span class="tag tag-macro">透皮貼片技術</span><span class="tag tag-macro">乳糖不耐症</span><span class="tag tag-macro">沃爾瑪</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=vioxPYU3Tqk" target="_blank">▶ 觀看影片</a><span class="view-count">👁 4.8K 次</span></div></article></div></section></main><footer class="site-footer"><div class="footer-inner"><p>📺 Bloomberg · CNBC · Coin Bureau · Real Vision · Kitco · Wealthion · Lyn Alden · InvestAnswers · 高橋ダン · 両学長 · 上念司 · テスタ · 投資の達人</p><p>🤖 Claude claude-sonnet-4-6 自動翻譯摘要 · 2026-06-23 23:50</p><p>⚠ 本報告僅供資訊參考，不構成投資建議。</p></div></footer><script>function switchTab(btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.dataset.cat;
+  document.querySelectorAll('.section').forEach(sec=>{
+    if(cat==='all')sec.classList.add('visible');
+    else sec.classList.toggle('visible',sec.dataset.cat===cat);
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.05});
+document.querySelectorAll('.card').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(16px)';c.style.transition='opacity .4s,transform .4s,background .2s';obs.observe(c)});</script></body></html>
