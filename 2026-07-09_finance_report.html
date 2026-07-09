@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>每日財經情報 — 2026-07-09</title><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d16;--surf:#0e1623;--card:#131e2e;--card2:#1a2840;--bdr:#1f3050;--bdr2:#2a4070;
+--gold:#f0b429;--gdim:#c8901e;--gglow:rgba(240,180,41,.15);
+--mac:#38bdf8;--mac-bg:rgba(56,189,248,.1);--mac-b:rgba(56,189,248,.3);
+--cry:#a78bfa;--cry-bg:rgba(167,139,250,.1);--cry-b:rgba(167,139,250,.3);
+--etf:#34d399;--etf-bg:rgba(52,211,153,.1);--etf-b:rgba(52,211,153,.3);
+--gen:#fb923c;--gen-bg:rgba(251,146,60,.1);--gen-b:rgba(251,146,60,.3);
+--t1:#e8edf5;--t2:#8fa8c8;--tm:#4a6280;--r:12px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.6}
+.site-header{background:linear-gradient(135deg,#0a1525,#0d1f38,#0a1525);border-bottom:1px solid var(--bdr);padding:0 24px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-block{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gdim));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-size:18px;font-weight:700}.logo-text span{color:var(--gold)}
+.date-badge{font-size:13px;color:var(--t2);background:rgba(255,255,255,.05);border:1px solid var(--bdr);padding:5px 12px;border-radius:20px}
+.update-tag{font-size:11px;background:var(--gglow);color:var(--gold);border:1px solid rgba(240,180,41,.3);padding:3px 10px;border-radius:20px}
+.hero{background:linear-gradient(160deg,#0d1f38,#080d16 60%);border-bottom:1px solid var(--bdr);padding:40px 24px 32px}
+.hero-inner{max-width:1280px;margin:0 auto}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:8px}.hero h1 .a{color:var(--gold)}
+.hero-sub{font-size:14px;color:var(--t2);margin-bottom:24px}
+.stats-row{display:flex;flex-wrap:wrap;gap:12px}
+.stat-chip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:8px 16px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}.num{font-weight:700}.lbl{color:var(--tm)}
+.da{background:var(--gold)}.dm{background:var(--mac)}.dc{background:var(--cry)}.de{background:var(--etf)}.dg{background:var(--gen)}
+.tab-nav{background:var(--surf);border-bottom:1px solid var(--bdr);padding:0 24px;overflow-x:auto}
+.tab-list{max-width:1280px;margin:0 auto;display:flex;list-style:none}
+.tab-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:14px;font-weight:500;color:var(--tm);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--t2)}.tab-count{font-size:11px;background:rgba(255,255,255,.07);padding:1px 7px;border-radius:10px}
+.tab-btn[data-cat=all].active{border-color:var(--gold);color:var(--gold)}
+.tab-btn[data-cat=macro].active{border-color:var(--mac);color:var(--mac)}
+.tab-btn[data-cat=crypto].active{border-color:var(--cry);color:var(--cry)}
+.tab-btn[data-cat=etf].active{border-color:var(--etf);color:var(--etf)}
+.tab-btn[data-cat=general].active{border-color:var(--gen);color:var(--gen)}
+.main{max-width:1280px;margin:0 auto;padding:28px 24px 60px}
+.section{margin-bottom:40px}.section[data-cat]{display:none}.section.visible{display:block}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-macro{background:var(--mac-bg);border:1px solid var(--mac-b);color:var(--mac)}
+.pill-crypto{background:var(--cry-bg);border:1px solid var(--cry-b);color:var(--cry)}
+.pill-etf{background:var(--etf-bg);border:1px solid var(--etf-b);color:var(--etf)}
+.pill-general{background:var(--gen-bg);border:1px solid var(--gen-b);color:var(--gen)}
+.section-title{font-size:18px;font-weight:700}.section-count{margin-left:auto;font-size:12px;color:var(--tm)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.card[data-cat=macro]::before{background:var(--mac)}.card[data-cat=crypto]::before{background:var(--cry)}
+.card[data-cat=etf]::before{background:var(--etf)}.card[data-cat=general]::before{background:var(--gen)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-2px)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.channel-badge{display:flex;align-items:center;gap:7px}
+.ch-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ch-icon.macro{background:var(--mac-bg);color:var(--mac)}.ch-icon.crypto{background:var(--cry-bg);color:var(--cry)}
+.ch-icon.etf{background:var(--etf-bg);color:var(--etf)}.ch-icon.general{background:var(--gen-bg);color:var(--gen)}
+.ch-name{font-size:12px;font-weight:600;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.flag{font-size:14px}.card-time{font-size:11px;color:var(--tm);white-space:nowrap}
+.card-title-orig{font-size:11px;color:var(--tm);font-style:italic;line-height:1.4;border-left:2px solid var(--bdr2);padding-left:8px}
+.card-title-zh{font-size:15px;font-weight:700;line-height:1.4}
+.card-summary{font-size:13px;color:var(--t2);line-height:1.6;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;padding:2px 9px;border-radius:10px;font-weight:500}
+.tag-macro{background:var(--mac-bg);color:var(--mac);border:1px solid var(--mac-b)}
+.tag-crypto{background:var(--cry-bg);color:var(--cry);border:1px solid var(--cry-b)}
+.tag-etf{background:var(--etf-bg);color:var(--etf);border:1px solid var(--etf-b)}
+.tag-general{background:var(--gen-bg);color:var(--gen);border:1px solid var(--gen-b)}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--bdr)}
+.watch-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;padding:5px 12px;border:1px solid rgba(240,180,41,.3);border-radius:6px;background:var(--gglow);transition:background .2s}
+.watch-btn:hover{background:rgba(240,180,41,.25);border-color:var(--gold)}
+.view-count{font-size:11px;color:var(--tm)}
+.site-footer{border-top:1px solid var(--bdr);padding:24px;text-align:center}
+.footer-inner{max-width:1280px;margin:0 auto}.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:6px}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+@media(max-width:640px){.header-inner{height:56px}.update-tag{display:none}.hero{padding:28px 16px 24px}.main{padding:20px 16px 50px}.card-grid{grid-template-columns:1fr}}</style></head><body><header class="site-header"><div class="header-inner"><div class="logo-block"><div class="logo-icon">📈</div><div class="logo-text">每日<span>財經</span>情報</div></div><div style="display:flex;align-items:center;gap:16px"><div class="date-badge">📅 2026 年 7 月 9 日（週四）</div><div class="update-tag">✦ 自動生成 2026-07-09 23:55</div></div></div></header><section class="hero"><div class="hero-inner"><h1>今日 <span class="a">財經情報</span> 彙整</h1><p class="hero-sub">從 13 個精選 YouTube 頻道（美國+日本）自動抓取 · Claude AI 翻譯摘要</p><div class="stats-row"><div class="stat-chip"><div class="dot da"></div><span class="num">6</span><span class="lbl">今日影片</span></div><div class="stat-chip"><div class="dot dm"></div><span class="num">6</span><span class="lbl">宏觀</span></div><div class="stat-chip"><div class="dot dc"></div><span class="num">0</span><span class="lbl">加密</span></div><div class="stat-chip"><div class="dot de"></div><span class="num">0</span><span class="lbl">ETF</span></div><div class="stat-chip"><div class="dot dg"></div><span class="num">0</span><span class="lbl">綜合</span></div></div></div></section><nav class="tab-nav"><ul class="tab-list"><li><button class="tab-btn active" data-cat="all" onclick="switchTab(this)">全部 <span class="tab-count">6</span></button></li><li><button class="tab-btn" data-cat="macro" onclick="switchTab(this)">🌐 宏觀 <span class="tab-count">6</span></button></li><li><button class="tab-btn" data-cat="crypto" onclick="switchTab(this)">₿ 數字貨幣 <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="etf" onclick="switchTab(this)">📊 ETF <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="general" onclick="switchTab(this)">💼 綜合 <span class="tab-count">0</span></button></li></ul></nav><main class="main"><section class="section visible" data-cat="macro"><div class="section-header"><span class="section-pill pill-macro">🌐 宏觀經濟</span><span class="section-title">Macro Economy</span><span class="section-count">6 則</span></div><div class="card-grid"><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">SK Hynix US Listing Demand Soars | Bloomberg Tech 7/09/2026</div><div class="card-title-zh">SK海力士美國上市需求激增 | 彭博科技 2026/07/09</div><div class="card-summary">SK海力士在美國的上市申請獲得超額認購，需求遠超預期，為這家韓國記憶體晶片製造商創造了史上最大規模的美國上市機會。彭博記者Ed Ludlow深入分析此次上市的市場熱度，反映出投資人對AI驅動的記憶體需求持續看好的信心。SK海力士作為全球主要高頻寬記憶體（HBM）供應商，受益於人工智慧伺服器及資料中心建設的強勁需求，吸引大量機構投資人積極認購。此次赴美上市不僅有助於提升公司的國際知名度與資本市場地位，也象徵韓國科技企業積極布局全球資本市場的重要里程碑，進一步鞏固其在全球半導體產業的戰略地位。</div><div class="card-tags"><span class="tag tag-macro">SK海力士</span><span class="tag tag-macro">美國上市</span><span class="tag tag-macro">記憶體晶片</span><span class="tag tag-macro">HBM</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=EHWSK7QAN7w" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.8K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">Wall Street&#39;s First Take on SpaceX</div><div class="card-title-zh">華爾街對SpaceX的首次評價</div><div class="card-summary">SpaceX的IPO承銷商靜默期已結束，分析師們開始發布對這家由伊隆·馬斯克領導的太空探索公司的研究報告與投資觀點。這是華爾街首次公開對SpaceX進行系統性評估，標誌著這家私人太空企業向公開市場邁進的重要里程碑。分析師們將從財務表現、商業模式、星鏈衛星網路收入潛力、火箭發射業務以及未來成長前景等多個維度進行深度剖析。SpaceX作為全球最具價值的私人企業之一，其估值備受市場關注，IPO定價與市場接受度將成為投資者最關心的焦點。此次上市不僅對太空產業具有指標意義，也將為科技與航太領域的投資趨勢帶來深遠影響。</div><div class="card-tags"><span class="tag tag-macro">SpaceX</span><span class="tag tag-macro">IPO</span><span class="tag tag-macro">伊隆馬斯克</span><span class="tag tag-macro">太空產業</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=40BJbVPJUVU" target="_blank">▶ 觀看影片</a><span class="view-count">👁 679 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">The Space Boom&#39;s Biggest Bottleneck</div><div class="card-title-zh">太空繁榮時代最大的瓶頸</div><div class="card-summary">資金正大量湧入太空經濟領域，從SpaceX創紀錄的IPO到藍色起源首次對外募資，投資熱潮持續升溫。然而，儘管火箭發射技術與衛星部署能力快速進步，整個太空產業仍面臨一個關鍵瓶頸制約其發展潛力。地面基礎設施、頻譜資源分配、以及太空交通管理等環節的建設速度遠落後於火箭技術的突破，形成供需失衡。此外，熟練工程師與技術人才的短缺，以及監管法規的滯後，也對產業擴張構成障礙。分析師指出，若無法有效解決這些基礎性瓶頸，太空經濟的商業化前景將受到嚴重限制，投資者需審慎評估相關風險，而非單純追逐市場熱度。</div><div class="card-tags"><span class="tag tag-macro">太空經濟</span><span class="tag tag-macro">SpaceX</span><span class="tag tag-macro">藍色起源</span><span class="tag tag-macro">宏觀經濟</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=riiJJVDPeMM" target="_blank">▶ 觀看影片</a><span class="view-count">👁 293 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">How AI Super PACs Are Shaping The Midterms</div><div class="card-title-zh">AI超級政治行動委員會如何影響中期選舉</div><div class="card-summary">美國國會議員正在一個關鍵時刻辯論人工智慧監管的未來走向。科技業者為影響立法結果，積極透過超級政治行動委員會（Super PAC）投入大量資金，試圖左右中期選舉的政治生態。AI相關企業和利益團體藉由政治獻金與遊說活動，希望塑造對自身有利的監管環境，阻止可能限制AI發展的法規出台。這一現象引發外界對科技巨頭政治影響力日益擴大的擔憂，同時也凸顯出AI治理議題已從純粹的技術討論，演變為具有高度政治角力性質的政策爭奪戰。隨著AI技術快速發展，監管框架的制定將對整個產業的未來發展方向產生深遠影響。</div><div class="card-tags"><span class="tag tag-macro">人工智慧監管</span><span class="tag tag-macro">超級政治行動委員會</span><span class="tag tag-macro">中期選舉</span><span class="tag tag-macro">科技政策</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=WdIUwP5liSY" target="_blank">▶ 觀看影片</a><span class="view-count">👁 3.8K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">How Warsh&#39;s Task Forces Will Reshape The Federal Reserve</div><div class="card-title-zh">沃什的工作小組將如何重塑聯邦儲備委員會</div><div class="card-summary">聯準會主席凱文·沃什正推動對央行運作方式進行重大改革，涉及資產管理、生產力評估、數據收集等多個核心領域。沃什計劃組建多個專項工作小組，針對聯準會的政策框架、溝通策略及內部運作機制展開全面檢討。這些改革舉措旨在提升央行的透明度與效率，並重新校準貨幣政策的制定流程。此次改革被視為聯準會數十年來最具深遠影響的結構性調整，可能從根本上改變央行與市場、政府之間的互動模式。業界密切關注這些工作小組的具體職責分工，以及其最終建議將如何影響未來的利率決策與金融監管政策走向。</div><div class="card-tags"><span class="tag tag-macro">聯準會改革</span><span class="tag tag-macro">凱文·沃什</span><span class="tag tag-macro">貨幣政策</span><span class="tag tag-macro">央行治理</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=qMff-mXFb3E" target="_blank">▶ 觀看影片</a><span class="view-count">👁 2.1萬 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">How Trump&#39;s $1.8B &#39;lawfare&#39; fund works</div><div class="card-title-zh">川普18億美元「法律戰」基金運作機制解析</div><div class="card-summary">美國維吉尼亞州聯邦法官於週五暫時阻止司法部採取任何進一步行動，以建立或運作川普所提出的18億美元「法律戰」基金。此基金旨在為遭受聯邦政府法律追訴的相關人士提供資金支援，被批評者視為以公帑為政治盟友提供法律保護的爭議性舉措。該基金的設立引發法律與憲法層面的廣泛爭議，反對者認為此舉逾越行政權力邊界，可能破壞司法獨立性。此案凸顯川普政府與司法機構之間持續升溫的緊張關係，並再度引發外界對行政權擴張及法治基礎是否遭受侵蝕的高度關注。聯邦法院的臨時禁令為此爭議提供了初步制衡，後續發展備受市場與法律界密切關注。</div><div class="card-tags"><span class="tag tag-macro">川普政府</span><span class="tag tag-macro">法律戰基金</span><span class="tag tag-macro">司法獨立</span><span class="tag tag-macro">美國政治</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=WDezLJqbwcE" target="_blank">▶ 觀看影片</a><span class="view-count">👁 3.2K 次</span></div></article></div></section></main><footer class="site-footer"><div class="footer-inner"><p>📺 Bloomberg · CNBC · Coin Bureau · Real Vision · Kitco · Wealthion · Lyn Alden · InvestAnswers · 高橋ダン · 両学長 · 上念司 · テスタ · 投資の達人</p><p>🤖 Claude claude-sonnet-4-6 自動翻譯摘要 · 2026-07-09 23:55</p><p>⚠ 本報告僅供資訊參考，不構成投資建議。</p></div></footer><script>function switchTab(btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.dataset.cat;
+  document.querySelectorAll('.section').forEach(sec=>{
+    if(cat==='all')sec.classList.add('visible');
+    else sec.classList.toggle('visible',sec.dataset.cat===cat);
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.05});
+document.querySelectorAll('.card').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(16px)';c.style.transition='opacity .4s,transform .4s,background .2s';obs.observe(c)});</script></body></html>
