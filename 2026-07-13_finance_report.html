@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>每日財經情報 — 2026-07-13</title><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d16;--surf:#0e1623;--card:#131e2e;--card2:#1a2840;--bdr:#1f3050;--bdr2:#2a4070;
+--gold:#f0b429;--gdim:#c8901e;--gglow:rgba(240,180,41,.15);
+--mac:#38bdf8;--mac-bg:rgba(56,189,248,.1);--mac-b:rgba(56,189,248,.3);
+--cry:#a78bfa;--cry-bg:rgba(167,139,250,.1);--cry-b:rgba(167,139,250,.3);
+--etf:#34d399;--etf-bg:rgba(52,211,153,.1);--etf-b:rgba(52,211,153,.3);
+--gen:#fb923c;--gen-bg:rgba(251,146,60,.1);--gen-b:rgba(251,146,60,.3);
+--t1:#e8edf5;--t2:#8fa8c8;--tm:#4a6280;--r:12px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.6}
+.site-header{background:linear-gradient(135deg,#0a1525,#0d1f38,#0a1525);border-bottom:1px solid var(--bdr);padding:0 24px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-block{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gdim));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-size:18px;font-weight:700}.logo-text span{color:var(--gold)}
+.date-badge{font-size:13px;color:var(--t2);background:rgba(255,255,255,.05);border:1px solid var(--bdr);padding:5px 12px;border-radius:20px}
+.update-tag{font-size:11px;background:var(--gglow);color:var(--gold);border:1px solid rgba(240,180,41,.3);padding:3px 10px;border-radius:20px}
+.hero{background:linear-gradient(160deg,#0d1f38,#080d16 60%);border-bottom:1px solid var(--bdr);padding:40px 24px 32px}
+.hero-inner{max-width:1280px;margin:0 auto}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:8px}.hero h1 .a{color:var(--gold)}
+.hero-sub{font-size:14px;color:var(--t2);margin-bottom:24px}
+.stats-row{display:flex;flex-wrap:wrap;gap:12px}
+.stat-chip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:8px 16px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}.num{font-weight:700}.lbl{color:var(--tm)}
+.da{background:var(--gold)}.dm{background:var(--mac)}.dc{background:var(--cry)}.de{background:var(--etf)}.dg{background:var(--gen)}
+.tab-nav{background:var(--surf);border-bottom:1px solid var(--bdr);padding:0 24px;overflow-x:auto}
+.tab-list{max-width:1280px;margin:0 auto;display:flex;list-style:none}
+.tab-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:14px;font-weight:500;color:var(--tm);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--t2)}.tab-count{font-size:11px;background:rgba(255,255,255,.07);padding:1px 7px;border-radius:10px}
+.tab-btn[data-cat=all].active{border-color:var(--gold);color:var(--gold)}
+.tab-btn[data-cat=macro].active{border-color:var(--mac);color:var(--mac)}
+.tab-btn[data-cat=crypto].active{border-color:var(--cry);color:var(--cry)}
+.tab-btn[data-cat=etf].active{border-color:var(--etf);color:var(--etf)}
+.tab-btn[data-cat=general].active{border-color:var(--gen);color:var(--gen)}
+.main{max-width:1280px;margin:0 auto;padding:28px 24px 60px}
+.section{margin-bottom:40px}.section[data-cat]{display:none}.section.visible{display:block}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-macro{background:var(--mac-bg);border:1px solid var(--mac-b);color:var(--mac)}
+.pill-crypto{background:var(--cry-bg);border:1px solid var(--cry-b);color:var(--cry)}
+.pill-etf{background:var(--etf-bg);border:1px solid var(--etf-b);color:var(--etf)}
+.pill-general{background:var(--gen-bg);border:1px solid var(--gen-b);color:var(--gen)}
+.section-title{font-size:18px;font-weight:700}.section-count{margin-left:auto;font-size:12px;color:var(--tm)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.card[data-cat=macro]::before{background:var(--mac)}.card[data-cat=crypto]::before{background:var(--cry)}
+.card[data-cat=etf]::before{background:var(--etf)}.card[data-cat=general]::before{background:var(--gen)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-2px)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.channel-badge{display:flex;align-items:center;gap:7px}
+.ch-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ch-icon.macro{background:var(--mac-bg);color:var(--mac)}.ch-icon.crypto{background:var(--cry-bg);color:var(--cry)}
+.ch-icon.etf{background:var(--etf-bg);color:var(--etf)}.ch-icon.general{background:var(--gen-bg);color:var(--gen)}
+.ch-name{font-size:12px;font-weight:600;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.flag{font-size:14px}.card-time{font-size:11px;color:var(--tm);white-space:nowrap}
+.card-title-orig{font-size:11px;color:var(--tm);font-style:italic;line-height:1.4;border-left:2px solid var(--bdr2);padding-left:8px}
+.card-title-zh{font-size:15px;font-weight:700;line-height:1.4}
+.card-summary{font-size:13px;color:var(--t2);line-height:1.6;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;padding:2px 9px;border-radius:10px;font-weight:500}
+.tag-macro{background:var(--mac-bg);color:var(--mac);border:1px solid var(--mac-b)}
+.tag-crypto{background:var(--cry-bg);color:var(--cry);border:1px solid var(--cry-b)}
+.tag-etf{background:var(--etf-bg);color:var(--etf);border:1px solid var(--etf-b)}
+.tag-general{background:var(--gen-bg);color:var(--gen);border:1px solid var(--gen-b)}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--bdr)}
+.watch-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;padding:5px 12px;border:1px solid rgba(240,180,41,.3);border-radius:6px;background:var(--gglow);transition:background .2s}
+.watch-btn:hover{background:rgba(240,180,41,.25);border-color:var(--gold)}
+.view-count{font-size:11px;color:var(--tm)}
+.site-footer{border-top:1px solid var(--bdr);padding:24px;text-align:center}
+.footer-inner{max-width:1280px;margin:0 auto}.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:6px}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+@media(max-width:640px){.header-inner{height:56px}.update-tag{display:none}.hero{padding:28px 16px 24px}.main{padding:20px 16px 50px}.card-grid{grid-template-columns:1fr}}</style></head><body><header class="site-header"><div class="header-inner"><div class="logo-block"><div class="logo-icon">📈</div><div class="logo-text">每日<span>財經</span>情報</div></div><div style="display:flex;align-items:center;gap:16px"><div class="date-badge">📅 2026 年 7 月 13 日（週一）</div><div class="update-tag">✦ 自動生成 2026-07-13 23:50</div></div></div></header><section class="hero"><div class="hero-inner"><h1>今日 <span class="a">財經情報</span> 彙整</h1><p class="hero-sub">從 13 個精選 YouTube 頻道（美國+日本）自動抓取 · Claude AI 翻譯摘要</p><div class="stats-row"><div class="stat-chip"><div class="dot da"></div><span class="num">5</span><span class="lbl">今日影片</span></div><div class="stat-chip"><div class="dot dm"></div><span class="num">5</span><span class="lbl">宏觀</span></div><div class="stat-chip"><div class="dot dc"></div><span class="num">0</span><span class="lbl">加密</span></div><div class="stat-chip"><div class="dot de"></div><span class="num">0</span><span class="lbl">ETF</span></div><div class="stat-chip"><div class="dot dg"></div><span class="num">0</span><span class="lbl">綜合</span></div></div></div></section><nav class="tab-nav"><ul class="tab-list"><li><button class="tab-btn active" data-cat="all" onclick="switchTab(this)">全部 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="macro" onclick="switchTab(this)">🌐 宏觀 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="crypto" onclick="switchTab(this)">₿ 數字貨幣 <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="etf" onclick="switchTab(this)">📊 ETF <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="general" onclick="switchTab(this)">💼 綜合 <span class="tab-count">0</span></button></li></ul></nav><main class="main"><section class="section visible" data-cat="macro"><div class="section-header"><span class="section-pill pill-macro">🌐 宏觀經濟</span><span class="section-title">Macro Economy</span><span class="section-count">5 則</span></div><div class="card-grid"><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">Palantir Co-Founder Joe Lonsdale on the AI Investment Boom</div><div class="card-title-zh">Palantir共同創辦人喬·朗斯代爾談AI投資熱潮</div><div class="card-summary">Palantir共同創辦人、8VC管理合夥人喬·朗斯代爾接受Bloomberg Markets專訪，深入探討人工智慧所引發的新一輪創投浪潮。朗斯代爾分析AI技術如何重塑風險投資格局，帶動大規模資本湧入科技領域。他從創業者與投資人的雙重視角，闡述AI對各產業的顛覆性影響，以及企業如何利用AI提升競爭優勢。此外，他也談及當前投資環境中的機遇與風險，包括估值泡沫的潛在隱憂，以及哪些領域具備長期投資價值。作為矽谷知名創投人，朗斯代爾對未來AI發展趨勢及其對宏觀經濟的深遠影響提出了獨到見解，為投資者提供重要參考框架。</div><div class="card-tags"><span class="tag tag-macro">人工智慧</span><span class="tag tag-macro">創業投資</span><span class="tag tag-macro">Palantir</span><span class="tag tag-macro">科技股</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=wOlGYLlbEnw" target="_blank">▶ 觀看影片</a><span class="view-count">👁 777 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">How Apple’s Lawsuit Could Disrupt OpenAI’s Bid to Rival the iPhone</div><div class="card-title-zh">蘋果訴訟如何擾亂OpenAI挑戰iPhone的野心</div><div class="card-summary">蘋果公司對OpenAI提起訴訟，指控其系統性竊取智慧財產權，此舉可能嚴重衝擊OpenAI進軍硬體裝置市場的戰略布局。OpenAI近期積極推動AI裝置開發計畫，試圖打造能與iPhone競爭的新一代智慧設備，但蘋果的法律行動恐將拖累其融資進程與合作夥伴關係。此案涉及AI訓練數據來源的核心法律爭議，可能為整個AI產業的智慧財產權保護樹立重要判例。若OpenAI在訴訟中敗訴，不僅面臨鉅額賠償，更可能被迫調整其模型訓練方式，進而影響產品開發時程。這場科技巨頭與AI新創之間的法律對決，將深刻左右AI硬體市場的競爭格局與未來走向。</div><div class="card-tags"><span class="tag tag-macro">蘋果訴訟</span><span class="tag tag-macro">OpenAI</span><span class="tag tag-macro">人工智慧</span><span class="tag tag-macro">智慧財產權</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=7md5rMuDtVw" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.6K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">AI Selloff, Apple vs. OpenAI &amp; the Future of Defense Tech | Bloomberg Tech 7/13/2026</div><div class="card-title-zh">AI拋售潮、蘋果對決OpenAI及國防科技的未來 | Bloomberg科技 2026年7月13日</div><div class="card-summary">本集Bloomberg科技節目由主播Ed Ludlow深入剖析多項重大財經議題。首先，南韓股市因AI相關股票遭到大規模拋售，引發恐慌情緒蔓延至美國市場，導致週一美股出現顯著跌勢，節目將探討此波AI股票拋售潮的成因與市場連鎖反應。其次，聚焦蘋果公司與OpenAI之間的競合關係，分析兩大科技巨頭在人工智慧領域的策略角力與潛在影響。此外，節目亦關注國防科技產業的未來發展趨勢，探討科技創新如何重塑現代國防體系。整體而言，本集節目涵蓋AI市場波動、科技巨頭競爭格局及國防科技三大核心主題，為投資者提供全面的宏觀視角與市場洞察。</div><div class="card-tags"><span class="tag tag-macro">AI拋售潮</span><span class="tag tag-macro">蘋果vs OpenAI</span><span class="tag tag-macro">國防科技</span><span class="tag tag-macro">南韓股市</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=RRLxl18bzkU" target="_blank">▶ 觀看影片</a><span class="view-count">👁 2.0K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">9小時前</span></div><div class="card-title-orig">How China came to dominate the global EV factory boom</div><div class="card-title-zh">中國如何主導全球電動車工廠熱潮</div><div class="card-summary">自2019年以來，中國汽車製造商在海外電動車及電池領域投資超過1,000億美元，迅速主導全球電動車供應鏈。憑藉完整的產業鏈優勢、政府補貼支持以及規模化生產能力，中國車企得以在成本上大幅壓制西方競爭對手。面對歐美各國對中國電動車加徵關稅的壓力，中國廠商積極在東南亞、歐洲、拉丁美洲等地設廠，以規避貿易壁壘並拓展全球市場。這波海外建廠潮不僅帶來就業與投資，也引發地緣政治角力與技術主導權爭奪，使電動車產業成為中美歐三方博弈的新戰場，對全球汽車產業格局產生深遠影響。</div><div class="card-tags"><span class="tag tag-macro">中國電動車</span><span class="tag tag-macro">全球供應鏈</span><span class="tag tag-macro">電池產業</span><span class="tag tag-macro">貿易壁壘</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=rOgQR7MOo4w" target="_blank">▶ 觀看影片</a><span class="view-count">👁 3.4萬 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">The YouTube gurus engineering viral videos</div><div class="card-title-zh">打造爆紅影片的YouTube策略大師</div><div class="card-summary">本影片探討YouTube創作者經濟的興起，以及專業策略顧問在其中扮演的關鍵角色。隨著數千名創作者依賴YouTube作為主要收入來源，越來越多人開始聘請專業顧問協助優化內容策略、提升觀看率與訂閱數。這些「YouTube策略師」透過數據分析、縮圖設計、標題優化及演算法研究等手段，協助創作者打造病毒式傳播的熱門影片。此現象反映出數位內容產業的專業化趨勢，創作者不再單打獨鬥，而是借助專業團隊的力量在競爭激烈的平台上脫穎而出。這一新興顧問產業的崛起，也揭示了創作者經濟規模持續擴大的商業潛力。</div><div class="card-tags"><span class="tag tag-macro">YouTube創作者經濟</span><span class="tag tag-macro">數位內容策略</span><span class="tag tag-macro">網紅顧問產業</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=qoRMIaTHcHw" target="_blank">▶ 觀看影片</a><span class="view-count">👁 8.5K 次</span></div></article></div></section></main><footer class="site-footer"><div class="footer-inner"><p>📺 Bloomberg · CNBC · Coin Bureau · Real Vision · Kitco · Wealthion · Lyn Alden · InvestAnswers · 高橋ダン · 両学長 · 上念司 · テスタ · 投資の達人</p><p>🤖 Claude claude-sonnet-4-6 自動翻譯摘要 · 2026-07-13 23:50</p><p>⚠ 本報告僅供資訊參考，不構成投資建議。</p></div></footer><script>function switchTab(btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.dataset.cat;
+  document.querySelectorAll('.section').forEach(sec=>{
+    if(cat==='all')sec.classList.add('visible');
+    else sec.classList.toggle('visible',sec.dataset.cat===cat);
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.05});
+document.querySelectorAll('.card').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(16px)';c.style.transition='opacity .4s,transform .4s,background .2s';obs.observe(c)});</script></body></html>
