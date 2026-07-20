@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>每日財經情報 — 2026-07-20</title><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d16;--surf:#0e1623;--card:#131e2e;--card2:#1a2840;--bdr:#1f3050;--bdr2:#2a4070;
+--gold:#f0b429;--gdim:#c8901e;--gglow:rgba(240,180,41,.15);
+--mac:#38bdf8;--mac-bg:rgba(56,189,248,.1);--mac-b:rgba(56,189,248,.3);
+--cry:#a78bfa;--cry-bg:rgba(167,139,250,.1);--cry-b:rgba(167,139,250,.3);
+--etf:#34d399;--etf-bg:rgba(52,211,153,.1);--etf-b:rgba(52,211,153,.3);
+--gen:#fb923c;--gen-bg:rgba(251,146,60,.1);--gen-b:rgba(251,146,60,.3);
+--t1:#e8edf5;--t2:#8fa8c8;--tm:#4a6280;--r:12px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.6}
+.site-header{background:linear-gradient(135deg,#0a1525,#0d1f38,#0a1525);border-bottom:1px solid var(--bdr);padding:0 24px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-block{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gdim));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-size:18px;font-weight:700}.logo-text span{color:var(--gold)}
+.date-badge{font-size:13px;color:var(--t2);background:rgba(255,255,255,.05);border:1px solid var(--bdr);padding:5px 12px;border-radius:20px}
+.update-tag{font-size:11px;background:var(--gglow);color:var(--gold);border:1px solid rgba(240,180,41,.3);padding:3px 10px;border-radius:20px}
+.hero{background:linear-gradient(160deg,#0d1f38,#080d16 60%);border-bottom:1px solid var(--bdr);padding:40px 24px 32px}
+.hero-inner{max-width:1280px;margin:0 auto}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:8px}.hero h1 .a{color:var(--gold)}
+.hero-sub{font-size:14px;color:var(--t2);margin-bottom:24px}
+.stats-row{display:flex;flex-wrap:wrap;gap:12px}
+.stat-chip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:8px 16px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}.num{font-weight:700}.lbl{color:var(--tm)}
+.da{background:var(--gold)}.dm{background:var(--mac)}.dc{background:var(--cry)}.de{background:var(--etf)}.dg{background:var(--gen)}
+.tab-nav{background:var(--surf);border-bottom:1px solid var(--bdr);padding:0 24px;overflow-x:auto}
+.tab-list{max-width:1280px;margin:0 auto;display:flex;list-style:none}
+.tab-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:14px;font-weight:500;color:var(--tm);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--t2)}.tab-count{font-size:11px;background:rgba(255,255,255,.07);padding:1px 7px;border-radius:10px}
+.tab-btn[data-cat=all].active{border-color:var(--gold);color:var(--gold)}
+.tab-btn[data-cat=macro].active{border-color:var(--mac);color:var(--mac)}
+.tab-btn[data-cat=crypto].active{border-color:var(--cry);color:var(--cry)}
+.tab-btn[data-cat=etf].active{border-color:var(--etf);color:var(--etf)}
+.tab-btn[data-cat=general].active{border-color:var(--gen);color:var(--gen)}
+.main{max-width:1280px;margin:0 auto;padding:28px 24px 60px}
+.section{margin-bottom:40px}.section[data-cat]{display:none}.section.visible{display:block}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-macro{background:var(--mac-bg);border:1px solid var(--mac-b);color:var(--mac)}
+.pill-crypto{background:var(--cry-bg);border:1px solid var(--cry-b);color:var(--cry)}
+.pill-etf{background:var(--etf-bg);border:1px solid var(--etf-b);color:var(--etf)}
+.pill-general{background:var(--gen-bg);border:1px solid var(--gen-b);color:var(--gen)}
+.section-title{font-size:18px;font-weight:700}.section-count{margin-left:auto;font-size:12px;color:var(--tm)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.card[data-cat=macro]::before{background:var(--mac)}.card[data-cat=crypto]::before{background:var(--cry)}
+.card[data-cat=etf]::before{background:var(--etf)}.card[data-cat=general]::before{background:var(--gen)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-2px)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.channel-badge{display:flex;align-items:center;gap:7px}
+.ch-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ch-icon.macro{background:var(--mac-bg);color:var(--mac)}.ch-icon.crypto{background:var(--cry-bg);color:var(--cry)}
+.ch-icon.etf{background:var(--etf-bg);color:var(--etf)}.ch-icon.general{background:var(--gen-bg);color:var(--gen)}
+.ch-name{font-size:12px;font-weight:600;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.flag{font-size:14px}.card-time{font-size:11px;color:var(--tm);white-space:nowrap}
+.card-title-orig{font-size:11px;color:var(--tm);font-style:italic;line-height:1.4;border-left:2px solid var(--bdr2);padding-left:8px}
+.card-title-zh{font-size:15px;font-weight:700;line-height:1.4}
+.card-summary{font-size:13px;color:var(--t2);line-height:1.6;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;padding:2px 9px;border-radius:10px;font-weight:500}
+.tag-macro{background:var(--mac-bg);color:var(--mac);border:1px solid var(--mac-b)}
+.tag-crypto{background:var(--cry-bg);color:var(--cry);border:1px solid var(--cry-b)}
+.tag-etf{background:var(--etf-bg);color:var(--etf);border:1px solid var(--etf-b)}
+.tag-general{background:var(--gen-bg);color:var(--gen);border:1px solid var(--gen-b)}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--bdr)}
+.watch-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;padding:5px 12px;border:1px solid rgba(240,180,41,.3);border-radius:6px;background:var(--gglow);transition:background .2s}
+.watch-btn:hover{background:rgba(240,180,41,.25);border-color:var(--gold)}
+.view-count{font-size:11px;color:var(--tm)}
+.site-footer{border-top:1px solid var(--bdr);padding:24px;text-align:center}
+.footer-inner{max-width:1280px;margin:0 auto}.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:6px}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+@media(max-width:640px){.header-inner{height:56px}.update-tag{display:none}.hero{padding:28px 16px 24px}.main{padding:20px 16px 50px}.card-grid{grid-template-columns:1fr}}</style></head><body><header class="site-header"><div class="header-inner"><div class="logo-block"><div class="logo-icon">📈</div><div class="logo-text">每日<span>財經</span>情報</div></div><div style="display:flex;align-items:center;gap:16px"><div class="date-badge">📅 2026 年 7 月 20 日（週一）</div><div class="update-tag">✦ 自動生成 2026-07-20 23:50</div></div></div></header><section class="hero"><div class="hero-inner"><h1>今日 <span class="a">財經情報</span> 彙整</h1><p class="hero-sub">從 13 個精選 YouTube 頻道（美國+日本）自動抓取 · Claude AI 翻譯摘要</p><div class="stats-row"><div class="stat-chip"><div class="dot da"></div><span class="num">5</span><span class="lbl">今日影片</span></div><div class="stat-chip"><div class="dot dm"></div><span class="num">5</span><span class="lbl">宏觀</span></div><div class="stat-chip"><div class="dot dc"></div><span class="num">0</span><span class="lbl">加密</span></div><div class="stat-chip"><div class="dot de"></div><span class="num">0</span><span class="lbl">ETF</span></div><div class="stat-chip"><div class="dot dg"></div><span class="num">0</span><span class="lbl">綜合</span></div></div></div></section><nav class="tab-nav"><ul class="tab-list"><li><button class="tab-btn active" data-cat="all" onclick="switchTab(this)">全部 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="macro" onclick="switchTab(this)">🌐 宏觀 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="crypto" onclick="switchTab(this)">₿ 數字貨幣 <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="etf" onclick="switchTab(this)">📊 ETF <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="general" onclick="switchTab(this)">💼 綜合 <span class="tab-count">0</span></button></li></ul></nav><main class="main"><section class="section visible" data-cat="macro"><div class="section-header"><span class="section-pill pill-macro">🌐 宏觀經濟</span><span class="section-title">Macro Economy</span><span class="section-count">5 則</span></div><div class="card-grid"><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">How Kimi K3 Is Reshaping AI Investing</div><div class="card-title-zh">Kimi K3如何重塑AI投資格局</div><div class="card-summary">中國人工智慧公司Moonshot AI推出的強大模型Kimi K3，再度點燃全球AI競賽的烽火。Crosslink Capital合夥人Mary D'Onofrio接受彭博市場採訪，深入分析Kimi K3對AI投資生態的深遠影響。Kimi K3的崛起顯示中國AI技術實力不容小覷，對美國科技巨頭構成顯著競爭壓力，並促使投資人重新評估AI領域的投資策略與資金配置。此一發展不僅影響半導體、雲端運算及AI應用等相關產業的股價走勢，更引發市場對AI算力需求、模型效率以及地緣政治風險的廣泛討論。投資人需重新審視AI賽道中中美兩國的競爭態勢，以及開源模型對整體AI產業估值的潛在衝擊。</div><div class="card-tags"><span class="tag tag-macro">人工智慧</span><span class="tag tag-macro">Kimi K3</span><span class="tag tag-macro">Moonshot AI</span><span class="tag tag-macro">中國科技</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=bOctpo3aQio" target="_blank">▶ 觀看影片</a><span class="view-count">👁 7.9K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">Inside Andreessen Horowitz&#39;s American Dynamism Strategy</div><div class="card-title-zh">深入解析安德森霍洛維茨的「美國活力」投資策略</div><div class="card-summary">安德森霍洛維茨（a16z）正積極擴展其「美國活力」（American Dynamism）投資策略，重點佈局國防與太空領域，並新增相關專業投資人才。該策略旨在支持強化美國國家利益、國家安全及工業競爭力的科技新創企業，涵蓋航太、國防科技、製造業及關鍵基礎設施等領域。在地緣政治緊張與全球供應鏈重組的背景下，a16z認為私人資本投入國防與深科技領域具有重要戰略價值。此舉反映矽谷頂尖創投機構對美國硬實力科技復興的高度重視，並試圖在政府採購與私人市場之間架起橋樑，推動下一代國防與太空技術的商業化發展。</div><div class="card-tags"><span class="tag tag-macro">安德森霍洛維茨</span><span class="tag tag-macro">美國活力</span><span class="tag tag-macro">國防科技</span><span class="tag tag-macro">太空投資</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=hs9eo5ekvhc" target="_blank">▶ 觀看影片</a><span class="view-count">👁 196 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">The AI Race, Starship and Silicon Valley&#39;s Defense Bet | Bloomberg Tech 7/20/2026</div><div class="card-title-zh">AI競賽、星艦計畫與矽谷的國防投注｜彭博科技 2026年7月20日</div><div class="card-summary">彭博科技記者Ed Ludlow深度解析中國AI新創公司Moonshot推出的Kimi K3模型，對OpenAI、Anthropic等AI巨頭以及晶片製造商所帶來的競爭衝擊。節目聚焦全球AI軍備競賽的最新動態，探討中美兩國在人工智慧領域的角力態勢。此外，節目亦涵蓋SpaceX星艦（Starship）的最新發展進程，以及矽谷科技業者積極押注國防科技領域的趨勢，分析科技資本如何加速流入軍事與航太產業。整體報導呈現2026年中科技業三大核心議題：AI模型競爭、太空商業化與國防科技整合，為投資人提供重要的宏觀產業佈局參考。</div><div class="card-tags"><span class="tag tag-macro">人工智慧競賽</span><span class="tag tag-macro">Kimi K3</span><span class="tag tag-macro">矽谷國防科技</span><span class="tag tag-macro">星艦計畫</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=pJRn5HTBuS4" target="_blank">▶ 觀看影片</a><span class="view-count">👁 2.1K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">10小時前</span></div><div class="card-title-orig">Helios Is AMD’s First AI System To Rival Nvidia Vera Rubin — We Got An Exclusive, First Look</div><div class="card-title-zh">Helios是AMD首款可與Nvidia Vera Rubin抗衡的AI系統——我們獨家搶先看</div><div class="card-summary">AMD推出名為Helios的全新AI系統，這是該公司首款正面挑戰Nvidia Vera Rubin的整合式AI平台。CNBC獲得獨家搶先體驗機會，深入了解這款系統的架構與性能表現。AMD在歷經十年的數據中心晶片復興之路後，已成為2026年表現最亮眼的晶片股之一。Helios系統整合了AMD最新一代的GPU與CPU技術，旨在為企業級AI訓練與推論工作負載提供完整解決方案，直接與Nvidia的旗艦AI平台競爭。此舉標誌著AMD在AI晶片市場的戰略升級，從單純銷售晶片轉向提供端對端AI系統，分析師認為這將有助於AMD進一步搶佔Nvidia在超大規模數據中心客戶中的市場份額。</div><div class="card-tags"><span class="tag tag-macro">AMD</span><span class="tag tag-macro">Helios</span><span class="tag tag-macro">人工智慧晶片</span><span class="tag tag-macro">Nvidia競爭</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=8cO9OTjk5H0" target="_blank">▶ 觀看影片</a><span class="view-count">👁 4.3萬 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">Why Americans Are Buying Fewer Groceries</div><div class="card-title-zh">為何美國人購買更少雜貨？</div><div class="card-summary">2025年美國消費者雜貨購買量明顯下滑，單位銷售量全年幾乎持平，且多數月份較去年同期下降約2%。這一趨勢反映出美國家庭在持續通膨壓力下的消費行為轉變——消費者開始更精打細算，減少採購數量、轉向自有品牌商品，或選擇折扣零售商購物。食品價格自2020年以來累計漲幅顯著，導致實際購買力下降，部分消費者甚至削減餐食份量或改變飲食習慣以應對高物價。此外，外食與外送服務的競爭也分流了部分雜貨消費。整體而言，雜貨銷售量的萎縮是美國消費者信心疲弱、可支配收入承壓的縮影，也為零售商帶來量價齊跌的雙重挑戰。</div><div class="card-tags"><span class="tag tag-macro">美國消費</span><span class="tag tag-macro">雜貨零售</span><span class="tag tag-macro">通膨壓力</span><span class="tag tag-macro">消費者行為</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=5FZhlylr_y0" target="_blank">▶ 觀看影片</a><span class="view-count">👁 33.9萬 次</span></div></article></div></section></main><footer class="site-footer"><div class="footer-inner"><p>📺 Bloomberg · CNBC · Coin Bureau · Real Vision · Kitco · Wealthion · Lyn Alden · InvestAnswers · 高橋ダン · 両学長 · 上念司 · テスタ · 投資の達人</p><p>🤖 Claude claude-sonnet-4-6 自動翻譯摘要 · 2026-07-20 23:50</p><p>⚠ 本報告僅供資訊參考，不構成投資建議。</p></div></footer><script>function switchTab(btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.dataset.cat;
+  document.querySelectorAll('.section').forEach(sec=>{
+    if(cat==='all')sec.classList.add('visible');
+    else sec.classList.toggle('visible',sec.dataset.cat===cat);
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.05});
+document.querySelectorAll('.card').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(16px)';c.style.transition='opacity .4s,transform .4s,background .2s';obs.observe(c)});</script></body></html>
