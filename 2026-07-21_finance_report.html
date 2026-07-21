@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>每日財經情報 — 2026-07-21</title><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d16;--surf:#0e1623;--card:#131e2e;--card2:#1a2840;--bdr:#1f3050;--bdr2:#2a4070;
+--gold:#f0b429;--gdim:#c8901e;--gglow:rgba(240,180,41,.15);
+--mac:#38bdf8;--mac-bg:rgba(56,189,248,.1);--mac-b:rgba(56,189,248,.3);
+--cry:#a78bfa;--cry-bg:rgba(167,139,250,.1);--cry-b:rgba(167,139,250,.3);
+--etf:#34d399;--etf-bg:rgba(52,211,153,.1);--etf-b:rgba(52,211,153,.3);
+--gen:#fb923c;--gen-bg:rgba(251,146,60,.1);--gen-b:rgba(251,146,60,.3);
+--t1:#e8edf5;--t2:#8fa8c8;--tm:#4a6280;--r:12px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.6}
+.site-header{background:linear-gradient(135deg,#0a1525,#0d1f38,#0a1525);border-bottom:1px solid var(--bdr);padding:0 24px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-block{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gdim));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-size:18px;font-weight:700}.logo-text span{color:var(--gold)}
+.date-badge{font-size:13px;color:var(--t2);background:rgba(255,255,255,.05);border:1px solid var(--bdr);padding:5px 12px;border-radius:20px}
+.update-tag{font-size:11px;background:var(--gglow);color:var(--gold);border:1px solid rgba(240,180,41,.3);padding:3px 10px;border-radius:20px}
+.hero{background:linear-gradient(160deg,#0d1f38,#080d16 60%);border-bottom:1px solid var(--bdr);padding:40px 24px 32px}
+.hero-inner{max-width:1280px;margin:0 auto}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:8px}.hero h1 .a{color:var(--gold)}
+.hero-sub{font-size:14px;color:var(--t2);margin-bottom:24px}
+.stats-row{display:flex;flex-wrap:wrap;gap:12px}
+.stat-chip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:8px 16px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}.num{font-weight:700}.lbl{color:var(--tm)}
+.da{background:var(--gold)}.dm{background:var(--mac)}.dc{background:var(--cry)}.de{background:var(--etf)}.dg{background:var(--gen)}
+.tab-nav{background:var(--surf);border-bottom:1px solid var(--bdr);padding:0 24px;overflow-x:auto}
+.tab-list{max-width:1280px;margin:0 auto;display:flex;list-style:none}
+.tab-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:14px;font-weight:500;color:var(--tm);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--t2)}.tab-count{font-size:11px;background:rgba(255,255,255,.07);padding:1px 7px;border-radius:10px}
+.tab-btn[data-cat=all].active{border-color:var(--gold);color:var(--gold)}
+.tab-btn[data-cat=macro].active{border-color:var(--mac);color:var(--mac)}
+.tab-btn[data-cat=crypto].active{border-color:var(--cry);color:var(--cry)}
+.tab-btn[data-cat=etf].active{border-color:var(--etf);color:var(--etf)}
+.tab-btn[data-cat=general].active{border-color:var(--gen);color:var(--gen)}
+.main{max-width:1280px;margin:0 auto;padding:28px 24px 60px}
+.section{margin-bottom:40px}.section[data-cat]{display:none}.section.visible{display:block}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-macro{background:var(--mac-bg);border:1px solid var(--mac-b);color:var(--mac)}
+.pill-crypto{background:var(--cry-bg);border:1px solid var(--cry-b);color:var(--cry)}
+.pill-etf{background:var(--etf-bg);border:1px solid var(--etf-b);color:var(--etf)}
+.pill-general{background:var(--gen-bg);border:1px solid var(--gen-b);color:var(--gen)}
+.section-title{font-size:18px;font-weight:700}.section-count{margin-left:auto;font-size:12px;color:var(--tm)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.card[data-cat=macro]::before{background:var(--mac)}.card[data-cat=crypto]::before{background:var(--cry)}
+.card[data-cat=etf]::before{background:var(--etf)}.card[data-cat=general]::before{background:var(--gen)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-2px)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.channel-badge{display:flex;align-items:center;gap:7px}
+.ch-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ch-icon.macro{background:var(--mac-bg);color:var(--mac)}.ch-icon.crypto{background:var(--cry-bg);color:var(--cry)}
+.ch-icon.etf{background:var(--etf-bg);color:var(--etf)}.ch-icon.general{background:var(--gen-bg);color:var(--gen)}
+.ch-name{font-size:12px;font-weight:600;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.flag{font-size:14px}.card-time{font-size:11px;color:var(--tm);white-space:nowrap}
+.card-title-orig{font-size:11px;color:var(--tm);font-style:italic;line-height:1.4;border-left:2px solid var(--bdr2);padding-left:8px}
+.card-title-zh{font-size:15px;font-weight:700;line-height:1.4}
+.card-summary{font-size:13px;color:var(--t2);line-height:1.6;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;padding:2px 9px;border-radius:10px;font-weight:500}
+.tag-macro{background:var(--mac-bg);color:var(--mac);border:1px solid var(--mac-b)}
+.tag-crypto{background:var(--cry-bg);color:var(--cry);border:1px solid var(--cry-b)}
+.tag-etf{background:var(--etf-bg);color:var(--etf);border:1px solid var(--etf-b)}
+.tag-general{background:var(--gen-bg);color:var(--gen);border:1px solid var(--gen-b)}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--bdr)}
+.watch-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;padding:5px 12px;border:1px solid rgba(240,180,41,.3);border-radius:6px;background:var(--gglow);transition:background .2s}
+.watch-btn:hover{background:rgba(240,180,41,.25);border-color:var(--gold)}
+.view-count{font-size:11px;color:var(--tm)}
+.site-footer{border-top:1px solid var(--bdr);padding:24px;text-align:center}
+.footer-inner{max-width:1280px;margin:0 auto}.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:6px}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+@media(max-width:640px){.header-inner{height:56px}.update-tag{display:none}.hero{padding:28px 16px 24px}.main{padding:20px 16px 50px}.card-grid{grid-template-columns:1fr}}</style></head><body><header class="site-header"><div class="header-inner"><div class="logo-block"><div class="logo-icon">📈</div><div class="logo-text">每日<span>財經</span>情報</div></div><div style="display:flex;align-items:center;gap:16px"><div class="date-badge">📅 2026 年 7 月 21 日（週二）</div><div class="update-tag">✦ 自動生成 2026-07-21 23:50</div></div></div></header><section class="hero"><div class="hero-inner"><h1>今日 <span class="a">財經情報</span> 彙整</h1><p class="hero-sub">從 13 個精選 YouTube 頻道（美國+日本）自動抓取 · Claude AI 翻譯摘要</p><div class="stats-row"><div class="stat-chip"><div class="dot da"></div><span class="num">5</span><span class="lbl">今日影片</span></div><div class="stat-chip"><div class="dot dm"></div><span class="num">5</span><span class="lbl">宏觀</span></div><div class="stat-chip"><div class="dot dc"></div><span class="num">0</span><span class="lbl">加密</span></div><div class="stat-chip"><div class="dot de"></div><span class="num">0</span><span class="lbl">ETF</span></div><div class="stat-chip"><div class="dot dg"></div><span class="num">0</span><span class="lbl">綜合</span></div></div></div></section><nav class="tab-nav"><ul class="tab-list"><li><button class="tab-btn active" data-cat="all" onclick="switchTab(this)">全部 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="macro" onclick="switchTab(this)">🌐 宏觀 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="crypto" onclick="switchTab(this)">₿ 數字貨幣 <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="etf" onclick="switchTab(this)">📊 ETF <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="general" onclick="switchTab(this)">💼 綜合 <span class="tab-count">0</span></button></li></ul></nav><main class="main"><section class="section visible" data-cat="macro"><div class="section-header"><span class="section-pill pill-macro">🌐 宏觀經濟</span><span class="section-title">Macro Economy</span><span class="section-count">5 則</span></div><div class="card-grid"><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">4小時前</span></div><div class="card-title-orig">Don&#39;t Give Up on AI Chips Yet, Says JoAnne Feeney</div><div class="card-title-zh">別放棄AI晶片股——JoAnne Feeney如此表示</div><div class="card-summary">近期AI股票拋售潮引發市場對更高效AI模型是否將降低晶片需求的討論。Advisors Capital Management合夥人JoAnne Feeney認為，投資者不應因此放棄AI晶片股。她指出，更高效的模型（如DeepSeek）雖然降低單次推理成本，但實際上將刺激更大規模的AI應用需求，進而推動整體晶片消耗量上升，此現象被稱為「傑文斯悖論」。Feeney強調，科技巨頭持續增加資本支出計劃顯示業界對AI基礎設施的長期需求依然強勁，輝達等晶片製造商的基本面並未改變。短期市場波動提供了買入優質AI晶片股的機會，長線投資者應把握此次回調，因為AI算力需求的結構性成長趨勢仍然完整。</div><div class="card-tags"><span class="tag tag-macro">AI晶片</span><span class="tag tag-macro">人工智慧</span><span class="tag tag-macro">輝達</span><span class="tag tag-macro">DeepSeek</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=yPvO6hXy48Q" target="_blank">▶ 觀看影片</a><span class="view-count">👁 980 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">4小時前</span></div><div class="card-title-orig">Moonshot&#39;s Kimi K3 Reshapes the AI Conversation, Says Bessemer Partner</div><div class="card-title-zh">Moonshot的Kimi K3重塑AI對話格局，貝塞默合夥人如此表示</div><div class="card-summary">Moonshot AI推出的Kimi K3模型重新點燃了人工智慧領域的討論，尤其是關於中國開源權重模型是否正在縮小與美國頂尖AI系統之間的差距。貝塞默創投合夥人在彭博市場節目中分析指出，Kimi K3的問世對全球AI競爭格局具有重要意義，可能改變市場對中美AI實力對比的既有認知。此一發展不僅影響科技投資邏輯，更引發外界對於開源模型商業化潛力、算力限制下的技術突破，以及地緣政治背景下AI主導權爭奪等議題的深入探討。分析師認為，中國AI企業正以更具成本效益的方式實現技術趕超，這對全球投資者的資產配置策略與科技板塊估值均帶來不可忽視的影響。</div><div class="card-tags"><span class="tag tag-macro">人工智慧</span><span class="tag tag-macro">中美科技競爭</span><span class="tag tag-macro">Moonshot AI</span><span class="tag tag-macro">Kimi K3</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=NjcXd7YTRko" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.2K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">Nvidia Rolls Out New Chips, WBD Deal In Limbo | Bloomberg Tech 7/21/2026</div><div class="card-title-zh">輝達推出新晶片，華納兄弟探索交易陷入僵局｜Bloomberg科技 2026/7/21</div><div class="card-summary">輝達（Nvidia）正式發布最新一代人工智慧晶片，進一步鞏固其在AI運算領域的主導地位。Bloomberg記者Ed Ludlow深入解析此次新世代處理器的技術規格與市場意義，並探討其對科技產業供應鏈及競爭格局的潛在影響。與此同時，華納兄弟探索（Warner Bros. Discovery）的併購或重組交易目前陷入不確定狀態，各方談判仍懸而未決，市場對其未來走向保持高度關注。本集節目綜合分析兩大科技媒體產業動態，反映出當前宏觀經濟環境下企業在技術投資與資本運作方面的雙重壓力與機遇，對投資人具有重要參考價值。</div><div class="card-tags"><span class="tag tag-macro">輝達</span><span class="tag tag-macro">人工智慧晶片</span><span class="tag tag-macro">華納兄弟探索</span><span class="tag tag-macro">科技股</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=pKsEFQgpe-o" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.9K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">9小時前</span></div><div class="card-title-orig">Why South Asian music is growing in popularity in the U.S.</div><div class="card-title-zh">南亞音樂為何在美國日益流行</div><div class="card-summary">華納音樂集團（Warner Music Group）作為全球第三大音樂廠牌，正積極切入南亞音樂市場。隨著南亞裔移民人口在美國持續增長，加上串流平台的普及，寶萊塢（Bollywood）、印度流行樂及巴基斯坦音樂等南亞音樂類型正在美國主流市場獲得越來越高的關注度。這一趨勢不僅反映了美國多元文化消費需求的轉變，也代表音樂產業在全球化布局上的新商機。主要唱片公司透過簽約南亞藝人、投資區域音樂製作等方式，試圖搶佔這塊快速成長的市場。南亞音樂的崛起也與社群媒體及TikTok等平台的傳播效應密切相關，使其得以突破族裔社群界限，吸引更廣泛的聽眾群體。</div><div class="card-tags"><span class="tag tag-macro">南亞音樂</span><span class="tag tag-macro">華納音樂集團</span><span class="tag tag-macro">音樂產業</span><span class="tag tag-macro">文化消費</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=4KrgIrhnpOU" target="_blank">▶ 觀看影片</a><span class="view-count">👁 2.0K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">Helios Is AMD’s First AI System To Rival Nvidia Vera Rubin — We Got An Exclusive, First Look</div><div class="card-title-zh">Helios是AMD首款能與輝達Vera Rubin抗衡的AI系統——我們獲得獨家搶先體驗</div><div class="card-summary">AMD推出名為Helios的全新AI系統，這是該公司首款直接挑戰輝達Vera Rubin平台的整合式AI解決方案。作為2026年表現最亮眼的晶片股之一，AMD歷經十年在數據中心晶片領域的艱辛復甦，如今正式進軍高端AI基礎設施市場。Helios系統整合了AMD最新一代GPU與自研網路互連技術，旨在為超大規模數據中心提供具競爭力的運算效能與能源效率。此舉標誌著AI晶片市場競爭格局出現重大轉變，AMD有望進一步蠶食輝達在AI加速器領域的主導地位。業界分析師認為，Helios的問世將為企業客戶提供更多元的AI基礎設施選擇，並對整體AI供應鏈生態系統產生深遠影響。</div><div class="card-tags"><span class="tag tag-macro">AMD</span><span class="tag tag-macro">Helios</span><span class="tag tag-macro">AI晶片</span><span class="tag tag-macro">輝達競爭</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=8cO9OTjk5H0" target="_blank">▶ 觀看影片</a><span class="view-count">👁 15.8萬 次</span></div></article></div></section></main><footer class="site-footer"><div class="footer-inner"><p>📺 Bloomberg · CNBC · Coin Bureau · Real Vision · Kitco · Wealthion · Lyn Alden · InvestAnswers · 高橋ダン · 両学長 · 上念司 · テスタ · 投資の達人</p><p>🤖 Claude claude-sonnet-4-6 自動翻譯摘要 · 2026-07-21 23:50</p><p>⚠ 本報告僅供資訊參考，不構成投資建議。</p></div></footer><script>function switchTab(btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.dataset.cat;
+  document.querySelectorAll('.section').forEach(sec=>{
+    if(cat==='all')sec.classList.add('visible');
+    else sec.classList.toggle('visible',sec.dataset.cat===cat);
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.05});
+document.querySelectorAll('.card').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(16px)';c.style.transition='opacity .4s,transform .4s,background .2s';obs.observe(c)});</script></body></html>
