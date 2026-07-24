@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>每日財經情報 — 2026-07-24</title><style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080d16;--surf:#0e1623;--card:#131e2e;--card2:#1a2840;--bdr:#1f3050;--bdr2:#2a4070;
+--gold:#f0b429;--gdim:#c8901e;--gglow:rgba(240,180,41,.15);
+--mac:#38bdf8;--mac-bg:rgba(56,189,248,.1);--mac-b:rgba(56,189,248,.3);
+--cry:#a78bfa;--cry-bg:rgba(167,139,250,.1);--cry-b:rgba(167,139,250,.3);
+--etf:#34d399;--etf-bg:rgba(52,211,153,.1);--etf-b:rgba(52,211,153,.3);
+--gen:#fb923c;--gen-bg:rgba(251,146,60,.1);--gen-b:rgba(251,146,60,.3);
+--t1:#e8edf5;--t2:#8fa8c8;--tm:#4a6280;--r:12px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.6}
+.site-header{background:linear-gradient(135deg,#0a1525,#0d1f38,#0a1525);border-bottom:1px solid var(--bdr);padding:0 24px;position:sticky;top:0;z-index:100}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-block{display:flex;align-items:center;gap:12px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gdim));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.logo-text{font-size:18px;font-weight:700}.logo-text span{color:var(--gold)}
+.date-badge{font-size:13px;color:var(--t2);background:rgba(255,255,255,.05);border:1px solid var(--bdr);padding:5px 12px;border-radius:20px}
+.update-tag{font-size:11px;background:var(--gglow);color:var(--gold);border:1px solid rgba(240,180,41,.3);padding:3px 10px;border-radius:20px}
+.hero{background:linear-gradient(160deg,#0d1f38,#080d16 60%);border-bottom:1px solid var(--bdr);padding:40px 24px 32px}
+.hero-inner{max-width:1280px;margin:0 auto}
+.hero h1{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:8px}.hero h1 .a{color:var(--gold)}
+.hero-sub{font-size:14px;color:var(--t2);margin-bottom:24px}
+.stats-row{display:flex;flex-wrap:wrap;gap:12px}
+.stat-chip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:8px 16px;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}.num{font-weight:700}.lbl{color:var(--tm)}
+.da{background:var(--gold)}.dm{background:var(--mac)}.dc{background:var(--cry)}.de{background:var(--etf)}.dg{background:var(--gen)}
+.tab-nav{background:var(--surf);border-bottom:1px solid var(--bdr);padding:0 24px;overflow-x:auto}
+.tab-list{max-width:1280px;margin:0 auto;display:flex;list-style:none}
+.tab-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:14px;font-weight:500;color:var(--tm);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{color:var(--t2)}.tab-count{font-size:11px;background:rgba(255,255,255,.07);padding:1px 7px;border-radius:10px}
+.tab-btn[data-cat=all].active{border-color:var(--gold);color:var(--gold)}
+.tab-btn[data-cat=macro].active{border-color:var(--mac);color:var(--mac)}
+.tab-btn[data-cat=crypto].active{border-color:var(--cry);color:var(--cry)}
+.tab-btn[data-cat=etf].active{border-color:var(--etf);color:var(--etf)}
+.tab-btn[data-cat=general].active{border-color:var(--gen);color:var(--gen)}
+.main{max-width:1280px;margin:0 auto;padding:28px 24px 60px}
+.section{margin-bottom:40px}.section[data-cat]{display:none}.section.visible{display:block}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-macro{background:var(--mac-bg);border:1px solid var(--mac-b);color:var(--mac)}
+.pill-crypto{background:var(--cry-bg);border:1px solid var(--cry-b);color:var(--cry)}
+.pill-etf{background:var(--etf-bg);border:1px solid var(--etf-b);color:var(--etf)}
+.pill-general{background:var(--gen-bg);border:1px solid var(--gen-b);color:var(--gen)}
+.section-title{font-size:18px;font-weight:700}.section-count{margin-left:auto;font-size:12px;color:var(--tm)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.card[data-cat=macro]::before{background:var(--mac)}.card[data-cat=crypto]::before{background:var(--cry)}
+.card[data-cat=etf]::before{background:var(--etf)}.card[data-cat=general]::before{background:var(--gen)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-2px)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.channel-badge{display:flex;align-items:center;gap:7px}
+.ch-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ch-icon.macro{background:var(--mac-bg);color:var(--mac)}.ch-icon.crypto{background:var(--cry-bg);color:var(--cry)}
+.ch-icon.etf{background:var(--etf-bg);color:var(--etf)}.ch-icon.general{background:var(--gen-bg);color:var(--gen)}
+.ch-name{font-size:12px;font-weight:600;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.flag{font-size:14px}.card-time{font-size:11px;color:var(--tm);white-space:nowrap}
+.card-title-orig{font-size:11px;color:var(--tm);font-style:italic;line-height:1.4;border-left:2px solid var(--bdr2);padding-left:8px}
+.card-title-zh{font-size:15px;font-weight:700;line-height:1.4}
+.card-summary{font-size:13px;color:var(--t2);line-height:1.6;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;padding:2px 9px;border-radius:10px;font-weight:500}
+.tag-macro{background:var(--mac-bg);color:var(--mac);border:1px solid var(--mac-b)}
+.tag-crypto{background:var(--cry-bg);color:var(--cry);border:1px solid var(--cry-b)}
+.tag-etf{background:var(--etf-bg);color:var(--etf);border:1px solid var(--etf-b)}
+.tag-general{background:var(--gen-bg);color:var(--gen);border:1px solid var(--gen-b)}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--bdr)}
+.watch-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--gold);text-decoration:none;padding:5px 12px;border:1px solid rgba(240,180,41,.3);border-radius:6px;background:var(--gglow);transition:background .2s}
+.watch-btn:hover{background:rgba(240,180,41,.25);border-color:var(--gold)}
+.view-count{font-size:11px;color:var(--tm)}
+.site-footer{border-top:1px solid var(--bdr);padding:24px;text-align:center}
+.footer-inner{max-width:1280px;margin:0 auto}.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:6px}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+@media(max-width:640px){.header-inner{height:56px}.update-tag{display:none}.hero{padding:28px 16px 24px}.main{padding:20px 16px 50px}.card-grid{grid-template-columns:1fr}}</style></head><body><header class="site-header"><div class="header-inner"><div class="logo-block"><div class="logo-icon">📈</div><div class="logo-text">每日<span>財經</span>情報</div></div><div style="display:flex;align-items:center;gap:16px"><div class="date-badge">📅 2026 年 7 月 24 日（週五）</div><div class="update-tag">✦ 自動生成 2026-07-24 23:51</div></div></div></header><section class="hero"><div class="hero-inner"><h1>今日 <span class="a">財經情報</span> 彙整</h1><p class="hero-sub">從 13 個精選 YouTube 頻道（美國+日本）自動抓取 · Claude AI 翻譯摘要</p><div class="stats-row"><div class="stat-chip"><div class="dot da"></div><span class="num">5</span><span class="lbl">今日影片</span></div><div class="stat-chip"><div class="dot dm"></div><span class="num">5</span><span class="lbl">宏觀</span></div><div class="stat-chip"><div class="dot dc"></div><span class="num">0</span><span class="lbl">加密</span></div><div class="stat-chip"><div class="dot de"></div><span class="num">0</span><span class="lbl">ETF</span></div><div class="stat-chip"><div class="dot dg"></div><span class="num">0</span><span class="lbl">綜合</span></div></div></div></section><nav class="tab-nav"><ul class="tab-list"><li><button class="tab-btn active" data-cat="all" onclick="switchTab(this)">全部 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="macro" onclick="switchTab(this)">🌐 宏觀 <span class="tab-count">5</span></button></li><li><button class="tab-btn" data-cat="crypto" onclick="switchTab(this)">₿ 數字貨幣 <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="etf" onclick="switchTab(this)">📊 ETF <span class="tab-count">0</span></button></li><li><button class="tab-btn" data-cat="general" onclick="switchTab(this)">💼 綜合 <span class="tab-count">0</span></button></li></ul></nav><main class="main"><section class="section visible" data-cat="macro"><div class="section-header"><span class="section-pill pill-macro">🌐 宏觀經濟</span><span class="section-title">Macro Economy</span><span class="section-count">5 則</span></div><div class="card-grid"><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">4小時前</span></div><div class="card-title-orig">Viking Admits It Missed the AI Rally</div><div class="card-title-zh">維京全球投資承認錯失AI股票漲勢</div><div class="card-summary">維京全球投資者（Viking Global Investors）向客戶坦承，其對人工智慧板塊的保守持倉策略導致錯失了今年AI股票的強勁漲勢。隨著AI概念股在2024年持續飆升，這家知名對沖基金承認其謹慎態度構成了一次「錯失機會」。此事件凸顯出機構投資者在面對AI浪潮時所面臨的兩難困境：一方面需評估AI相關企業估值是否過高、泡沫風險是否存在；另一方面又承受著跟上市場熱潮、避免績效落後的壓力。這一案例反映出當前宏觀投資環境中，AI主題已成為影響基金表現的關鍵因素，保守的風險管理策略在強勢市場中可能付出顯著的機會成本。</div><div class="card-tags"><span class="tag tag-macro">維京全球投資</span><span class="tag tag-macro">人工智慧股票</span><span class="tag tag-macro">對沖基金</span><span class="tag tag-macro">錯失漲勢</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=Mkz9V7XJDUs" target="_blank">▶ 觀看影片</a><span class="view-count">👁 150 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">&#39;Inference Speed Makes Markets Bigger,&#39; says Cerebras CEO</div><div class="card-title-zh">「推理速度讓市場更大」——Cerebras執行長專訪</div><div class="card-summary">Cerebras執行長接受Bloomberg Markets專訪，深入探討AI推理速度對市場規模的影響。AMD與Cerebras合作推出新型伺服器，主打大幅縮短AI推理回應時間，直接挑戰輝達（Nvidia）的市場主導地位。Cerebras執行長強調，推理速度的提升不僅是技術優化，更是擴大AI應用市場的關鍵驅動力——速度越快，使用場景越多，整體市場規模隨之增長。此次AMD與Cerebras的結盟被視為AI晶片市場格局重塑的重要信號，兩家公司聯手挑戰輝達長期壟斷的AI加速運算生態系統，為企業客戶提供更具競爭力的替代方案，進一步加劇AI基礎設施領域的市場競爭。</div><div class="card-tags"><span class="tag tag-macro">Cerebras</span><span class="tag tag-macro">AMD</span><span class="tag tag-macro">Nvidia</span><span class="tag tag-macro">AI推理</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=vcYGEC1l2VY" target="_blank">▶ 觀看影片</a><span class="view-count">👁 624 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">B</div><span class="ch-name">Bloomberg Markets</span><span class="flag">🇺🇸</span></div><span class="card-time">5小時前</span></div><div class="card-title-orig">SpaceX Is Betting Its Future on Starship</div><div class="card-title-zh">SpaceX將未來押注在星艦上</div><div class="card-summary">SpaceX正積極備戰下一次星艦（Starship）測試飛行，並據彭博社獲悉，該公司已開始婉拒部分獵鷹9號（Falcon 9）的發射業務，顯示其戰略重心正大幅轉移至星艦平台。星艦作為有史以來最大且最強力的火箭系統，被視為SpaceX未來商業版圖的核心支柱，涵蓋大規模衛星部署、深空探索乃至載人登月任務。此舉反映SpaceX創辦人馬斯克的長遠佈局——以星艦取代獵鷹9號成為主力運載工具，進一步鞏固其在全球商業航太市場的主導地位。然而，星艦研發成本龐大且技術風險仍高，此一戰略押注能否成功，將深刻影響SpaceX的財務表現與整體估值。</div><div class="card-tags"><span class="tag tag-macro">SpaceX</span><span class="tag tag-macro">星艦</span><span class="tag tag-macro">商業航太</span><span class="tag tag-macro">馬斯克</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=lRlzDY-IHHA" target="_blank">▶ 觀看影片</a><span class="view-count">👁 1.0K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">17小時前</span></div><div class="card-title-orig">How an ICE contract could boost a stock Trump purchased</div><div class="card-title-zh">川普購買的股票如何可能因ICE合約而大漲</div><div class="card-summary">美國總統川普近期買入高達500萬美元的Axon Enterprise股票，該公司為知名泰瑟槍、隨身攝影機及執法科技設備製造商。此舉引發市場關注，因為Axon正積極爭取美國移民與海關執法局（ICE）的重大政府合約。隨著川普政府大力推動移民執法行動，ICE的預算與採購需求預計將顯著擴張，這對Axon的業務前景極為有利。分析師指出，若Axon成功取得ICE合約，將大幅提升其政府業務營收，進而推動股價上漲。然而，川普作為現任總統投資與政府政策高度相關的企業，也引發外界對潛在利益衝突的質疑與道德爭議。</div><div class="card-tags"><span class="tag tag-macro">川普投資</span><span class="tag tag-macro">Axon Enterprise</span><span class="tag tag-macro">ICE合約</span><span class="tag tag-macro">執法科技</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=3GS7WS14Fok" target="_blank">▶ 觀看影片</a><span class="view-count">👁 3.3K 次</span></div></article><article class="card" data-cat="macro"><div class="card-top"><div class="channel-badge"><div class="ch-icon macro">C</div><span class="ch-name">CNBC</span><span class="flag">🇺🇸</span></div><span class="card-time">1天前</span></div><div class="card-title-orig">Why These Three Companies Dominate The U.S. Hybrid Car Market</div><div class="card-title-zh">為何這三家公司主導美國混合動力車市場</div><div class="card-summary">美國混合動力車銷量持續攀升，為消費者提供兼顧省油與無需充電的實用選擇。在這波趨勢中，豐田、福特與現代三大車廠憑藉先發優勢、成熟技術積累及完善產品線，牢牢掌控市場主導地位。豐田擁有數十年混動技術深厚底蘊，Prius等車款深植消費者心中；福特則以F-150 PowerBoost等熱銷車型切入主流市場；現代旗下品牌亦憑藉多元混動車款快速擴張市佔。隨著油價居高不下，消費者對純電動車的里程焦慮仍存，混合動力車恰好填補這一市場缺口。分析指出，混動車市場的高門檻在於技術研發投入與供應鏈整合，使得後進者難以短期內撼動這三大巨頭的領先地位。</div><div class="card-tags"><span class="tag tag-macro">混合動力車</span><span class="tag tag-macro">豐田</span><span class="tag tag-macro">美國汽車市場</span><span class="tag tag-macro">電動車</span></div><div class="card-footer"><a class="watch-btn" href="https://www.youtube.com/watch?v=hUsVM91NahE" target="_blank">▶ 觀看影片</a><span class="view-count">👁 5.7萬 次</span></div></article></div></section></main><footer class="site-footer"><div class="footer-inner"><p>📺 Bloomberg · CNBC · Coin Bureau · Real Vision · Kitco · Wealthion · Lyn Alden · InvestAnswers · 高橋ダン · 両学長 · 上念司 · テスタ · 投資の達人</p><p>🤖 Claude claude-sonnet-4-6 自動翻譯摘要 · 2026-07-24 23:51</p><p>⚠ 本報告僅供資訊參考，不構成投資建議。</p></div></footer><script>function switchTab(btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.dataset.cat;
+  document.querySelectorAll('.section').forEach(sec=>{
+    if(cat==='all')sec.classList.add('visible');
+    else sec.classList.toggle('visible',sec.dataset.cat===cat);
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)'}}),{threshold:.05});
+document.querySelectorAll('.card').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(16px)';c.style.transition='opacity .4s,transform .4s,background .2s';obs.observe(c)});</script></body></html>
