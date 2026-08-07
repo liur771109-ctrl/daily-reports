@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>馬雲視角下的中國 AI — A Distilled Perspective</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0612;--surf:#150a1f;--card:#1a0f28;--card2:#22153a;
+  --bdr:#2d1b4a;--bdr2:#4a2d78;
+  --orange:#fb923c;--orange-bg:rgba(251,146,60,.10);--orange-b:rgba(251,146,60,.30);
+  --gold:#fbbf24;--gold-bg:rgba(251,191,36,.10);--gold-b:rgba(251,191,36,.30);
+  --red:#f87171;--red-bg:rgba(248,113,113,.10);--red-b:rgba(248,113,113,.30);
+  --jade:#34d399;--jade-bg:rgba(52,211,153,.10);--jade-b:rgba(52,211,153,.30);
+  --purple:#c084fc;--purple-bg:rgba(192,132,252,.10);--purple-b:rgba(192,132,252,.30);
+  --cyan:#22d3ee;--cyan-bg:rgba(34,211,238,.10);--cyan-b:rgba(34,211,238,.30);
+  --t1:#f5e9d4;--t2:#a08eb0;--tm:#5b4d6b;
+  --r:14px;
+  --grad1:linear-gradient(135deg,#f59e0b,#dc2626,#7c3aed);
+  --grad2:linear-gradient(135deg,#fbbf24,#f97316);
+  --grad3:linear-gradient(135deg,#06b6d4,#7c3aed,#f59e0b);
+}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;background:var(--bg);color:var(--t1);line-height:1.7;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 10%,rgba(34,211,238,.05),transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(251,146,60,.06),transparent 60%);pointer-events:none;z-index:0}
+
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,6,18,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr);padding:0 28px}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo-block{display:flex;align-items:center;gap:14px}
+.logo-icon{width:42px;height:42px;border-radius:10px;background:var(--grad3);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#fff;box-shadow:0 0 24px rgba(34,211,238,.35)}
+.logo-text{font-size:19px;font-weight:800}
+.logo-text .g{background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.tag-pill{font-size:11px;color:var(--cyan);background:var(--cyan-bg);border:1px solid var(--cyan-b);padding:5px 14px;border-radius:20px;letter-spacing:1px}
+
+.hero{padding:64px 28px 40px;position:relative;z-index:1}
+.hero-inner{max-width:1200px;margin:0 auto}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+.hero h1{font-size:clamp(28px,5vw,52px);font-weight:900;margin-bottom:18px;line-height:1.15;letter-spacing:-1px}
+.hero h1 .a{background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:15px;color:var(--t2);margin-bottom:30px;max-width:760px}
+.profile-row{display:flex;flex-wrap:wrap;gap:10px}
+.profile-chip{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:10px 18px;font-size:13px}
+.profile-chip .k{color:var(--tm);font-weight:600}
+.profile-chip .v{font-weight:700;color:var(--t1)}
+
+.essence-strip{background:linear-gradient(135deg,rgba(34,211,238,.10),rgba(124,58,237,.08),rgba(251,146,60,.10));border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:36px 28px;position:relative;z-index:1}
+.essence-inner{max-width:1200px;margin:0 auto}
+.essence-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.essence-label::before{content:'\2756';font-size:14px}
+.essence-quote{font-size:clamp(18px,2.4vw,24px);font-weight:800;line-height:1.55;color:var(--t1);max-width:1000px}
+.essence-quote .hl{color:var(--gold)}
+.essence-quote .hl2{color:var(--cyan)}
+.essence-attr{margin-top:14px;font-size:13px;color:var(--t2)}
+
+.main{max-width:1200px;margin:0 auto;padding:48px 28px 80px;position:relative;z-index:1}
+.section{margin-bottom:56px}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--bdr)}
+.section-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:20px;font-size:13px;font-weight:700}
+.pill-orange{background:var(--orange-bg);border:1px solid var(--orange-b);color:var(--orange)}
+.pill-gold{background:var(--gold-bg);border:1px solid var(--gold-b);color:var(--gold)}
+.pill-red{background:var(--red-bg);border:1px solid var(--red-b);color:var(--red)}
+.pill-jade{background:var(--jade-bg);border:1px solid var(--jade-b);color:var(--jade)}
+.pill-purple{background:var(--purple-bg);border:1px solid var(--purple-b);color:var(--purple)}
+.pill-cyan{background:var(--cyan-bg);border:1px solid var(--cyan-b);color:var(--cyan)}
+.section-title{font-size:21px;font-weight:800}
+.section-en{margin-left:auto;font-size:12px;color:var(--tm);font-style:italic;letter-spacing:1px}
+
+.lead{font-size:15px;color:var(--t2);line-height:1.85;margin-bottom:22px;max-width:920px}
+.lead b{color:var(--t1);font-weight:800}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:12px;transition:background .2s,border-color .2s,transform .15s,box-shadow .2s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.card[data-c=orange]::before{background:linear-gradient(90deg,#f97316,#fb923c)}
+.card[data-c=gold]::before{background:linear-gradient(90deg,#d97706,#fbbf24)}
+.card[data-c=red]::before{background:linear-gradient(90deg,#dc2626,#f87171)}
+.card[data-c=jade]::before{background:linear-gradient(90deg,#059669,#34d399)}
+.card[data-c=purple]::before{background:linear-gradient(90deg,#9333ea,#c084fc)}
+.card[data-c=cyan]::before{background:linear-gradient(90deg,#0891b2,#22d3ee)}
+.card:hover{background:var(--card2);border-color:var(--bdr2);transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.card-num{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--tm)}
+.card-title{font-size:17px;font-weight:800;line-height:1.4}
+.card-body{font-size:14px;color:var(--t2);line-height:1.75}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tag{font-size:11px;padding:3px 10px;border-radius:10px;font-weight:600}
+.tag-orange{background:var(--orange-bg);color:var(--orange);border:1px solid var(--orange-b)}
+.tag-gold{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-b)}
+.tag-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-b)}
+.tag-jade{background:var(--jade-bg);color:var(--jade);border:1px solid var(--jade-b)}
+.tag-purple{background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-b)}
+.tag-cyan{background:var(--cyan-bg);color:var(--cyan);border:1px solid var(--cyan-b)}
+
+/* IT vs DT 對比表 */
+.vs-grid{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:stretch;border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden}
+.vs-col{padding:22px 22px}
+.vs-it{background:linear-gradient(135deg,rgba(248,113,113,.06),transparent)}
+.vs-dt{background:linear-gradient(135deg,rgba(34,211,238,.08),transparent)}
+.vs-mid{display:flex;align-items:center;justify-content:center;background:var(--bdr);color:var(--gold);font-weight:900;font-size:14px;letter-spacing:2px}
+.vs-h{font-size:13px;font-weight:800;letter-spacing:2px;margin-bottom:6px}
+.vs-h.it{color:var(--red)}
+.vs-h.dt{color:var(--cyan)}
+.vs-name{font-size:18px;font-weight:900;margin-bottom:14px}
+.vs-row{display:flex;gap:10px;padding:9px 0;border-top:1px dashed var(--bdr);font-size:13px;color:var(--t2);line-height:1.6}
+.vs-row:first-of-type{border-top:0}
+.vs-row .lbl{color:var(--tm);min-width:64px;font-size:11px;font-weight:700;letter-spacing:1px;padding-top:2px}
+
+/* 雷達式優劣勢 */
+.dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.dual-box{padding:24px;border-radius:var(--r);border:1px solid var(--bdr)}
+.dual-box.up{background:linear-gradient(135deg,rgba(52,211,153,.06),transparent);border-color:var(--jade-b)}
+.dual-box.down{background:linear-gradient(135deg,rgba(248,113,113,.06),transparent);border-color:var(--red-b)}
+.dual-h{font-size:13px;font-weight:800;letter-spacing:2px;margin-bottom:14px;text-transform:uppercase}
+.dual-box.up .dual-h{color:var(--jade)}
+.dual-box.down .dual-h{color:var(--red)}
+.dual-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.dual-list li{font-size:14px;line-height:1.7;color:var(--t1);padding-left:24px;position:relative}
+.dual-box.up .dual-list li::before{content:'\25B2';position:absolute;left:0;color:var(--jade);font-weight:900;font-size:11px}
+.dual-box.down .dual-list li::before{content:'\25BC';position:absolute;left:0;color:var(--red);font-weight:900;font-size:11px}
+.dual-list li b{color:var(--t1)}
+.dual-list li .sub{display:block;color:var(--t2);font-size:13px;margin-top:3px;font-weight:400}
+
+/* 引言塊 */
+.quote-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.q-card{background:var(--card);border:1px solid var(--bdr);border-left:4px solid var(--cyan);border-radius:var(--r);padding:22px}
+.q-card .q-mark{font-size:36px;color:var(--cyan);line-height:1;margin-bottom:6px;font-family:Georgia,serif}
+.q-text{font-size:15px;font-weight:600;line-height:1.65;color:var(--t1);margin-bottom:10px}
+.q-meta{font-size:11px;color:var(--tm);letter-spacing:1px}
+
+/* 寫給 X 區塊 */
+.letter-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.letter{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px;position:relative}
+.letter[data-c=jade]{border-top:3px solid var(--jade)}
+.letter[data-c=orange]{border-top:3px solid var(--orange)}
+.letter[data-c=purple]{border-top:3px solid var(--purple)}
+.letter[data-c=cyan]{border-top:3px solid var(--cyan)}
+.letter-to{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--tm);text-transform:uppercase}
+.letter-h{font-size:18px;font-weight:800;line-height:1.4}
+.letter-body{font-size:14px;color:var(--t2);line-height:1.8}
+.letter-sign{font-size:12px;color:var(--gold);font-weight:700;margin-top:6px;letter-spacing:1px;text-align:right}
+
+/* takeaway */
+.takeaway-box{background:linear-gradient(135deg,rgba(34,211,238,.06),rgba(192,132,252,.06));border:1px solid var(--bdr2);border-radius:var(--r);padding:28px;margin-top:24px}
+.takeaway-title{font-size:13px;font-weight:800;letter-spacing:2px;color:var(--gold);margin-bottom:14px;text-transform:uppercase}
+.takeaway-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.takeaway-list li{font-size:14px;line-height:1.7;color:var(--t1);padding-left:24px;position:relative}
+.takeaway-list li::before{content:'\25B8';position:absolute;left:0;color:var(--cyan);font-weight:900}
+
+.disclaimer{margin-top:48px;padding:18px 22px;background:var(--card);border:1px solid var(--bdr);border-radius:var(--r);font-size:12px;color:var(--tm);line-height:1.7}
+
+.site-footer{border-top:1px solid var(--bdr);padding:28px;text-align:center;position:relative;z-index:1}
+.footer-inner p{font-size:12px;color:var(--tm);margin-bottom:8px}
+.footer-inner .grad-text{background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+
+@media(max-width:780px){
+  .vs-grid{grid-template-columns:1fr}
+  .vs-mid{padding:8px;font-size:12px}
+  .dual-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .header-inner{height:58px}
+  .hero{padding:36px 16px 24px}
+  .essence-strip{padding:24px 16px}
+  .main{padding:32px 16px 60px}
+  .card-grid,.quote-grid,.letter-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-icon">馬</div>
+      <div class="logo-text">馬雲<span class="g">看 AI</span></div>
+    </div>
+    <div class="tag-pill">CHINA AI · A JACK MA LENS</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">A DISTILLED PERSPECTIVE · CHINA AI</div>
+    <h1>如果今天讓馬雲講<span class="a">中國 AI</span>，<br/>他會怎麼開場？</h1>
+    <p class="hero-sub">本篇為「蒸餾馬雲」系列第二篇——不是模仿他的口氣，而是把他在 2017 年世界智能大會、雲棲大會、達沃斯、彭博訪談以及外灘演講中反覆出現的 AI 觀點，重新排列組合，去解一個今天最熱的題目：<b>中國 AI 的位置、機會、與真正的危機</b>。</p>
+    <div class="profile-row">
+      <div class="profile-chip"><span class="k">框架</span><span class="v">IT 時代 → DT 時代</span></div>
+      <div class="profile-chip"><span class="k">命名</span><span class="v">他主張叫 MI 不叫 AI</span></div>
+      <div class="profile-chip"><span class="k">立場</span><span class="v">機器要做人做不到的事</span></div>
+      <div class="profile-chip"><span class="k">焦點</span><span class="v">教育 &gt; 算力</span></div>
+      <div class="profile-chip"><span class="k">時區</span><span class="v">用 30 年的尺度看</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="essence-strip">
+  <div class="essence-inner">
+    <div class="essence-label">ESSENCE · 一句話開場</div>
+    <div class="essence-quote">「中國 AI 的問題從來不是<span class="hl">追上 OpenAI</span>，而是——三十年後，<span class="hl2">我們的孩子能不能在 AI 已經會做的事之外，還剩下值得做的事。</span>」</div>
+    <div class="essence-attr">— 重新排列馬雲歷次演講中的核心句</div>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- 一、馬雲式破題 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-orange">①</span>
+      <span class="section-title">破題 · 他不會從 GPU 開始講</span>
+      <span class="section-en">Where He Would Start</span>
+    </div>
+    <div class="lead">中國今天討論 AI，9 成的人從<b>算力、模型、晶片管制、誰更會 Scaling</b>開始。馬雲不會。他開場通常會先換一個鏡頭——把時間軸從 18 個月拉到 30 年，把問題從「誰贏」改成「人類要的是什麼」。理解他看 AI 的角度，要先接受三個前提。</div>
+    <div class="card-grid">
+      <article class="card" data-c="orange">
+        <div class="card-num">PREMISE 01</div>
+        <div class="card-title">機器要做機器擅長的事，不是模仿人</div>
+        <div class="card-body">他多次反對 "Artificial Intelligence" 這個翻譯，主張該叫「Machine Intelligence」。理由很簡單：你不會要求飛機去模仿鳥，火車去模仿馬。AI 真正的價值，是做<b>人類做不到、做不好、不想做</b>的事，不是搶人類已經能做好的事。</div>
+        <div class="card-tags"><span class="tag tag-orange">MI &gt; AI</span><span class="tag tag-orange">命名即立場</span></div>
+      </article>
+      <article class="card" data-c="orange">
+        <div class="card-num">PREMISE 02</div>
+        <div class="card-title">這不是技術革命，是商業革命</div>
+        <div class="card-body">他經常說：「過去三十年是讓人類變得更像機器，未來三十年是讓機器變得更像智能。」而真正改寫產業的，從來不是技術本身，是商業形態。所以中國 AI 的勝負手，不在實驗室，在<b>應用場景</b>——那裡才是這場革命的主戰場。</div>
+        <div class="card-tags"><span class="tag tag-orange">場景</span><span class="tag tag-orange">商業革命</span></div>
+      </article>
+      <article class="card" data-c="orange">
+        <div class="card-num">PREMISE 03</div>
+        <div class="card-title">不要用 18 個月看 AI，用 30 年看</div>
+        <div class="card-body">「網際網路花了 20 年才真正改變零售。」他常用這句提醒急躁的觀察者。AI 模型每三個月一次大更新，是<b>技術曲線</b>；但社會、教育、就業要重新適配，是<b>制度曲線</b>。兩條曲線必然錯開，看不懂這個錯開，就看不懂中國 AI 真正的瓶頸。</div>
+        <div class="card-tags"><span class="tag tag-orange">時間尺度</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 二、IT 時代 vs DT 時代 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-cyan">②</span>
+      <span class="section-title">他的核心框架 · IT 時代 vs DT 時代</span>
+      <span class="section-en">From IT to DT</span>
+    </div>
+    <div class="lead">這是馬雲最具辨識度、被引用最多的一個框架——早在 2014 年提出，至今仍是他解讀一切技術話題的底層 OS。把今天的 AI 套進這個對照，會看到他眼裡的中國 AI 不是<b>更強的 IT</b>，而是<b>真正的 DT</b>機會。</div>
+    <div class="vs-grid">
+      <div class="vs-col vs-it">
+        <div class="vs-h it">⚡ IT ERA</div>
+        <div class="vs-name">IT 時代</div>
+        <div class="vs-row"><span class="lbl">驅動</span><span>讓<b>自己</b>強大、控制、效率</span></div>
+        <div class="vs-row"><span class="lbl">資源</span><span>標準化、規模化、流程化</span></div>
+        <div class="vs-row"><span class="lbl">用戶</span><span>使用者，被服務的對象</span></div>
+        <div class="vs-row"><span class="lbl">心法</span><span>把「我」做好，等別人來</span></div>
+        <div class="vs-row"><span class="lbl">代表</span><span>大型企業 IT 系統、ERP、SaaS</span></div>
+      </div>
+      <div class="vs-mid">VS</div>
+      <div class="vs-col vs-dt">
+        <div class="vs-h dt">⌬ DT ERA</div>
+        <div class="vs-name">DT 時代（Data Technology）</div>
+        <div class="vs-row"><span class="lbl">驅動</span><span>讓<b>別人</b>強大、共享、賦能</span></div>
+        <div class="vs-row"><span class="lbl">資源</span><span>數據、智能、生態</span></div>
+        <div class="vs-row"><span class="lbl">用戶</span><span>合作者，與你共生的對象</span></div>
+        <div class="vs-row"><span class="lbl">心法</span><span>把「他人」做強，自己自然在</span></div>
+        <div class="vs-row"><span class="lbl">代表</span><span>平台、AI 賦能、開放生態</span></div>
+      </div>
+    </div>
+
+    <div class="takeaway-box" style="margin-top:18px">
+      <div class="takeaway-title">⌁ 套到中國 AI 的結論</div>
+      <ul class="takeaway-list">
+        <li><b>美國式 AI 偏 IT 思維</b>——先把模型做到最強，再讓全世界跑來用我。</li>
+        <li><b>中國真正適合的路是 DT 思維</b>——不是只比模型，是把 AI 變成中小企業、農民、學生、工廠主的「水電煤」。</li>
+        <li>所以馬雲不會用「中國 AI 落後幾年」當度量；他會問：<b>有多少中國中小企業、夫妻店、村莊，今天因為 AI 變得更強了？</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 三、中國的優勢與短板 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-jade">③</span>
+      <span class="section-title">中國 AI 的真實牌面 · 他眼裡的長板與短板</span>
+      <span class="section-en">Strengths &amp; Gaps, Honestly</span>
+    </div>
+    <div class="dual-grid">
+      <div class="dual-box up">
+        <div class="dual-h">▲ 中國的長板（他會反覆強調的）</div>
+        <ul class="dual-list">
+          <li><b>場景密度世界第一</b><span class="sub">14 億人口、最複雜的產業鏈、最瘋狂的支付/物流/外賣場景。AI 在這裡跑一年，等於在別處跑三年。</span></li>
+          <li><b>應用敢試、敢賠、敢迭代</b><span class="sub">小餐館、跨境電商、義烏商戶，今天就在用 AI 重做客服、選品、文案——真正的 DT 從這裡長出來，不是從會議室。</span></li>
+          <li><b>數據基建齊全</b><span class="sub">移動支付滲透、物流數位化、政務上雲——這些是十年前砸下的「土壤」，AI 是種子。</span></li>
+          <li><b>年輕人不怕失敗</b><span class="sub">「中國最大的紅利從來不是人口，是<b>願意試錯的年輕人</b>。」這句話可以直接貼到 AI 上。</span></li>
+          <li><b>製造業 + AI 的天然耦合</b><span class="sub">全世界沒有第二個地方同時擁有完整製造鏈與 AI 應用市場——這是中國最被低估的長板。</span></li>
+        </ul>
+      </div>
+      <div class="dual-box down">
+        <div class="dual-h">▼ 中國的短板（他會直話直說的）</div>
+        <ul class="dual-list">
+          <li><b>原創性研究不夠</b><span class="sub">「我們善於把 0.5 做到 99，但很少有人去做 0 到 0.5。」這個結構性短板，光靠補貼不會自己消失。</span></li>
+          <li><b>對「失敗」的容忍仍偏低</b><span class="sub">真正的基礎研究 9 成會失敗。社會、資本、考核制度容不容得下這 9 成失敗，是 AI 長期競爭的決定變量。</span></li>
+          <li><b>教育體系跟不上</b><span class="sub">「30 年後，今天教給孩子的東西，AI 都會做。」課綱還在訓練「能被 AI 取代的能力」，是最慢、最隱形、最致命的問題。</span></li>
+          <li><b>數據集中於少數巨頭</b><span class="sub">DT 時代的核心資源是數據。如果數據只集中在 5 家公司、3 個城市手裡，AI 賦能千萬中小企業的故事就講不下去。</span></li>
+          <li><b>說「彎道超車」太多，做苦活太少</b><span class="sub">他會反覆提醒：「彎道超車是賽車手的話，不是創業者的話。創業者只有一條路——把直道修對。」</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 四、他擔心的 vs 他樂觀的 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-red">④</span>
+      <span class="section-title">三個樂觀理由 · 三個警鐘</span>
+      <span class="section-en">Three Yes &amp; Three Warnings</span>
+    </div>
+    <div class="card-grid">
+      <article class="card" data-c="jade">
+        <div class="card-num">YES · 01</div>
+        <div class="card-title">中國 AI 的真實生命，在 6 億「沒被服務好的人」</div>
+        <div class="card-body">「最值得做的客戶，是過去那些被認為不值得服務的人。」AI 把客服、法律諮詢、教育輔導、醫療問診的邊際成本壓到趨近於零，這意味著——農村、小鎮、老人、文盲、殘障人，第一次有機會獲得過去只有大城市精英能買到的服務。這才是中國 AI 最該寫的故事。</div>
+        <div class="card-tags"><span class="tag tag-jade">普惠 AI</span></div>
+      </article>
+      <article class="card" data-c="jade">
+        <div class="card-num">YES · 02</div>
+        <div class="card-title">AI 會放大「小而美」，不是消滅它</div>
+        <div class="card-body">很多人擔心 AI 讓巨頭更大、小公司沒活路。馬雲式的反向觀點：AI 讓<b>一個人也能是一家公司</b>——一個設計師、一個翻譯、一個小餐廳老闆，配上 AI，產能會等同過去 10 人的小團隊。這恰恰是阿里 25 年前那句「讓天下沒有難做的生意」最徹底的兌現。</div>
+        <div class="card-tags"><span class="tag tag-jade">一人公司</span></div>
+      </article>
+      <article class="card" data-c="jade">
+        <div class="card-num">YES · 03</div>
+        <div class="card-title">中國產業鏈 + AI = 全球唯一組合</div>
+        <div class="card-body">機器人、無人機、智能製造——這些東西沒有完整製造鏈，是做不出來的。北美有最強模型，但要把模型變成 1000 萬台終端產品送到全球農村，沒有第二個答案能寫得比中國快。AI 真正的下半場是<b>具身</b>，這場仗中國有打的本錢。</div>
+        <div class="card-tags"><span class="tag tag-jade">具身智能</span></div>
+      </article>
+
+      <article class="card" data-c="red">
+        <div class="card-num">⚠ NO · 01</div>
+        <div class="card-title">最大的危險是「全民焦慮，只有 5 家公司在做」</div>
+        <div class="card-body">當 AI 變成全民話題，但真正能參與的只有頭部幾家公司，這個產業就走偏了。DT 時代核心是<b>讓更多人能用</b>，不是<b>讓更少人能做</b>。如果中國 AI 變成「巨頭俱樂部 + 圍觀群眾」，再強的模型也撐不出大格局。</div>
+        <div class="card-tags"><span class="tag tag-red">壟斷風險</span></div>
+      </article>
+      <article class="card" data-c="red">
+        <div class="card-num">⚠ NO · 02</div>
+        <div class="card-title">第二大危險：教育沒換腦袋</div>
+        <div class="card-body">「我們今天教孩子的，是讓他們去和機器競爭的能力——記憶、計算、標準答案。這場比賽從一開始就輸了。」AI 越強，<b>沒被 AI 取代的能力</b>越值錢——創造力、好奇心、同理心、跨文化、團隊感。如果中小學課綱不換，30 年後中國 AI 再強，普通人卻找不到工作，這是最大的悲劇。</div>
+        <div class="card-tags"><span class="tag tag-red">教育斷層</span></div>
+      </article>
+      <article class="card" data-c="red">
+        <div class="card-num">⚠ NO · 03</div>
+        <div class="card-title">第三大危險：把 AI 當「神」或當「敵人」</div>
+        <div class="card-body">「機器永遠不會有靈魂、不會有信仰、不會有價值觀。」他反對兩種極端——把 AI 神化（甚麼都能解決），或把 AI 妖魔化（都是它害的）。中國輿論場最容易在這兩端來回擺，這比模型差幾分，更傷產業。</div>
+        <div class="card-tags"><span class="tag tag-red">輿論失衡</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 五、馬雲式語錄改寫成 AI 篇 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-purple">⑤</span>
+      <span class="section-title">如果他今天再說一次 · 把舊話接到 AI 上</span>
+      <span class="section-en">Old Lines, New Subject</span>
+    </div>
+    <div class="lead">這一段是「再蒸餾」——把他過去最具辨識度的金句，搬到 AI 語境下重講一次。每一句的語法、節奏、轉折，都儘量保留他原本的味道。</div>
+    <div class="quote-grid">
+      <div class="q-card"><div class="q-mark">&ldquo;</div><div class="q-text">今天 AI 很殘酷，明天 AI 更殘酷，後天 AI 會很美好。但絕大多數公司，會死在明天晚上。</div><div class="q-meta">改寫自他最知名的「後天的太陽」</div></div>
+      <div class="q-card"><div class="q-mark">&ldquo;</div><div class="q-text">不要去想怎麼戰勝 AI——要去想，AI 不會的那件事，你做了沒。</div><div class="q-meta">改寫自他談「對手」的觀點</div></div>
+      <div class="q-card"><div class="q-mark">&ldquo;</div><div class="q-text">AI 時代最值錢的，不是會寫程式的人，是會問問題的人。</div><div class="q-meta">2017 演講主題的延伸</div></div>
+      <div class="q-card"><div class="q-mark">&ldquo;</div><div class="q-text">機器有智能 (Intelligence)，人有智慧 (Wisdom)。智能可以被訓練，智慧只能被經歷。</div><div class="q-meta">他多次區分 IQ / EQ / LQ 的延伸</div></div>
+      <div class="q-card"><div class="q-mark">&ldquo;</div><div class="q-text">真正的 AI 公司，不會說自己是 AI 公司——就像真正的電力公司，不會每天提醒你它在賣電。</div><div class="q-meta">改寫自他「不要 AI 概念股」的評論</div></div>
+      <div class="q-card"><div class="q-mark">&ldquo;</div><div class="q-text">AI 會讓很多工作消失，但更會讓更多工作出現。問題是——你願不願意成為那個「新工作」的人。</div><div class="q-meta">他談就業時最常重複的句型</div></div>
+      <div class="q-card"><div class="q-mark">&ldquo;</div><div class="q-text">中國 AI 不應該追求「最大」，應該追求「最被需要」。</div><div class="q-meta">他談公司規模的常用句型</div></div>
+      <div class="q-card"><div class="q-mark">&ldquo;</div><div class="q-text">夢想還是要有的，AI 把它實現的成本，第一次降到了普通人也能負擔的範圍。</div><div class="q-meta">把那句經典金句接到 AI 上</div></div>
+    </div>
+  </section>
+
+  <!-- 六、馬雲式三封信 -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-pill pill-gold">⑥</span>
+      <span class="section-title">如果他寫三封信 · 給創業者、家長、政策制定者</span>
+      <span class="section-en">Three Letters, His Voice</span>
+    </div>
+    <div class="letter-grid">
+      <div class="letter" data-c="orange">
+        <div class="letter-to">致 · AI 創業者</div>
+        <div class="letter-h">不要做「AI 公司」，做一家「用 AI 的好公司」</div>
+        <div class="letter-body">如果你的 PPT 上寫「我們是一家 AI 公司」，你已經輸了一半。客戶不在乎你用什麼。客戶只想知道——你能不能把他過去要花 8 小時的事，今天 8 分鐘做完，而且做得更好。<br/><br/>不要追隨大模型的版本號，那是別人的賽道。<b>追隨真實的、不被服務好的客戶</b>——AI 只是你終於拿得起的那把扳手。<br/><br/>還有一句送給你：在 AI 時代，<b>速度永遠重要，但方向更重要。</b>跑錯方向，越快越遠。</div>
+        <div class="letter-sign">— 寫給每一個寫商業計劃書的人</div>
+      </div>
+      <div class="letter" data-c="purple">
+        <div class="letter-to">致 · 家長與老師</div>
+        <div class="letter-h">不要把孩子訓練成「會被 AI 取代的人」</div>
+        <div class="letter-body">這封信最難寫，因為它要請所有家長承認一件事——我們從小被教的那些「優點」（會背、會算、會考試），正好是 AI 最強的部分。<br/><br/>未來真正稀缺的，是 AI 不會的：<b>提出新問題、跨領域連接、從零想像、與不同人協作、相信看不見的東西</b>。這些東西，在現在的考試裡幾乎不加分。<br/><br/>所以請允許你的孩子：多失敗、多玩、多問為什麼、多和不同的人在一起、多閱讀無用的書。AI 越強，「無用之學」越值錢。</div>
+        <div class="letter-sign">— 一個前英語老師留</div>
+      </div>
+      <div class="letter" data-c="cyan">
+        <div class="letter-to">致 · 政策制定者</div>
+        <div class="letter-h">不要管太多 AI 模型，多管 AI 之外的人</div>
+        <div class="letter-body">真正需要監管智慧的，從來不是「禁止什麼」，而是<b>創造什麼條件，讓更多人有機會參與</b>。<br/><br/>三件事最值得花錢：<br/>一、把 AI 教育推到鄉村小學，而不是只給重點高中；<br/>二、讓中小企業能買得起、用得起 AI，這是 DT 時代的「水電煤」；<br/>三、為原創研究撐傘——容忍 9 成失敗，等待那 1 成。<br/><br/>對人類最大的監管，是讓人類不要被機器取代得太快、太徹底。<b>速度可以競賽，但不能踩到那條叫「人」的紅線。</b></div>
+        <div class="letter-sign">— 一個老兵的公開信</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 七、五句帶走 -->
+  <div class="takeaway-box">
+    <div class="takeaway-title">⌁ 蒸餾完成 · 五句帶走</div>
+    <ul class="takeaway-list">
+      <li><b>中國 AI 的勝負手不在算力，而在「DT 化」——讓更多人用得上。</b></li>
+      <li><b>機器有智能，人有智慧。</b>智能可以訓練，智慧只能經歷。</li>
+      <li><b>最大的危險不是 AI 太強，而是教育沒換腦袋。</b></li>
+      <li><b>未來最值錢的不是會程式的人，是會問問題、會相信、會合作的人。</b></li>
+      <li><b>不要做 AI 公司，做一家用 AI 的好公司。</b></li>
+    </ul>
+  </div>
+
+  <div class="disclaimer">
+    ⓘ 本文為基於馬雲（Jack Ma）2014–2024 年公開演講、訪談、雲棲大會主旨報告、世界智能大會發言、達沃斯與彭博訪談等公開素材整理而成的「視角重組」報告，並非他本人原話。文中部分句式為作者基於其常用語法的改寫，旨在還原其分析框架的味道，不代表其當前立場。本文不構成任何投資、政策或職涯建議。
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>📚 思想素材 · 雲棲大會 · 世界智能大會 · 達沃斯論壇 · 母校演講 · 公開訪談 · 自傳體著作</p>
+    <p>🥃 <span class="grad-text">Distilled by Claude</span> · 「蒸餾馬雲」系列 II — 把他的框架，套到今天的 AI</p>
+    <p>⚠ 本報告僅供思想參考，不構成投資、政策或職涯建議。</p>
+  </div>
+</footer>
+</body>
+</html>
